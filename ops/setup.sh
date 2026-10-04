@@ -2,7 +2,10 @@
 # Agency statik sitesi (Vite/React) — bir veya birden çok alan adında. Kaynak: github.com/atonota/agency
 # Akış: main'e push → GitHub Actions "build" → sunucu timer'ı 2 dk içinde CI'dan geçen commit'i
 #        Node 24 konteynerinde npm ci + build eder → atomik olarak yayınlar. Başarısız build yayınlanmaz.
-# Önkoşul: Docker, host Caddy (common snippet'i), UFW. Diğer projelerden bağımsızdır.
+# Önkoşul: Docker, host Caddy. İki Caddy düzeni otomatik algılanır:
+#   "sites"         → /etc/caddy/sites/*.caddy + common snippet + caddy.env (PUBLIC_IP, bind), UFW 443 açılır
+#   "sites-enabled" → /etc/caddy/sites-enabled/* (ör. srv01): SADECE yeni site dosyası eklenir, mevcut dosyalara,
+#                      firewall'a ve caddy.env'e dokunulmaz; doğrulama başarısızsa eklenen dosya geri alınır; reload (restart değil).
 # Kullanım (root):
 #   git clone https://github.com/atonota/agency.git /opt/agency/repo
 #   bash /opt/agency/repo/ops/setup.sh agency.titanlar.com      — alan adı ekle/güncelle
@@ -19,18 +22,27 @@ die()  { printf '\033[1;31m[x] %s\033[0m\n' "$*"; exit 1; }
 setenv() { touch "$1"; grep -q "^$2=" "$1" && sed -i "s|^$2=.*|$2=$3|" "$1" || echo "$2=$3" >> "$1"; }
 
 [ "$(id -u)" -eq 0 ] || die "root olarak çalıştır"
-for c in docker caddy ufw git curl python3 flock; do command -v $c >/dev/null || die "$c yok"; done
+for c in docker caddy git curl python3 flock dig; do command -v $c >/dev/null || die "$c yok"; done
+
+# Caddy düzeni
+if grep -qs 'import /etc/caddy/sites-enabled/' /etc/caddy/Caddyfile; then
+  LAYOUT=sites-enabled; SITE_DIR=/etc/caddy/sites-enabled; TMPL="$OPS/caddy/site.sites-enabled.tmpl"
+elif grep -qs 'import /etc/caddy/sites/' /etc/caddy/Caddyfile; then
+  LAYOUT=sites; SITE_DIR=/etc/caddy/sites; TMPL="$OPS/caddy/site.caddy.tmpl"
+  command -v ufw >/dev/null || die "ufw yok"
+else die "/etc/caddy/Caddyfile içinde sites/ veya sites-enabled/ import'u bulunamadı — Caddy düzeni tanınmadı"; fi
+echo "Caddy düzeni: $LAYOUT ($SITE_DIR)"
 
 # Alan adları: argümanlar → yoksa kayıtlı liste → yoksa varsayılan
 DOMAINS_FILE="$BASE/state/domains"; mkdir -p "$BASE/state"
 # Önceki (tek alan adlı) kurulumdan geçiş: mevcut site dosyalarını listeye al
 if [ ! -s "$DOMAINS_FILE" ]; then
-  for f in /etc/caddy/sites/*.caddy; do grep -qs "github.com/atonota/agency" "$f" && basename "$f" .caddy >> "$DOMAINS_FILE"; done
+  for f in "$SITE_DIR"/*.caddy; do grep -qs "github.com/atonota/agency" "$f" && basename "$f" .caddy >> "$DOMAINS_FILE"; done
 fi
 valid() { [[ "$1" =~ ^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$ ]]; }
 if [ "${1:-}" = "--remove" ]; then
   D="${2:?kullanım: setup.sh --remove <domain>}"; valid "$D" || die "geçersiz alan adı: $D"
-  rm -f "/etc/caddy/sites/$D.caddy"; sed -i "/^$D\$/d" "$DOMAINS_FILE" 2>/dev/null || true
+  rm -f "$SITE_DIR/$D.caddy"; sed -i "/^$D\$/d" "$DOMAINS_FILE" 2>/dev/null || true
   systemctl reload caddy && echo "kaldırıldı: $D"; exit 0
 fi
 if [ "$#" -gt 0 ]; then DOMAINS=("$@")
@@ -40,31 +52,50 @@ for D in "${DOMAINS[@]}"; do valid "$D" || die "geçersiz alan adı: $D"; done
 for D in "${DOMAINS[@]}"; do grep -qx "$D" "$DOMAINS_FILE" 2>/dev/null || echo "$D" >> "$DOMAINS_FILE"; done
 echo "Alan adları: ${DOMAINS[*]}"
 
-log "1/5 Public erişim: PUBLIC_IP + UFW 443"
+log "1/5 Public erişim"
 CENV=/etc/caddy/caddy.env
-PUB=$(grep -s '^PUBLIC_IP=' "$CENV" | cut -d= -f2-)
-[ -n "$PUB" ] || { PUB=$(curl -fsS -4 https://ifconfig.me); setenv "$CENV" PUBLIC_IP "$PUB"; chown root:caddy "$CENV"; chmod 640 "$CENV"; }
+if [ "$LAYOUT" = sites ]; then
+  PUB=$(grep -s '^PUBLIC_IP=' "$CENV" | cut -d= -f2-)
+  [ -n "$PUB" ] || { PUB=$(curl -fsS -4 https://ifconfig.me); setenv "$CENV" PUBLIC_IP "$PUB"; chown root:caddy "$CENV"; chmod 640 "$CENV"; }
+  ufw allow 443/tcp comment 'public https' >/dev/null && echo "UFW 443 açık"
+else
+  PUB=$(curl -fsS -4 https://ifconfig.me)   # firewall ve caddy.env'e dokunulmaz (mevcut siteler zaten 443'te)
+fi
+echo "PUBLIC_IP=$PUB"
 for D in "${DOMAINS[@]}"; do
   r=$(dig +short "$D" A | tail -1); [ "$r" = "$PUB" ] || warn "$D → '$r'; beklenen $PUB (A kaydı, Cloudflare ise DNS only / gri bulut)"
 done
-ufw allow 443/tcp comment 'public https' >/dev/null && echo "PUBLIC_IP=$PUB, UFW 443 açık"
 
 log "2/5 Yayın (CI'dan geçen son commit; ilk kurulumda npm ci + build birkaç dakika sürebilir)"
 bash "$OPS/update.sh" || true
 [ -L "$BASE/current" ] || die "yayın oluşmadı — yukarıdaki çıktıya bakın (CI bitmemiş olabilir; birkaç dakika sonra tekrar çalıştırın)"
 echo "Yayında: $(cut -c1-12 "$BASE/state/deployed")"
 
-log "3/5 Caddy: ${DOMAINS[*]}"
+log "3/5 Caddy: ${DOMAINS[*]} ($LAYOUT)"
 chmod o+x "$BASE" 2>/dev/null || true
+NEW=()
 for D in "${DOMAINS[@]}"; do
-  sed -e "s|__BASE__|$BASE|g" -e "s|__DOMAIN__|$D|g" "$OPS/caddy/site.caddy.tmpl" > "/etc/caddy/sites/$D.caddy"
-  chmod 644 "/etc/caddy/sites/$D.caddy"
-  install -o caddy -g caddy -m 640 /dev/null "/var/log/caddy/$D.log" 2>/dev/null || true
+  F="$SITE_DIR/$D.caddy"
+  if [ -e "$F" ] && ! grep -qs "github.com/atonota/agency" "$F"; then die "$F zaten var ve bu projeye ait değil — dokunulmadı"; fi
+  [ -e "$F" ] || NEW+=("$F")
+  sed -e "s|__BASE__|$BASE|g" -e "s|__DOMAIN__|$D|g" "$TMPL" > "$F.tmp" && mv "$F.tmp" "$F"
+  chmod 644 "$F"
+  if [ "$LAYOUT" = sites-enabled ]; then
+    install -d -o caddy -g caddy /var/log/caddy/access_log /var/log/caddy/byte_log
+    for L in access_log byte_log; do install -o caddy -g caddy -m 640 /dev/null "/var/log/caddy/$L/$D.log" 2>/dev/null || true; done
+  else
+    install -o caddy -g caddy -m 640 /dev/null "/var/log/caddy/$D.log" 2>/dev/null || true
+  fi
 done
-runuser -u caddy -- env HOME=/var/lib/caddy $(grep -v '^#' "$CENV" | xargs) \
-  caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
-chown -R caddy:caddy /var/log/caddy
-systemctl restart caddy
+rollback() { for F in "${NEW[@]}"; do rm -f "$F"; done; die "Caddy doğrulaması başarısız — eklenen dosyalar geri alındı, Caddy'ye dokunulmadı"; }
+if [ "$LAYOUT" = sites ]; then
+  runuser -u caddy -- env HOME=/var/lib/caddy $(grep -v '^#' "$CENV" | xargs) caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile || rollback
+  chown -R caddy:caddy /var/log/caddy
+  systemctl restart caddy
+else
+  caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile >/dev/null 2>&1 || { caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile 2>&1 | tail -5; rollback; }
+  systemctl reload caddy && echo "Caddy reload edildi (diğer sitelerde kesinti yok)"
+fi
 
 log "4/5 Otomatik yayın zamanlayıcısı (2 dk)"
 for u in service timer; do sed -e "s|__OPS__|$OPS|g" -e "s|__BASE__|$BASE|g" "$OPS/systemd/agency-update.$u" > "/etc/systemd/system/agency-update.$u"; done

@@ -15,9 +15,17 @@ Caddy:  <her alan adı> (public, TLS) → aynı current/   (agency.titanlar.com,
 - Tek build, çok alan adı: alan adları `/opt/agency/state/domains` listesinde; her biri için `/etc/caddy/sites/<domain>.caddy` (şablon `caddy/site.caddy.tmpl`).
 - Build dosya adları hash'siz (`assets/app.js`) → tüm yanıtlar `Cache-Control: no-cache` (ETag ile doğrulanır).
 
+## Desteklenen Caddy düzenleri (otomatik algılanır)
+| Düzen | Algılama | Ne yapılır |
+|---|---|---|
+| `sites` | Caddyfile `import /etc/caddy/sites/*` | `/etc/caddy/sites/<domain>.caddy` (`common` snippet, `bind PUBLIC_IP`), UFW 443, Caddy restart |
+| `sites-enabled` (ör. srv01) | Caddyfile `import /etc/caddy/sites-enabled/*` | **Sadece** `/etc/caddy/sites-enabled/<domain>.caddy` eklenir (sunucudaki diğer sitelerle aynı log biçimi). Mevcut dosyalara, firewall'a, caddy.env'e dokunulmaz. Doğrulama başarısızsa eklenen dosya geri alınır. Caddy **reload** (kesintisiz) |
+
+Aynı adda bu projeye ait olmayan bir site dosyası varsa script durur, dosyaya dokunmaz.
+
 ## Kurulum (sunucuda, root)
 ```bash
-git clone https://github.com/atonota/agency.git /opt/agency/repo     # ilk kez
+git clone https://iwyz0@github.com/atonota/agency.git /opt/agency/repo     # ilk kez (her sunucuda)
 bash /opt/agency/repo/ops/setup.sh agency.titanlar.com
 ```
 
