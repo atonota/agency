@@ -1,0 +1,20 @@
+# __DOMAIN__ — public statik site (Vite/React). Kaynak: github.com/atonota/agency
+# Aynı build birden çok alan adında yayınlanır; setup.sh <domain> her alan adı için bu şablondan bir site dosyası üretir.
+# TLS: alan adının DNS zone'u ne olursa olsun token gerekmesin diye standart ACME (TLS-ALPN-01, 443) kullanılır.
+__DOMAIN__ {
+	bind {$PUBLIC_IP}
+	import common __DOMAIN__
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		# Build dosya adlarında hash yok (assets/app.js) → her istekte ETag ile doğrula
+		Cache-Control "no-cache"
+	}
+
+	root * __BASE__/current
+	encode zstd gzip
+	try_files {path} /index.html
+	file_server
+}
