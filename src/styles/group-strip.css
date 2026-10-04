@@ -1,0 +1,80 @@
+/* ================================================================
+   Grup şirketleri — kaydırma hızına tepki veren tipografik bant (.pf-gs)
+   React Bits ScrollVelocity: satır 1 şirket adları (mono, büyük harf),
+   satır 2 ters yönde slogan / sektör etiketleri. Kutu, pill, beyaz nokta yok.
+   ================================================================ */
+
+.fe-band[data-type='group-strip'] { padding-block: 0; }
+
+.pf-gs {
+  position: relative;
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: 40px;
+  min-height: 120px;
+}
+.pf-gs-head, .pf-gs-more { flex: none; white-space: nowrap; }
+.pf-gs-track { position: relative; min-width: 0; }
+
+/* ---------- Hareketli bant ---------- */
+.pf-gs-motion {
+  padding: 20px 0;
+  mask-image: linear-gradient(90deg, transparent, #000 120px, #000 calc(100% - 120px), transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 120px, #000 calc(100% - 120px), transparent);
+}
+.pf-gs-band { display: grid; gap: 10px; }
+.pf-gs-parallax { position: relative; overflow: hidden; }
+.pf-gs-scroller { display: flex; white-space: nowrap; width: max-content; }
+.pf-gs-copy { display: inline-flex; align-items: center; flex-shrink: 0; }
+.pf-gs-line { display: inline-flex; align-items: center; }
+
+.pf-gs-name {
+  display: inline-flex; align-items: center;
+  font-family: var(--fe-mono); font-size: clamp(20px, 1.6vw, 24px); font-weight: 500; line-height: 1.2;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--fe-ink); text-decoration: none; white-space: nowrap;
+  transition: color 160ms ease;
+}
+/* Hover: mint alt çizgi soldan açılır; bant bu sırada duraklar (VelocityBand hoverFactor) */
+.pf-gs-name-text { position: relative; }
+.pf-gs-name-text::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -5px; height: 1px;
+  background: var(--fe-accent); transform: scaleX(0); transform-origin: left; transition: transform 220ms ease;
+}
+.pf-gs-name:hover { color: var(--fe-accent); }
+.pf-gs-name:hover .pf-gs-name-text::after { transform: scaleX(1); }
+.pf-gs-name:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 4px; border-radius: 2px; }
+.pf-gs-name .fe-dot[data-tags='true'] { margin-right: 10px; }
+/* Bant duraklarken diğer adlar bir ton geri çekilir; işaret edilen öne çıkar */
+.pf-gs-band[data-hover='true'] .pf-gs-name:not(:hover) { color: var(--fe-ink-2); }
+.pf-gs-band[data-hover='true'] .pf-gs-tag { color: var(--fe-muted); }
+
+.pf-gs-sep { font-size: 16px; line-height: 1; color: var(--fe-accent); padding: 0 22px; }
+.pf-gs-line2 .pf-gs-sep { color: var(--fe-line-strong); }
+.pf-gs-tag { font-size: clamp(18px, 1.3vw, 21px); font-weight: 500; line-height: 1.2; color: var(--fe-muted); white-space: nowrap; }
+
+/* ---------- Klavye / okuyucu listesi: odak gelince bandın üstünde görünür ---------- */
+.pf-gs-a11y { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.pf-gs-a11y:focus-within {
+  position: absolute; inset: 0; width: auto; height: auto; clip-path: none; white-space: normal; z-index: 2;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px; padding: 16px 0; overflow: auto;
+  background: var(--fe-footer);
+}
+
+/* ---------- Hareket azaltma: statik iki satır ---------- */
+.pf-gs-static { display: grid; gap: 12px; padding: 24px 0; }
+.pf-gs-static-names { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px; }
+.pf-gs-static-tags { display: flex; flex-wrap: wrap; align-items: center; row-gap: 6px; margin: 0; }
+.pf-gs-static-tags .pf-gs-sep { padding: 0 12px; color: var(--fe-line-strong); }
+
+/* ---------- Duyarlı ---------- */
+@media (max-width: 62em) {
+  .pf-gs { grid-template-columns: 1fr auto; column-gap: 24px; row-gap: 6px; min-height: 0; padding: 22px 0 18px; }
+  .pf-gs-head { grid-column: 1; grid-row: 1; }
+  .pf-gs-more { grid-column: 2; grid-row: 1; }
+  .pf-gs-track { grid-column: 1 / -1; grid-row: 2; }
+  .pf-gs-motion { padding: 12px 0 0; }
+  .pf-gs-static { padding: 12px 0 0; }
+}
+@media (max-width: 30em) {
+  .pf-gs-motion { mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); }
+  .pf-gs-name { font-size: 20px; }
+  .pf-gs-sep { padding: 0 14px; }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "plan-hero",
+  "type": "plan-hero",
+  "order": 10,
+  "label": "Planlama başlığı",
+  "owner": "Ürün pazarlama",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Planlama prototipi · Kurumsal olgunluk haritası",
+    "title": "Enterprise footer: neye, ne zaman ihtiyacınız olacak?",
+    "description": "Olgun bir kurumsal grubun footer'ında ve Güven Merkezi'nde bulunan her şey burada. Her öğedeki renkli nokta hangi aşamada gerektiğini gösterir. Bir aşama seçin; o aşamada henüz gerekmeyenler soluklaşır."
+  }
+}

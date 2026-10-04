@@ -1,0 +1,171 @@
+/* ================================================================
+   Sertifikalar — "Güvence defteri"
+   Sol: kategori dizini · Sağ: polar yığılmış bar · Alt: defter satırları,
+   her satır tıklanınca kutusuz ayrıntı bloğu (ince üst/alt çizgi).
+   Kutu yok; ince çizgi, mono tipografi, boşluk. Tüm yazılar ≥ 16px.
+   ================================================================ */
+
+.fe-band[data-type='certifications'] { padding-block: 56px 64px; }
+
+.cl-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 32px; }
+
+/* ---------- Üst: dizin + grafik ---------- */
+.cl-top { display: grid; grid-template-columns: minmax(240px, 320px) minmax(0, 1fr); column-gap: 64px; row-gap: 28px; align-items: start; }
+
+.cl-idx { display: flex; flex-direction: column; border-left: 1px solid var(--fe-line); }
+.cl-idx-row {
+  position: relative; display: grid; grid-template-columns: 22px 26px minmax(0, 1fr) auto; align-items: center; column-gap: 12px;
+  margin-left: -1px; padding: 9px 12px 9px 18px; border: 0; border-left: 2px solid transparent; background: none;
+  color: var(--fe-ink-2); font: inherit; font-size: 16px; text-align: left; cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+.cl-idx-row:hover, .cl-idx-row[data-hot] { color: var(--fe-ink); border-left-color: var(--fe-line-strong); background: linear-gradient(90deg, color-mix(in srgb, var(--fe-accent) 7%, transparent), transparent 70%); }
+.cl-idx-row[data-on] { color: var(--mantine-primary-color-filled); border-left-color: var(--mantine-primary-color-filled); }
+.cl-idx-row:focus-visible { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: -2px; }
+.cl-idx-icon { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; color: var(--fe-muted); transition: color 160ms ease; }
+.cl-idx-row[data-on] .cl-idx-icon, .cl-idx-row[data-hot] .cl-idx-icon { color: inherit; }
+/* Dilim numarası: grafikteki açı ekseni etiketiyle bire bir aynı (01–10). */
+.cl-idx-num { font-family: var(--fe-mono); font-size: 16px; color: var(--fe-muted); font-variant-numeric: tabular-nums; letter-spacing: 0.04em; transition: color 160ms ease; }
+.cl-idx-row[data-on] .cl-idx-num, .cl-idx-row[data-hot] .cl-idx-num { color: inherit; }
+.cl-idx-name { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cl-idx-count { font-family: var(--fe-mono); font-size: 16px; color: var(--fe-muted); }
+.cl-idx-row[data-on] .cl-idx-count { color: inherit; }
+
+.cl-chart { position: relative; min-width: 0; }
+.cl-chart-center {
+  position: absolute; left: 50%; top: 200px; transform: translate(-50%, -50%); width: 150px;
+  text-align: center; pointer-events: none;
+}
+.cl-chart-center-n { font-size: clamp(30px, 3vw, 44px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--fe-ink); font-variant-numeric: tabular-nums; }
+.cl-chart-center-name { font-family: var(--fe-mono); font-size: 16px; line-height: 1.3; color: var(--fe-muted); margin-top: 8px; text-wrap: balance; }
+.cl-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; margin-top: 6px; font-size: 16px; color: var(--fe-muted); }
+.cl-legend-item { display: inline-flex; align-items: center; gap: 8px; }
+
+/* ---------- Alt: defter ---------- */
+.cl-ledger { margin-top: 44px; }
+.cl-ledger-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; padding-bottom: 12px; border-bottom: 1px solid var(--fe-ink); }
+.cl-ledger-sel { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: var(--fe-ink); }
+.cl-ledger-n { font-family: var(--fe-mono); font-size: 16px; color: var(--fe-muted); margin-left: auto; }
+
+/* Filtre chip'i: dolgu yok, ince çizgi; seçiliyken vurgu rengi. Yazı 16px. */
+.cl-chip { margin-left: 8px; }
+.cl .cl-chip .mantine-Chip-label {
+  --chip-fz: 16px; --chip-bg: transparent; --chip-hover: transparent; --chip-bd: 1px solid var(--fe-line-strong);
+  font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.02em; color: var(--fe-ink-2); background: transparent;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.cl .cl-chip .mantine-Chip-label:hover { color: var(--fe-ink); border-color: var(--fe-ink); }
+.cl .cl-chip .mantine-Chip-input:checked + .mantine-Chip-label,
+.cl .cl-chip .mantine-Chip-label[data-checked] { color: var(--mantine-primary-color-filled); border-color: var(--mantine-primary-color-filled); background: color-mix(in srgb, var(--fe-accent) 8%, transparent); }
+.cl .cl-chip .mantine-Chip-input:focus-visible + .mantine-Chip-label { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: 2px; }
+.cl .cl-chip .mantine-Chip-checkIcon { color: var(--mantine-primary-color-filled); }
+
+/* Sütunlar: halka · belge · aşama · sürüm · tür · ürünler · ok */
+.cl-cols, .cl-row {
+  display: grid; grid-template-columns: 24px minmax(220px, 1.2fr) 16px 110px 190px minmax(0, 1.4fr) 24px; column-gap: 20px; align-items: center;
+}
+.cl-cols { padding: 10px 0; border-bottom: 1px solid var(--fe-line); }
+.cl-col { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fe-muted); }
+
+/* Satır + ayrıntı bir öğe: alt çizgi öğede, ayrıntının üst çizgisi kendinde → "ince üst/alt çizgi". */
+.cl-item { position: relative; border-bottom: 1px solid var(--fe-line); will-change: transform, opacity; }
+.cl-item[data-open] { border-bottom-color: var(--fe-line-strong); }
+.cl-row {
+  position: relative; width: 100%; padding: 13px 0; border: 0; background: none; color: var(--fe-ink);
+  font: inherit; text-align: left; cursor: pointer;
+  transition: background 160ms ease;
+}
+.cl-row:hover { background: linear-gradient(90deg, color-mix(in srgb, var(--fe-accent) 6%, transparent), transparent 65%); }
+.cl-row:focus-visible { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: -2px; border-radius: 2px; }
+.cl-item[data-open] .cl-row { background: linear-gradient(90deg, color-mix(in srgb, var(--fe-accent) 9%, transparent), transparent 55%); }
+
+/* Gerçek görsel-gizli kopya (erişilebilirlik ağacında kalır). */
+.cl-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Halka: sertifika → dolu, diğer belge türleri → içi boş. 24px, yazı yok. */
+.cl-ring {
+  display: inline-block; width: 24px; height: 24px; border-radius: 50%; box-sizing: border-box;
+  border: 1.5px solid var(--mantine-primary-color-filled); transition: box-shadow 160ms ease;
+}
+.cl-ring[data-filled] { background: var(--mantine-primary-color-filled); }
+.cl-row:hover .cl-ring, .cl-item[data-open] .cl-ring { box-shadow: 0 0 0 4px var(--fe-glow); }
+
+.cl-code { position: relative; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.cl-code-line { display: inline-flex; align-items: center; gap: 8px; font-family: var(--fe-mono); font-size: 17px; font-weight: 500; letter-spacing: 0.01em; line-height: 1.3; color: var(--fe-ink); }
+.cl-code-anim { display: inline-block; }
+.cl-code-enc { color: var(--fe-muted); }
+/* Belgenin ne olduğu satırda görünür; ipucuna bağımlı değil. */
+.cl-desc { font-size: 16px; line-height: 1.4; color: var(--fe-muted); text-wrap: pretty; }
+.cl-tier { display: inline-flex; align-items: center; justify-content: center; width: 16px; }
+/* Sürüm: çerçevesiz düz mono metin — chip değil. */
+.cl-edition-tag { font-family: var(--fe-mono); font-size: 16px; line-height: 1.25; color: var(--fe-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cl-kind { font-size: 16px; color: var(--fe-ink); }
+.cl-kind[data-other] { color: var(--fe-muted); font-style: italic; }
+
+/* Ürün kısa kodları: mono, vurgu rengi; ayraç soluk. */
+.cl-products { font-family: var(--fe-mono); font-size: 16px; line-height: 1.45; letter-spacing: 0.02em; min-width: 0; }
+.cl-pcode { color: var(--mantine-primary-color-filled); }
+.cl-sep { color: var(--fe-muted); }
+.cl-none { color: var(--fe-muted); }
+
+.cl-caret { display: inline-flex; align-items: center; justify-content: center; width: 24px; color: var(--fe-muted); transition: transform 240ms cubic-bezier(.2,.8,.2,1), color 160ms ease; }
+.cl-item[data-open] .cl-caret { transform: rotate(180deg); color: var(--mantine-primary-color-filled); }
+.cl-row:hover .cl-caret { color: var(--fe-ink); }
+
+/* Geçerlilik bayrağı: 90 gün içinde amber (aşama-o token'ı), geçmişse kırmızı. */
+.cl-flag { display: inline-flex; align-items: center; line-height: 1; }
+.cl-flag[data-state='soon'], .cl-exp[data-state='soon'] .cl-exp-note { color: var(--fe-tier-o); }
+.cl-flag[data-state='over'], .cl-exp[data-state='over'] .cl-exp-note { color: var(--mantine-color-red-6); }
+
+/* ---------- Ayrıntı bloğu (kutusuz) ---------- */
+.cl-detail { padding: 18px 0 20px 44px; border-top: 1px solid var(--fe-line); }
+.cl-detail-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 32px; margin: 0;
+}
+.cl-f { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 4px; min-width: 0; margin: 0; }
+.cl-f[data-wide] { grid-column: span 3; }
+.cl-f-k { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.04em; color: var(--fe-muted); }
+.cl-f-v { margin: 0; font-size: 16px; line-height: 1.5; color: var(--fe-ink); text-wrap: pretty; overflow-wrap: anywhere; }
+.cl-mono { font-family: var(--fe-mono); font-variant-numeric: tabular-nums; letter-spacing: 0.01em; }
+.cl-dim { color: var(--fe-muted); }
+.cl-prod { color: var(--mantine-primary-color-filled); font-weight: 500; }
+.cl-quote { font-style: italic; color: var(--fe-ink); quotes: '“' '”'; }
+.cl-verify { font-size: 16px; }
+.cl-vis { font-size: 16px; }
+.cl-vis[data-vis='controlled'] { color: var(--fe-ink-2); font-style: italic; }
+
+.cl-exp { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+.cl-exp-note { display: inline-flex; align-items: center; gap: 6px; font-family: var(--fe-mono); font-size: 16px; }
+
+/* Örnek veri notu — mono, soluk, üstte ince çizgi. */
+.cl-example { margin: 16px 0 0; padding-top: 10px; border-top: 1px solid var(--fe-line); font-family: var(--fe-mono); font-size: 16px; line-height: 1.45; color: var(--fe-muted); }
+
+/* ---------- Duyarlılık ---------- */
+@media (max-width: 1100px) {
+  .cl-top { grid-template-columns: minmax(200px, 260px) minmax(0, 1fr); column-gap: 32px; }
+  .cl-cols, .cl-row { grid-template-columns: 24px minmax(170px, 1fr) 16px 100px 160px minmax(0, 1.2fr) 24px; column-gap: 14px; }
+  .cl-detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cl-f[data-wide] { grid-column: span 2; }
+}
+@media (max-width: 760px) {
+  .fe-band[data-type='certifications'] { padding-block: 40px 48px; }
+  .cl-top { grid-template-columns: 1fr; }
+  .cl-idx { flex-direction: row; flex-wrap: wrap; border-left: 0; border-bottom: 1px solid var(--fe-line); gap: 0 2px; }
+  .cl-idx-row { grid-template-columns: auto auto auto; column-gap: 8px; margin: 0 0 -1px; padding: 8px 10px; border-left: 0; border-bottom: 2px solid transparent; background: none; }
+  .cl-idx-row:hover, .cl-idx-row[data-hot] { background: none; border-bottom-color: var(--fe-line-strong); }
+  .cl-idx-row[data-on] { border-bottom-color: var(--mantine-primary-color-filled); }
+  .cl-idx-icon { display: none; }
+  .cl-cols { display: none; }
+  .cl-ledger-n { margin-left: 0; flex-basis: 100%; }
+  .cl-row { grid-template-columns: 24px minmax(0, 1fr) 16px 24px; row-gap: 6px; align-items: start; }
+  .cl-ring { margin-top: 1px; }
+  .cl-edition, .cl-kind, .cl-products { grid-column: 2 / 4; }
+  .cl-edition:empty { display: none; }
+  .cl-caret { grid-row: 1; grid-column: 4; }
+  .cl-detail { padding-left: 0; }
+  .cl-detail-grid { grid-template-columns: 1fr; }
+  .cl-f[data-wide] { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cl-idx-row, .cl-row, .cl-ring, .cl-caret { transition: none; }
+}

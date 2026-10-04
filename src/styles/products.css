@@ -1,0 +1,87 @@
+/* ================================================================
+   Ürün ailesi — akan satırlar (.pf-)
+   Kutu yok: her ürün tam genişlik bir satır; üst/alt ince çizgi.
+   Hover / focus-visible: satırın içinde mint zeminli marquee akar.
+   ================================================================ */
+
+.fe-band[data-type='product-cards'] { padding-block: 56px 72px; }
+
+.pf-head { margin-bottom: 32px; }
+
+.pf-rows { display: flex; flex-direction: column; border-bottom: 1px solid var(--fe-line-strong); }
+
+.pf-row { position: relative; overflow: hidden; border-top: 1px solid var(--fe-line-strong); }
+.pf-row-link {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1.25fr) 56px;
+  align-items: center;
+  column-gap: 24px;
+  padding: 28px 0;
+  color: var(--fe-ink);
+  text-decoration: none;
+  cursor: pointer;
+}
+.pf-row-link:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: -2px; }
+
+.pf-idx { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.1em; color: var(--fe-muted); }
+
+.pf-name {
+  display: flex; align-items: baseline; gap: 12px;
+  font-size: clamp(32px, 3.8vw, 56px); line-height: 1; font-weight: 600; letter-spacing: -0.03em;
+  color: var(--fe-ink); text-wrap: balance;
+}
+
+.pf-mid { display: grid; gap: 8px; min-width: 0; }
+.pf-meta {
+  display: flex; align-items: center; gap: 18px;
+  font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fe-muted);
+}
+.pf-badge { position: relative; padding-left: 16px; color: var(--fe-accent); }
+.pf-badge::before {
+  content: ''; position: absolute; left: 0; top: 50%; width: 7px; height: 7px; margin-top: -3.5px; border-radius: 50%;
+  background: var(--fe-accent); box-shadow: 0 0 12px var(--fe-accent);
+}
+.pf-desc { font-size: 17px; line-height: 1.45; color: var(--fe-ink-2); }
+
+.pf-arrow { display: grid; justify-self: end; color: var(--fe-muted); transition: transform 220ms ease, color 220ms ease; }
+.pf-row-link:hover .pf-arrow, .pf-row-link:focus-visible .pf-arrow { color: var(--fe-accent); transform: translateX(6px); }
+
+/* ---------- Marquee (gsap ile açılır; FlowingRows.tsx) ---------- */
+.pf-mq {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+  background: var(--fe-accent); color: var(--fe-accent-ink);
+  transform: translate3d(0, 101%, 0);
+}
+.pf-mq-wrap { height: 100%; width: 100%; overflow: hidden; }
+.pf-mq-inner { display: flex; align-items: center; height: 100%; width: fit-content; will-change: transform; }
+.pf-mq-part { display: flex; align-items: center; flex-shrink: 0; white-space: nowrap; }
+.pf-mq-text {
+  display: flex; align-items: center;
+  font-size: clamp(20px, 2vw, 30px); font-weight: 600; letter-spacing: -0.015em; line-height: 1;
+}
+.pf-mq-text > span { padding: 0 0.55em; }
+.pf-mq-sep { font-size: max(16px, 0.6em); opacity: 0.7; padding: 0 0.2em !important; }
+
+/* ---------- Hareket azaltma: marquee statik ikinci satır ---------- */
+.pf-row[data-static] .pf-mq-static { padding: 0 0 24px 88px; color: var(--fe-ink-2); }
+.pf-row[data-static] .pf-mq-text { flex-wrap: wrap; row-gap: 6px; font-size: 16px; font-weight: 500; letter-spacing: 0; line-height: 1.4; }
+.pf-row[data-static] .pf-mq-text > span { padding: 0 0.4em 0 0; }
+.pf-row[data-static] .pf-mq-sep { color: var(--fe-accent); opacity: 1; padding: 0 0.6em 0 0 !important; }
+
+/* ---------- Duyarlı ---------- */
+@media (max-width: 62em) {
+  .fe-band[data-type='product-cards'] { padding-block: 44px 56px; }
+  .pf-row-link { grid-template-columns: 40px minmax(0, 1fr) 40px; row-gap: 12px; padding: 22px 0; column-gap: 16px; }
+  .pf-idx { grid-column: 1; grid-row: 1; align-self: start; padding-top: 0.35em; }
+  .pf-name { grid-column: 2; grid-row: 1; }
+  .pf-mid { grid-column: 2; grid-row: 2; }
+  .pf-arrow { grid-column: 3; grid-row: 1; }
+  .pf-row[data-static] .pf-mq-static { padding-left: 56px; }
+}
+@media (max-width: 30em) {
+  .pf-row-link { grid-template-columns: 32px minmax(0, 1fr) 32px; column-gap: 10px; }
+  .pf-name { font-size: 32px; }
+  .pf-meta { flex-wrap: wrap; gap: 8px 16px; }
+  .pf-mq-text { font-size: 20px; }
+  .pf-row[data-static] .pf-mq-static { padding-left: 42px; }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "brand",
+  "type": "brand-block",
+  "order": 20,
+  "label": "Marka ve bülten",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "status": {
+      "label": "Tüm sistemler çalışıyor",
+      "href": "#durum",
+      "tier": "z"
+    },
+    "social": [
+      {
+        "icon": "LinkedinLogo",
+        "label": "LinkedIn",
+        "href": "#linkedin",
+        "tier": "z"
+      },
+      {
+        "icon": "XLogo",
+        "label": "X",
+        "href": "#x",
+        "tier": "z"
+      },
+      {
+        "icon": "YoutubeLogo",
+        "label": "YouTube",
+        "href": "#youtube",
+        "tier": "o"
+      },
+      {
+        "icon": "InstagramLogo",
+        "label": "Instagram",
+        "href": "#instagram",
+        "tier": "o"
+      },
+      {
+        "icon": "FacebookLogo",
+        "label": "Facebook",
+        "href": "#facebook",
+        "tier": "e"
+      },
+      {
+        "icon": "GithubLogo",
+        "label": "GitHub",
+        "href": "#github",
+        "tier": "e"
+      }
+    ],
+    "newsletter": {
+      "tier": "o",
+      "eyebrow": "Bülten",
+      "title": "Ürün güncellemeleri ve sektör notları",
+      "description": "Ayda bir e-posta. İstediğiniz zaman ayrılabilirsiniz.",
+      "placeholder": "kurumsal@sirketiniz.com",
+      "button": "Abone ol",
+      "consent": {
+        "before": "",
+        "linkLabel": "Bülten Aydınlatma Metni",
+        "href": "#bulten-aydinlatma",
+        "after": "'ni okudum, ticari elektronik ileti almayı kabul ediyorum."
+      },
+      "success": "Onay e-postası gönderildi (önizleme — gerçek gönderim yapılmaz).",
+      "errorEmail": "Geçerli bir e-posta adresi girin.",
+      "errorConsent": "Devam etmek için aydınlatma metnini onaylayın."
+    },
+    "stores": [
+      {
+        "icon": "AppleLogo",
+        "caption": "İndirin",
+        "label": "App Store",
+        "href": "#appstore",
+        "tier": "o"
+      },
+      {
+        "icon": "GooglePlayLogo",
+        "caption": "Edinin",
+        "label": "Google Play",
+        "href": "#googleplay",
+        "tier": "o"
+      },
+      {
+        "icon": "DeviceMobile",
+        "caption": "Keşfedin",
+        "label": "AppGallery",
+        "href": "#appgallery",
+        "tier": "e"
+      }
+    ],
+    "entity": {
+      "label": "İşletmeci tüzel kişi",
+      "name": "MARKA Teknoloji Holding A.Ş.",
+      "link": {
+        "label": "Kurumsal Bilgiler",
+        "href": "#bth"
+      },
+      "hq": "Genel merkez: İstanbul",
+      "tier": "z"
+    }
+  }
+}

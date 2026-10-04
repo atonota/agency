@@ -1,0 +1,71 @@
+{
+  "id": "actions",
+  "type": "action-cards",
+  "order": 10,
+  "label": "Aksiyon bandı",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "headline": "Kurumsal ölçekte konuşalım.",
+    "subline": "Demo, satış ve dokümantasyon tek adımda; destek ve güven ekipleri hemen altında.",
+    "primary": [
+      {
+        "icon": "MonitorPlay",
+        "title": "Demo Talep Et",
+        "description": "Termitral ve platformu kendi senaryonuzla canlı görün",
+        "href": "#demo",
+        "tier": "z"
+      },
+      {
+        "icon": "ChatCircleText",
+        "title": "Satış Ekibiyle Görüş",
+        "description": "Kurumsal lisans, fiyatlandırma ve geçiş planı",
+        "href": "#satis",
+        "tier": "z"
+      },
+      {
+        "icon": "BookOpen",
+        "title": "Dokümantasyonu İncele",
+        "description": "API referansı, entegrasyon ve kurulum kılavuzları",
+        "href": "#dok",
+        "tier": "z"
+      }
+    ],
+    "secondaryEyebrow": "Hızlı erişim",
+    "secondary": [
+      {
+        "icon": "Lifebuoy",
+        "title": "Destek talebi",
+        "href": "#destek",
+        "tier": "z"
+      },
+      {
+        "icon": "ShieldCheck",
+        "title": "Güven Merkezi",
+        "href": "#guven",
+        "tier": "z"
+      },
+      {
+        "icon": "Handshake",
+        "title": "İş Ortağı Ol",
+        "href": "#is-ortagi",
+        "tier": "o"
+      },
+      {
+        "icon": "Headset",
+        "title": "7/24 Kurumsal Destek Hattı",
+        "value": "0850 000 00 00",
+        "mono": true,
+        "copy": true,
+        "tier": "o"
+      }
+    ],
+    "copy": {
+      "label": "Kopyala",
+      "done": "Kopyalandı",
+      "aria": "Numarayı kopyala"
+    }
+  }
+}

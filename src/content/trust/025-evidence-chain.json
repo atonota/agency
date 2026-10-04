@@ -1,0 +1,70 @@
+{
+  "id": "tc-evidence",
+  "type": "evidence-chain",
+  "order": 25,
+  "label": "Kanıt zinciri",
+  "owner": "Bilgi güvenliği (CISO ofisi)",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Kanıt zinciri",
+    "title": "Kurumsallık, tıklanan bağlantının arkasında gerçek süreç, gerçek belge, gerçek sorumlu ve güncel kanıt bulunmasıdır.",
+    "description": "Sekiz halka, tek zincir. Her halka tıklanınca ilgili bölüme götürür; hiçbiri boş bir sayfaya ya da genel bir iletişim formuna çıkmaz.",
+    "claim": {
+      "phrases": ["gerçek süreç", "gerçek belge", "gerçek sorumlu", "güncel kanıt"],
+      "separator": "|"
+    },
+    "nodes": [
+      {
+        "label": "Ürün",
+        "text": "Termitral ve ürün ailesi: ne sattığımız, kime ve hangi kurulum biçimiyle.",
+        "href": "#products",
+        "tier": "z"
+      },
+      {
+        "label": "Dokümantasyon",
+        "text": "Kurulum, API ve yönetim kılavuzları; sürüm notlarıyla birlikte, tarihli.",
+        "href": "#sitemap",
+        "tier": "z"
+      },
+      {
+        "label": "Güvenlik",
+        "text": "Şifreleme, erişim yönetimi ve olay müdahalesi; politika özeti herkese açık.",
+        "href": "#tc-security",
+        "tier": "z"
+      },
+      {
+        "label": "Sertifika kapsamı",
+        "text": "Hangi standart hangi ürünü kapsıyor; kapsam dışı olan açıkça işaretli.",
+        "href": "#tc-matrix",
+        "tier": "e"
+      },
+      {
+        "label": "Sistem durumu",
+        "text": "Canlı hizmet durumu, 90 günlük geçmiş ve olay kayıtları tek sayfada.",
+        "href": "#tc-status",
+        "tier": "o"
+      },
+      {
+        "label": "Destek",
+        "text": "Kanal, yanıt süresi ve yükseltme yolu; kime ulaşılacağı belli.",
+        "href": "#actions",
+        "tier": "z"
+      },
+      {
+        "label": "Sözleşme",
+        "text": "Hizmet, veri işleme ve gizlilik sözleşmeleri; sürümlü ve tarihli.",
+        "href": "#legal",
+        "tier": "o"
+      },
+      {
+        "label": "Sorumlu tüzel kişi",
+        "text": "Ticaret sicili, MERSİS ve adres: belgeyi imzalayan şirketin kendisi.",
+        "href": "#bth",
+        "tier": "z"
+      }
+    ],
+    "footnote": "Zincirin bir halkası boşsa kurumsallık algısı tam orada kırılır: bağlantı vardır, arkasında belge yoktur."
+  }
+}

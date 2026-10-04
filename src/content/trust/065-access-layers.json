@@ -1,0 +1,65 @@
+{
+  "id": "tc-access",
+  "type": "access-layers",
+  "order": 65,
+  "label": "Erişim katmanları",
+  "owner": "Bilgi güvenliği (CISO ofisi)",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Erişim katmanları",
+    "title": "Her şeyi herkese açmayın",
+    "description": "Özet herkese, ayrıntı gizlilik sözleşmesiyle. İki katman aynı gerçeği anlatır; fark, ayrıntı düzeyidir. Her satırda soldaki açık özet, sağdaki kontrollü belgenin varlığını kanıtlar.",
+    "layers": {
+      "public": {
+        "label": "Herkese açık",
+        "hint": "Bu sayfada, girişsiz"
+      },
+      "controlled": {
+        "label": "Kontrollü erişim / NDA",
+        "hint": "Karşılıklı gizlilik sözleşmesi sonrası"
+      }
+    },
+    "rows": [
+      {
+        "public": { "label": "Sertifika bilgileri", "href": "#sertifika", "tier": "z" },
+        "controlled": { "label": "Tam SOC 2 raporu", "href": "#tc-procurement", "tier": "e" }
+      },
+      {
+        "public": { "label": "Kapsam tablosu", "href": "#tc-matrix", "tier": "e" },
+        "controlled": { "label": "Ayrıntılı mimari doküman", "href": "#tc-procurement", "tier": "o" }
+      },
+      {
+        "public": { "label": "Güvenlik politikası özeti", "href": "#tc-security", "tier": "z" },
+        "controlled": { "label": "Kurumsal güvenlik anketleri", "href": "#tc-procurement", "tier": "e" }
+      },
+      {
+        "public": { "label": "Veri bölgeleri", "href": "#tc-residency", "tier": "o" },
+        "controlled": { "label": "Ayrıntılı veri akış şemaları", "href": "#tc-procurement", "tier": "o" }
+      },
+      {
+        "public": { "label": "Alt veri işleyenler", "href": "#tc-subprocessors", "tier": "o" },
+        "controlled": { "label": "Müşteriye özel güvenlik değerlendirmesi", "href": "#tc-procurement", "tier": "e" }
+      },
+      {
+        "public": { "label": "Status page", "href": "#tc-status", "tier": "o" },
+        "controlled": { "label": "BCP/DR test kanıtları", "href": "#tc-procurement", "tier": "e" }
+      },
+      {
+        "public": { "label": "Vulnerability disclosure", "href": "#tc-vdp", "tier": "o" },
+        "controlled": { "label": "Hassas bulgu ayrıntıları", "href": "#tc-procurement", "tier": "e" }
+      },
+      {
+        "public": { "label": "Pentest tarihi ve genel sonuç özeti", "href": "#tc-security", "tier": "e" },
+        "controlled": { "label": "Ayrıntılı pentest raporu", "href": "#tc-procurement", "tier": "e" }
+      }
+    ],
+    "note": "Büyük sağlayıcılarda da görülür: bazı SOC 2 raporları yalnızca gizlilik sözleşmesi altında paylaşılır.",
+    "request": {
+      "label": "Talep et",
+      "href": "#tc-procurement",
+      "tier": "o"
+    }
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "id": "tc-matrix",
+  "type": "compliance-matrix",
+  "order": 40,
+  "label": "Ürün uyum matrisi",
+  "owner": "Bilgi güvenliği (CISO ofisi)",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Product Compliance Matrix",
+    "title": "Hangi ürün, hangi standardın kapsamında?",
+    "description": "“Şirket sertifikalı” demek yetmez. Kurumsal alıcı kendi kullandığı ürünün kapsamda olup olmadığına bakar.",
+    "products": [
+      "ERP",
+      "SCM",
+      "HSM",
+      "TeamsLike",
+      "Termitral",
+      "Platform / Bulut"
+    ],
+    "statuses": {
+      "in": {
+        "label": "Hedef kapsam",
+        "color": "petrol"
+      },
+      "eval": {
+        "label": "Değerlendiriliyor",
+        "color": "yellow"
+      },
+      "na": {
+        "label": "Uygulanamaz",
+        "color": "gray"
+      }
+    },
+    "rows": [
+      {
+        "standard": "ISO/IEC 27001:2022",
+        "cells": [
+          "in",
+          "in",
+          "in",
+          "in",
+          "in",
+          "in"
+        ]
+      },
+      {
+        "standard": "SOC 2 Type II",
+        "cells": [
+          "in",
+          "in",
+          "na",
+          "in",
+          "na",
+          "in"
+        ]
+      },
+      {
+        "standard": "ISO/IEC 27701:2025",
+        "cells": [
+          "in",
+          "in",
+          "na",
+          "in",
+          "eval",
+          "in"
+        ]
+      },
+      {
+        "standard": "ISO 22301:2019",
+        "cells": [
+          "in",
+          "in",
+          "eval",
+          "eval",
+          "na",
+          "in"
+        ]
+      },
+      {
+        "standard": "ISO/IEC 42001:2023",
+        "cells": [
+          "eval",
+          "eval",
+          "na",
+          "in",
+          "na",
+          "eval"
+        ]
+      },
+      {
+        "standard": "ISO/IEC 27017 / 27018",
+        "cells": [
+          "eval",
+          "eval",
+          "na",
+          "eval",
+          "na",
+          "in"
+        ]
+      },
+      {
+        "standard": "FIPS 140-3",
+        "cells": [
+          "na",
+          "na",
+          "in",
+          "na",
+          "na",
+          "na"
+        ]
+      },
+      {
+        "standard": "Common Criteria",
+        "cells": [
+          "na",
+          "na",
+          "eval",
+          "na",
+          "eval",
+          "na"
+        ]
+      },
+      {
+        "standard": "PCI PTS POI / EMVCo",
+        "cells": [
+          "na",
+          "na",
+          "na",
+          "na",
+          "in",
+          "na"
+        ]
+      },
+      {
+        "standard": "PCI DSS v4.0.1",
+        "cells": [
+          "na",
+          "na",
+          "na",
+          "na",
+          "eval",
+          "na"
+        ]
+      },
+      {
+        "standard": "SOC 1 Type II",
+        "cells": [
+          "eval",
+          "na",
+          "na",
+          "na",
+          "na",
+          "na"
+        ]
+      },
+      {
+        "standard": "WCAG 2.2 AA + ACR",
+        "cells": [
+          "in",
+          "in",
+          "eval",
+          "in",
+          "eval",
+          "na"
+        ]
+      }
+    ],
+    "note": "Prototip: durumlar planlama amaçlıdır, gerçek sertifika durumunu göstermez."
+  }
+}

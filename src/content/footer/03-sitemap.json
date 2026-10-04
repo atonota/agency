@@ -1,0 +1,356 @@
+{
+  "id": "sitemap",
+  "type": "link-columns",
+  "order": 30,
+  "label": "Site haritası",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "columns": [
+      {
+        "title": "Ürünler & Platform",
+        "icon": "Stack",
+        "links": [
+          {
+            "label": "Tüm Ürünler",
+            "href": "#urunler",
+            "tier": "z"
+          },
+          {
+            "label": "Platform",
+            "href": "#platform",
+            "tier": "z"
+          },
+          {
+            "label": "Modüller",
+            "href": "#moduller",
+            "tier": "z"
+          },
+          {
+            "label": "Entegrasyonlar",
+            "href": "#entegrasyonlar",
+            "tier": "o"
+          },
+          {
+            "label": "Kurulum Seçenekleri",
+            "href": "#kurulum-secenekleri",
+            "tier": "o",
+            "hint": "Bulut, özel bulut ve kurum içi (on-premise) kurulum"
+          },
+          {
+            "label": "Planlar ve Lisanslama",
+            "href": "#planlar",
+            "tier": "z"
+          },
+          {
+            "label": "Enterprise",
+            "href": "#enterprise",
+            "tier": "o"
+          },
+          {
+            "label": "Ürün Yaşam Döngüsü",
+            "href": "#tc-lifecycle",
+            "tier": "o",
+            "hint": "Desteklenen sürümler, destek süreleri ve EOL (End of Life — destek sonu) politikası"
+          }
+        ]
+      },
+      {
+        "title": "Çözümler & Ekosistem",
+        "icon": "Target",
+        "links": [
+          {
+            "label": "Çözüm Alanları",
+            "href": "#cozum-alanlari",
+            "tier": "z"
+          },
+          {
+            "label": "Sektörel Çözümler",
+            "href": "#sektorel",
+            "tier": "o"
+          },
+          {
+            "label": "Kurumsal Çözümler",
+            "href": "#kurumsal-cozumler",
+            "tier": "o"
+          },
+          {
+            "label": "Entegrasyon Ekosistemi",
+            "href": "#ekosistem",
+            "tier": "o"
+          },
+          {
+            "label": "Veri Taşıma ve Geçiş",
+            "href": "#gecis",
+            "tier": "o"
+          },
+          {
+            "label": "İş Ortakları",
+            "href": "#is-ortaklari",
+            "tier": "o"
+          },
+          {
+            "label": "İş Ortağı Ol",
+            "href": "#is-ortagi-ol",
+            "tier": "e"
+          },
+          {
+            "label": "Marketplace",
+            "href": "#marketplace",
+            "tier": "e",
+            "hint": "Ekosistem ve iş ortağı uygulamaları olgunlaştığında açılır"
+          }
+        ]
+      },
+      {
+        "title": "Geliştirici & Kaynaklar",
+        "icon": "Code",
+        "links": [
+          {
+            "label": "Dokümantasyon",
+            "href": "#dok",
+            "tier": "z"
+          },
+          {
+            "label": "Geliştirici Merkezi",
+            "href": "#gelistirici",
+            "tier": "o"
+          },
+          {
+            "label": "API Referansı",
+            "href": "#api",
+            "tier": "o",
+            "hint": "API — Application Programming Interface (uygulama programlama arayüzü)"
+          },
+          {
+            "label": "SDK ve Örnekler",
+            "href": "#sdk",
+            "tier": "o",
+            "hint": "SDK — Software Development Kit (yazılım geliştirme kiti)"
+          },
+          {
+            "label": "Sürüm Notları",
+            "href": "#surum",
+            "tier": "z"
+          },
+          {
+            "label": "Mimari Kaynaklar",
+            "href": "#mimari",
+            "tier": "e",
+            "hint": "Referans mimariler, dağıtım ve ölçekleme kılavuzları"
+          },
+          {
+            "label": "Müşteri Hikâyeleri",
+            "href": "#vaka",
+            "tier": "o"
+          },
+          {
+            "label": "Akademi ve Rehberler",
+            "href": "#akademi",
+            "tier": "o"
+          }
+        ]
+      },
+      {
+        "title": "Destek & Hizmetler",
+        "icon": "Lifebuoy",
+        "links": [
+          {
+            "label": "Yardım Merkezi",
+            "href": "#yardim",
+            "tier": "z"
+          },
+          {
+            "label": "Teknik Destek",
+            "href": "#teknik-destek",
+            "tier": "z"
+          },
+          {
+            "label": "Destek Talebi",
+            "href": "#destek-talebi",
+            "tier": "z"
+          },
+          {
+            "label": "Sistem Durumu",
+            "href": "#tc-status",
+            "tier": "z"
+          },
+          {
+            "label": "Kurulum ve Geçiş",
+            "href": "#kurulum-gecis",
+            "tier": "o"
+          },
+          {
+            "label": "Eğitim",
+            "href": "#egitim",
+            "tier": "o"
+          },
+          {
+            "label": "Danışmanlık",
+            "href": "#danismanlik",
+            "tier": "e"
+          },
+          {
+            "label": "Bize Ulaşın",
+            "href": "#iletisim",
+            "tier": "z"
+          }
+        ]
+      },
+      {
+        "title": "Kurumsal",
+        "icon": "Buildings",
+        "links": [
+          {
+            "label": "Hakkımızda",
+            "href": "#hakkimizda",
+            "tier": "z"
+          },
+          {
+            "label": "Vizyon ve Değerler",
+            "href": "#vizyon",
+            "tier": "o"
+          },
+          {
+            "label": "Liderlik",
+            "href": "#liderlik",
+            "tier": "o"
+          },
+          {
+            "label": "Kariyer",
+            "href": "#kariyer",
+            "tier": "z",
+            "hint": "12 açık pozisyon",
+            "badge": "12 açık pozisyon",
+            "badgeKind": "count"
+          },
+          {
+            "label": "Medya Merkezi",
+            "href": "#medya",
+            "tier": "o"
+          },
+          {
+            "label": "Marka Merkezi",
+            "href": "#marka",
+            "tier": "e",
+            "hint": "Logo, renk ve kullanım kılavuzu, basın kiti"
+          },
+          {
+            "label": "Kurumsal Bilgiler",
+            "href": "#bth",
+            "tier": "z",
+            "hint": "Ticaret unvanı, MERSİS, sicil ve künye (Bilgi Toplumu Hizmetleri)"
+          },
+          {
+            "label": "İş Birlikleri",
+            "href": "#is-birlikleri",
+            "tier": "e"
+          }
+        ]
+      },
+      {
+        "title": "Güven Merkezi",
+        "icon": "ShieldCheck",
+        "links": [
+          {
+            "label": "Güvenlik",
+            "href": "#tc-security",
+            "tier": "z"
+          },
+          {
+            "label": "Uyum ve Güvence",
+            "href": "#tc-compliance",
+            "tier": "o"
+          },
+          {
+            "label": "Sertifika ve Raporlar",
+            "href": "#tc-compliance",
+            "tier": "o"
+          },
+          {
+            "label": "Gizlilik",
+            "href": "#tc-privacy",
+            "tier": "z"
+          },
+          {
+            "label": "Veri Barındırma",
+            "href": "#tc-residency",
+            "tier": "o"
+          },
+          {
+            "label": "Alt Veri İşleyenler",
+            "href": "#tc-subprocessors",
+            "tier": "o"
+          },
+          {
+            "label": "İş Sürekliliği",
+            "href": "#tc-bcm",
+            "tier": "o"
+          },
+          {
+            "label": "Güvenlik Açığı Bildirimi",
+            "href": "#tc-vdp",
+            "tier": "z",
+            "hint": "Sorumlu bildirim politikası ve security.txt"
+          }
+        ]
+      },
+      {
+        "title": "Yatırımcı & Grup",
+        "icon": "ChartLineUp",
+        "links": [
+          {
+            "label": "Grup Şirketleri",
+            "href": "#grup",
+            "tier": "o"
+          },
+          {
+            "label": "Yönetim Kurulu",
+            "href": "#yonetim-kurulu",
+            "tier": "o"
+          },
+          {
+            "label": "Yatırımcı İlişkileri",
+            "href": "#yi",
+            "tier": "e"
+          },
+          {
+            "label": "Kurumsal Yönetim",
+            "href": "#kurumsal-yonetim",
+            "tier": "e"
+          },
+          {
+            "label": "Finansal Raporlar",
+            "href": "#finansal",
+            "tier": "e"
+          },
+          {
+            "label": "Sürdürülebilirlik",
+            "href": "#surdurulebilirlik",
+            "tier": "o"
+          },
+          {
+            "label": "ESG Raporları",
+            "href": "#esg",
+            "tier": "e",
+            "hint": "ESG — Environmental, Social, Governance (çevresel, sosyal ve yönetişim)"
+          },
+          {
+            "label": "Etik ve Uyum Hattı",
+            "href": "#etik-hat",
+            "tier": "e"
+          }
+        ]
+      }
+    ],
+    "eyebrow": "Site haritası",
+    "counts": {
+      "sections": "{n} bölüm",
+      "pages": "{n} sayfa"
+    },
+    "title": "Site haritası",
+    "description": "Tüm sayfalar yedi bölümde. Aşama seçiliyken henüz gerekmeyen sayfalar soluklaşır."
+  }
+}

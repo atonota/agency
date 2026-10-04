@@ -1,0 +1,97 @@
+{
+  "id": "tc-hero",
+  "type": "trust-hero",
+  "order": 10,
+  "label": "Güven Merkezi girişi",
+  "owner": "Bilgi güvenliği (CISO ofisi)",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Güven Merkezi · Trust Center",
+    "typed": [
+      "Satın alma",
+      "BT",
+      "Güvenlik",
+      "Hukuk",
+      "Yönetim"
+    ],
+    "titleAfter": "ekibiniz için güvence, tek adreste.",
+    "title": "Satın alma, BT, güvenlik, hukuk ve yönetim ekibiniz için güvence, tek adreste.",
+    "description": "Hangi standartlara göre çalıştığımızı, sertifikaların hangi ürünleri kapsadığını, verinizin nerede tutulduğunu ve bir olay anında ne olduğunu birkaç dakikada görün.",
+    "audiencesLabel": "Kimin için",
+    "audiences": [
+      {
+        "label": "Satın alma"
+      },
+      {
+        "label": "CIO",
+        "hint": "Chief Information Officer — bilgi teknolojilerinden sorumlu üst yönetici"
+      },
+      {
+        "label": "CISO",
+        "hint": "Chief Information Security Officer — bilgi güvenliği yöneticisi"
+      },
+      {
+        "label": "Hukuk"
+      },
+      {
+        "label": "Güvenlik ekibi"
+      }
+    ],
+    "primary": {
+      "label": "Güvenlik raporu talep et",
+      "href": "#tc-procurement",
+      "tier": "o"
+    },
+    "secondary": {
+      "label": "Güvenlik anketi gönder",
+      "href": "#tc-procurement",
+      "tier": "o"
+    },
+    "signals": [
+      {
+        "label": "Herkese açık belge",
+        "value": 24
+      },
+      {
+        "label": "NDA ile paylaşılan rapor",
+        "value": 7
+      },
+      {
+        "label": "Ortalama anket yanıtı",
+        "value": "5 iş günü"
+      }
+    ],
+    "note": "Prototip: sayılar ve durumlar örnektir.",
+    "seal": "ISO/IEC 27001:2022 · SOC 2 TYPE II · ISO/IEC 27701:2025 · ",
+    "stackLabel": "Platform katmanları",
+    "stack": [
+      {
+        "label": "Altyapı · Bulut",
+        "sub": "TR ve AB veri bölgeleri"
+      },
+      {
+        "label": "Platform",
+        "sub": "Kimlik, API, entegrasyon"
+      },
+      {
+        "label": "ERP · SCM",
+        "sub": "Operasyon ve tedarik"
+      },
+      {
+        "label": "HSM · Termitral",
+        "sub": "Kriptografi ve saha"
+      },
+      {
+        "label": "TeamsLike",
+        "sub": "İletişim ve iş birliği"
+      },
+      {
+        "label": "Güven katmanı",
+        "sub": "ISMS · PIMS · BCMS",
+        "accent": true
+      }
+    ]
+  }
+}

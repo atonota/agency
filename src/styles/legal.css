@@ -1,0 +1,132 @@
+/* ================================================================
+   Yasal bar (.lb-legal) — üç satır, kutusuz: çizgi, tipografi, boşluk.
+   (1) yasal bağlantılar "·" ayraçlı  (2) sözleşmeler, kesik çizgi
+   (3) telif + MERSİS | dil · veri bölgesi · tema · başa dön
+   ================================================================ */
+
+.fe-band[data-type='legal-bar'] { background: transparent; padding-block: 30px 40px; }
+
+.lb-legal { display: block; }
+
+/* ---------- Bağlantı listesi ---------- */
+.lb-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0; margin: 0; padding: 0; list-style: none; }
+.lb-links li { display: inline-flex; align-items: center; }
+.lb-links li + li::before { content: '·'; color: var(--fe-line-strong); margin: 0 14px; font-weight: 600; }
+
+.lb-link {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 1rem; line-height: 1.5;
+  color: var(--fe-ink-2); text-decoration: none; padding: 2px 0; border-radius: 2px;
+  transition: color 140ms ease;
+}
+.lb-link:hover { color: var(--fe-ink); }
+.lb-link[data-hint='true'] { text-decoration: underline dotted color-mix(in srgb, var(--fe-muted) 75%, transparent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.lb-link[data-hint='true']:hover { text-decoration-color: var(--fe-accent); }
+.lb-link:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 4px; }
+.lb-cookie { font-family: inherit; }
+.lb-cookie:hover { color: var(--fe-accent); }
+
+/* ---------- Sözleşmeler ve politikalar ---------- */
+.lb-agreements {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px;
+  margin-top: 20px; padding-top: 18px; border-top: 1px dashed var(--fe-line-strong);
+}
+.lb-agreements-title {
+  display: inline-flex; align-items: center; gap: 6px; font-family: var(--fe-mono); font-size: 1rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--fe-ink); text-decoration: none; white-space: nowrap;
+  transition: color 140ms ease;
+}
+.lb-agreements-title:hover { color: var(--fe-accent); }
+.lb-agreements-title:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 4px; border-radius: 2px; }
+
+/* ---------- Alt satır ---------- */
+.lb-bottom {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 32px;
+  margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--fe-line);
+}
+.lb-copy { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; margin: 0; font-size: 1rem; color: var(--fe-muted); }
+.lb-mersis { font-family: var(--fe-mono); font-variant-numeric: tabular-nums; letter-spacing: 0.02em; user-select: all; }
+.lb-mersis-label { color: var(--fe-ink-2); }
+
+.lb-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.lb-sep { width: 1px; height: 18px; background: var(--fe-line-strong); flex: none; }
+
+/* Dil / veri bölgesi — çerçevesiz menü tetikleyicisi */
+.lb-menu-btn {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; line-height: 1.5; color: var(--fe-ink-2);
+  padding: 2px 0; border-bottom: 1px solid transparent; transition: color 140ms ease, border-color 140ms ease;
+}
+.lb-menu-ico { display: inline-grid; place-items: center; color: var(--fe-muted); transition: color 140ms ease; }
+.lb-menu-caret { color: var(--fe-muted); transition: transform 180ms ease, color 140ms ease; }
+.lb-menu-btn:hover { color: var(--fe-ink); border-color: var(--fe-line-strong); }
+.lb-menu-btn:hover .lb-menu-ico, .lb-menu-btn:hover .lb-menu-caret { color: var(--fe-ink); }
+.lb-menu-btn[data-expanded] { color: var(--fe-accent); border-color: var(--fe-accent); }
+.lb-menu-btn[data-expanded] .lb-menu-ico, .lb-menu-btn[data-expanded] .lb-menu-caret { color: var(--fe-accent); }
+.lb-menu-btn[data-expanded] .lb-menu-caret { transform: rotate(180deg); }
+.lb-menu-btn:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 4px; border-radius: 2px; }
+
+.lb-menu-dd {
+  background: var(--fe-footer); border: 1px solid var(--fe-line); border-radius: 8px; padding: 6px;
+  box-shadow: 0 18px 40px -18px color-mix(in srgb, var(--fe-ground) 80%, transparent);
+}
+.lb-menu-label { font-family: var(--fe-mono); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fe-muted); padding: 8px 10px 6px; }
+.lb-menu-item { font-size: 1rem; color: var(--fe-ink-2); padding: 8px 10px; border-radius: 6px; }
+.lb-menu-item:hover, .lb-menu-item[data-hovered] { background: var(--fe-surface-2); color: var(--fe-ink); }
+.lb-menu-item[data-selected] { color: var(--fe-accent); }
+.lb-menu-sec { color: var(--fe-accent); }
+
+/* Tema — üç ince ikon düğmesi, seçili mint */
+.lb-theme { display: inline-flex; align-items: center; gap: 2px; }
+.lb-theme-btn {
+  width: 32px; height: 32px; display: inline-grid; place-items: center; border-radius: 50%;
+  color: var(--fe-muted); transition: color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+}
+.lb-theme-btn:hover { color: var(--fe-ink); transform: translateY(-1px); }
+.lb-theme-btn[aria-pressed='true'] { color: var(--fe-accent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--fe-accent) 55%, transparent); }
+.lb-theme-btn:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 2px; }
+
+/* Başa dön — Magnet ile sarılı metin bağlantısı */
+.lb-top-wrap { vertical-align: middle; }
+.lb-top {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 500; line-height: 1.5;
+  color: var(--fe-ink); padding: 2px 0; border-bottom: 1px solid var(--fe-line-strong);
+  transition: color 140ms ease, border-color 140ms ease;
+}
+.lb-top-arrow { transition: transform 200ms ease; }
+.lb-top:hover { color: var(--fe-accent); border-color: var(--fe-accent); }
+.lb-top:hover .lb-top-arrow { transform: translateY(-3px); }
+.lb-top:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 4px; border-radius: 2px; }
+
+/* ---------- Çerez tercih paneli (Mantine Modal) ---------- */
+.lb-modal { background: var(--fe-footer); border: 1px solid var(--fe-line); }
+.lb-modal-head { background: var(--fe-footer); padding: 22px 24px 8px; }
+.lb-modal-title { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.01em; }
+.lb-modal-title-in { display: inline-flex; align-items: center; gap: 10px; color: var(--fe-ink); }
+.lb-modal-title-in svg { color: var(--fe-accent); }
+.lb-modal-body { padding: 0 24px 22px; }
+.lb-modal-desc { margin: 0 0 14px; font-size: 1rem; line-height: 1.6; color: var(--fe-ink-2); }
+.lb-cookie-list { margin: 0; padding: 0; list-style: none; }
+.lb-cookie-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0; border-top: 1px solid var(--fe-line); }
+.lb-cookie-row:last-child { border-bottom: 1px solid var(--fe-line); }
+.lb-cookie-text { display: grid; gap: 2px; min-width: 0; }
+.lb-cookie-name { font-size: 1rem; font-weight: 500; color: var(--fe-ink); cursor: pointer; }
+.lb-cookie-desc { font-size: 1rem; color: var(--fe-muted); }
+.lb-cookie-always { display: inline-flex; align-items: center; gap: 10px; font-family: var(--fe-mono); font-size: 1rem; color: var(--fe-accent); white-space: nowrap; }
+.lb-modal-actions { display: flex; align-items: center; justify-content: flex-end; gap: 18px; margin-top: 18px; }
+.lb-modal-saved { margin-right: auto; font-size: 1rem; color: var(--fe-ok); }
+.lb-modal-reject { font-size: 1rem; color: var(--fe-ink-2); border-bottom: 1px solid var(--fe-line-strong); padding: 2px 0; transition: color 140ms ease, border-color 140ms ease; }
+.lb-modal-reject:hover { color: var(--fe-ink); border-color: var(--fe-ink); }
+.lb-modal-reject:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 4px; border-radius: 2px; }
+
+/* ---------- Duyarlı ---------- */
+@media (max-width: 62em) {
+  .lb-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 48em) {
+  .fe-band[data-type='legal-bar'] { padding-block: 24px 32px; }
+  .lb-links { gap: 10px 0; }
+  .lb-links li + li::before { margin: 0 10px; }
+  .lb-agreements { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .lb-controls { gap: 12px 18px; }
+  .lb-sep { display: none; }
+  .lb-cookie-row { align-items: flex-start; }
+}

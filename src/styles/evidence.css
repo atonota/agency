@@ -1,0 +1,124 @@
+/* ================================================================
+   Kanıt zinciri — evidence-chain (önek: .ec-)
+   Kutu yok: isometric plaka + mint halka + ince bağlantı çizgisi. Yazı ≥ 1rem.
+   Plaka 104×84 px sabit çizilir (ölçeklenmez); 62em altında zincir dikey akar.
+   ================================================================ */
+
+.ec { --ec-pw: 104px; --ec-ph: 84px; --ec-cy: 38px; --ec-gap: 12px; --ec-rgap: 28px; }
+
+/* ---------- Ana iddia: TrueFocus (React Bits) — kelimeler arasında gezen odak ---------- */
+.ec-claim { margin: -8px 0 40px; }
+.ec-claim .focus-container { justify-content: flex-start; gap: 0.6em 1.6em; }
+.ec-claim .focus-word {
+  font-size: clamp(18px, 1.8vw, 24px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2;
+  color: var(--fe-ink); cursor: default;
+}
+.ec-claim .focus-word.active { color: var(--fe-accent); }
+.ec-claim .corner { width: 0.7rem; height: 0.7rem; border-width: 2px; border-radius: 2px; filter: drop-shadow(0 0 6px var(--glow-color)); }
+.ec-claim .top-left, .ec-claim .top-right { top: -7px; }
+.ec-claim .bottom-left, .ec-claim .bottom-right { bottom: -7px; }
+.ec-claim .top-left, .ec-claim .bottom-left { left: -9px; }
+.ec-claim .top-right, .ec-claim .bottom-right { right: -9px; }
+.ec-claim-static { display: flex; flex-wrap: wrap; gap: 0.6em 1.6em; }
+.ec-claim-word { font-size: clamp(18px, 1.8vw, 24px); font-weight: 600; letter-spacing: -0.02em; color: var(--fe-ink); }
+.ec-claim-word:first-child { color: var(--fe-accent); }
+
+/* ---------- Zincir: yatay ızgara ---------- */
+.ec-chain {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(var(--ec-n, 8), minmax(0, 1fr)); column-gap: var(--ec-gap);
+  counter-reset: ec;
+}
+.ec-node { position: relative; min-width: 0; }
+.ec-link { display: grid; gap: 14px; justify-items: start; color: inherit; text-decoration: none; border-radius: 10px; outline: none; }
+.ec-link:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 6px; }
+
+/* Plaka: sabit boyut, kabın içinde sola yaslı */
+.ec-plate { position: relative; width: var(--ec-pw); height: var(--ec-ph); display: block; }
+.ec-svg { display: block; width: var(--ec-pw); height: var(--ec-ph); overflow: visible; }
+.ec-face-top {
+  fill: color-mix(in srgb, var(--fe-accent) 10%, var(--fe-surface));
+  stroke: color-mix(in srgb, var(--fe-accent) 50%, transparent); stroke-width: 1; stroke-linejoin: round;
+  transition: fill 220ms ease, stroke 220ms ease;
+}
+.ec-face-left { fill: color-mix(in srgb, var(--fe-accent) 8%, var(--fe-ground)); stroke: color-mix(in srgb, var(--fe-accent) 38%, transparent); stroke-width: 1; stroke-linejoin: round; }
+.ec-face-right { fill: color-mix(in srgb, var(--fe-accent) 15%, var(--fe-ground)); stroke: color-mix(in srgb, var(--fe-accent) 38%, transparent); stroke-width: 1; stroke-linejoin: round; }
+.ec-grid line { stroke: color-mix(in srgb, var(--fe-accent) 16%, transparent); stroke-width: 0.75; transition: stroke 220ms ease; }
+
+/* Mint halka + numara */
+.ec-ring { transform-box: fill-box; transform-origin: center; transition: transform 260ms cubic-bezier(.2,.8,.2,1); }
+.ec-ring-core { fill: var(--fe-surface); stroke: var(--fe-accent); stroke-width: 2; transition: fill 220ms ease, stroke-width 220ms ease; }
+.ec-ring-halo { fill: none; stroke: color-mix(in srgb, var(--fe-accent) 35%, transparent); stroke-width: 6; opacity: 0; transform-box: fill-box; transform-origin: center; transition: opacity 260ms ease, transform 260ms ease; }
+.ec-num {
+  position: absolute; left: 50%; transform: translate(-50%, -50%);
+  font-family: var(--fe-mono); font-size: 16px; font-weight: 600; letter-spacing: 0.02em; color: var(--fe-accent);
+  pointer-events: none; transition: color 220ms ease, transform 260ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* Metin.
+   Etiket blok akışındadır (inline-flex değil): en uzun kelime hücreyi zorlayamaz — gerekirse
+   `hyphens:auto` (ol lang="tr") ile heceden, en kötü durumda `overflow-wrap:anywhere` ile kırılır.
+   Ok satır içi yer kaplamaz: 20px'lik sağ rezervde mutlak konumlanır. Aşama noktası bağlantının
+   köşesinde (`fe-tier-block`), etiket satırında değil. */
+.ec-body { display: grid; gap: 6px; min-width: 0; }
+.ec-label {
+  position: relative; display: block; padding-right: 20px; min-width: 0;
+  font-size: 16px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; color: var(--fe-ink);
+  overflow-wrap: anywhere; hyphens: auto; transition: color 180ms ease;
+}
+.ec-label-text { display: inline; }
+.ec-arrow {
+  position: absolute; right: 0; top: 0.25em; color: var(--fe-muted);
+  opacity: 0; transform: translateX(-4px); transition: opacity 180ms ease, transform 180ms ease, color 180ms ease;
+}
+.ec-text { font-size: 16px; line-height: 1.5; color: var(--fe-ink-2); transition: color 180ms ease; }
+
+/* Hover / odak: halka büyür, açıklama vurgulanır */
+.ec-node:hover .ec-ring, .ec-node:focus-within .ec-ring { transform: scale(1.22); }
+.ec-node:hover .ec-ring-core, .ec-node:focus-within .ec-ring-core { fill: var(--fe-accent); stroke-width: 0; }
+.ec-node:hover .ec-num, .ec-node:focus-within .ec-num { color: var(--fe-accent-ink); transform: translate(-50%, -50%) scale(1.08); }
+.ec-node:hover .ec-ring-halo, .ec-node:focus-within .ec-ring-halo { opacity: 1; transform: scale(1.55); }
+.ec-node:hover .ec-face-top, .ec-node:focus-within .ec-face-top { fill: color-mix(in srgb, var(--fe-accent) 24%, var(--fe-surface)); stroke: var(--fe-accent); }
+.ec-node:hover .ec-grid line, .ec-node:focus-within .ec-grid line { stroke: color-mix(in srgb, var(--fe-accent) 34%, transparent); }
+.ec-node:hover .ec-label, .ec-node:focus-within .ec-label { color: var(--fe-accent); }
+.ec-node:hover .ec-text, .ec-node:focus-within .ec-text { color: var(--fe-ink); }
+.ec-node:hover .ec-arrow, .ec-node:focus-within .ec-arrow { opacity: 1; transform: translateX(0); color: var(--fe-accent); }
+
+/* ---------- Bağlantı çizgileri ---------- */
+.ec-conn { position: absolute; overflow: visible; pointer-events: none; display: block; }
+.ec-conn-track { stroke: var(--fe-line); stroke-width: 1; }
+.ec-conn-draw { stroke: var(--fe-accent); stroke-width: 1.5; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--fe-glow)); }
+/* yatay: plakanın sağ köşesinden bir sonraki plakanın sol köşesine (hücre genişliği − plaka + aralık) */
+.ec-chain:not([data-vertical]) .ec-conn {
+  top: calc(var(--ec-cy) - 6px); height: 12px;
+  left: var(--ec-pw); width: calc(100% - var(--ec-pw) + var(--ec-gap));
+}
+.ec-node:hover .ec-conn-draw, .ec-node:focus-within .ec-conn-draw { stroke-width: 2.5; }
+
+/* ---------- 62em–84em: zincir 4 + 4, iki sıra ----------
+   Container xl 84em altında hücreyi 8'e bölünce (~109–145px) "Dokümantasyon" (~123px @16px/600)
+   etikete sığmaz; 4 sütunda hücre ≥ 230px. Sıra sonundaki (4.) düğümün bağlantı çizgisi gizlenir. */
+@media (min-width: 62.01em) and (max-width: 84em) {
+  .ec-chain:not([data-vertical]) { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 44px; }
+  .ec-chain:not([data-vertical]) .ec-node:nth-child(4n) .ec-conn { display: none; }
+}
+
+/* ---------- 62em altı: dikey zincir ---------- */
+@media (max-width: 62em) {
+  .ec-chain { grid-template-columns: 1fr; row-gap: var(--ec-rgap); }
+  .ec-link { grid-template-columns: var(--ec-pw) minmax(0, 1fr); gap: 22px; align-items: start; }
+  .ec-body { padding-top: 10px; padding-right: 0; }
+  .ec-text { max-width: 56ch; }
+  /* alt köşeden (y = cy + hh ≈ 68) bir sonraki plakanın üst köşesine (y ≈ 8) */
+  .ec-chain[data-vertical] .ec-conn {
+    left: calc(var(--ec-pw) / 2 - 6px); width: 12px;
+    top: 68px; height: calc(100% - 68px + var(--ec-rgap) + 8px);
+  }
+}
+
+.ec-footnote { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--fe-line); line-height: 1.55; }
+
+/* Hareket azaltma: geçişler kapalı (TSX statik dalları seçer) */
+@media (prefers-reduced-motion: reduce) {
+  .ec-ring, .ec-ring-halo, .ec-ring-core, .ec-num, .ec-label, .ec-text, .ec-arrow, .ec-face-top, .ec-grid line { transition: none; }
+}

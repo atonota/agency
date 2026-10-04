@@ -1,0 +1,94 @@
+{
+  "id": "products",
+  "type": "product-cards",
+  "order": 40,
+  "label": "Ürün ailesi",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Ürün ailesi",
+    "navLabel": "Ürünler",
+    "more": {
+      "label": "Tüm ürünler",
+      "href": "#urunler",
+      "tier": "z"
+    },
+    "separator": "◆",
+    "speed": 16,
+    "items": [
+      {
+        "code": "ERP",
+        "name": "ERP",
+        "description": "Finans, üretim ve kaynak planlama",
+        "icon": "TreeStructure",
+        "href": "#erp",
+        "tier": "z",
+        "marquee": [
+          "Kurulum: bulut / on-prem",
+          "Modüller: Finans · Üretim · Satın alma · İK",
+          "Entegrasyon: e-Fatura, e-Defter, banka",
+          "Çok şirketli, çok para birimli"
+        ]
+      },
+      {
+        "code": "SCM",
+        "name": "SCM",
+        "description": "Tedarik zinciri ve lojistik yönetimi",
+        "icon": "Truck",
+        "href": "#scm",
+        "tier": "z",
+        "marquee": [
+          "Depo, sevkiyat ve rota planlama",
+          "Talep tahmini ve stok optimizasyonu",
+          "Tedarikçi portalı",
+          "Kurulum: bulut"
+        ]
+      },
+      {
+        "code": "HSM",
+        "name": "HSM",
+        "description": "Güvenlik ve anahtar yönetimi",
+        "icon": "Lock",
+        "href": "#hsm",
+        "tier": "z",
+        "marquee": [
+          "FIPS 140-3 uyumlu donanım",
+          "Anahtar yaşam döngüsü ve PKI",
+          "Elektronik imza ve zaman damgası",
+          "Kurulum: on-prem / veri merkezi"
+        ]
+      },
+      {
+        "code": "TL",
+        "name": "TeamsLike",
+        "description": "Kurumsal iletişim ve iş birliği",
+        "icon": "ChatsCircle",
+        "href": "#teams",
+        "tier": "z",
+        "badge": "Yeni",
+        "marquee": [
+          "Mesajlaşma, görüntülü toplantı, kanallar",
+          "Veri yerleşimi: Türkiye",
+          "Kurulum: bulut / on-prem",
+          "ERP ve SCM ile yerleşik entegrasyon"
+        ]
+      },
+      {
+        "code": ">_",
+        "name": "Termitral",
+        "description": "Saha ve operasyon terminalleri",
+        "icon": "TerminalWindow",
+        "href": "#terminal",
+        "tier": "z",
+        "marquee": [
+          "El terminali ve kiosk uygulamaları",
+          "Çevrimdışı çalışma, otomatik eşitleme",
+          "Barkod / RFID / NFC",
+          "Android ve Windows"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "id": "legal",
+  "type": "legal-bar",
+  "order": 100,
+  "label": "Yasal bar",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "aria": "Yasal bağlantılar",
+    "links": [
+      {
+        "label": "Gizlilik",
+        "href": "#gizlilik",
+        "tier": "z"
+      },
+      {
+        "label": "KVKK",
+        "href": "#kvkk",
+        "tier": "z",
+        "hint": "6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında aydınlatma metni"
+      },
+      {
+        "label": "KVKK Başvuru Formu",
+        "href": "#basvuru",
+        "tier": "z"
+      },
+      {
+        "label": "Çerez Politikası",
+        "href": "#cerez",
+        "tier": "z"
+      },
+      {
+        "label": "Kullanım Koşulları",
+        "href": "#kosullar",
+        "tier": "z"
+      },
+      {
+        "label": "Bilgi Toplumu Hizmetleri",
+        "href": "#bth",
+        "tier": "z"
+      },
+      {
+        "label": "Erişilebilirlik",
+        "href": "#tc-accessibility",
+        "tier": "o",
+        "hint": "Erişilebilirlik beyanı ve ACR (uygunluk raporu)"
+      },
+      {
+        "label": "Site Haritası",
+        "href": "#harita",
+        "tier": "z"
+      }
+    ],
+    "cookie": {
+      "label": "Çerez Tercihleri",
+      "tier": "z",
+      "title": "Çerez tercihleri",
+      "description": "Zorunlu çerezler her zaman açıktır. Diğerlerini dilediğiniz zaman değiştirebilirsiniz.",
+      "always": "Her zaman açık",
+      "categories": [
+        {
+          "id": "required",
+          "label": "Zorunlu",
+          "description": "Oturum ve güvenlik",
+          "required": true
+        },
+        {
+          "id": "functional",
+          "label": "İşlevsel",
+          "description": "Dil ve tercih hatırlama"
+        },
+        {
+          "id": "analytics",
+          "label": "Analitik",
+          "description": "Anonim kullanım ölçümü"
+        },
+        {
+          "id": "marketing",
+          "label": "Pazarlama",
+          "description": "Kişiselleştirilmiş içerik"
+        }
+      ],
+      "save": "Kaydet",
+      "reject": "Tümünü reddet",
+      "saved": "Tercihleriniz kaydedildi.",
+      "close": "Kapat"
+    },
+    "agreements": {
+      "label": "Sözleşmeler ve Politikalar",
+      "href": "#sozlesmeler",
+      "tier": "o",
+      "links": [
+        {
+          "label": "DPA",
+          "href": "#dpa",
+          "tier": "o",
+          "hint": "Data Processing Agreement — veri işleme sözleşmesi"
+        },
+        {
+          "label": "SLA",
+          "href": "#sla",
+          "tier": "o",
+          "hint": "Service Level Agreement — hizmet seviyesi sözleşmesi"
+        },
+        {
+          "label": "Kabul Edilebilir Kullanım Politikası",
+          "href": "#aup",
+          "tier": "o",
+          "hint": "Acceptable Use Policy (AUP)"
+        },
+        {
+          "label": "Alt Veri İşleyen Listesi",
+          "href": "#tc-subprocessors",
+          "tier": "o"
+        },
+        {
+          "label": "Ürün Özel Şartları",
+          "href": "#urun-sartlari",
+          "tier": "o",
+          "hint": "Her ürüne özgü ek hizmet şartları"
+        },
+        {
+          "label": "Bilgi Güvenliği Politikası",
+          "href": "#bgp",
+          "tier": "o"
+        },
+        {
+          "label": "Yasal Uyarı",
+          "href": "#yasal",
+          "tier": "e"
+        }
+      ]
+    },
+    "mersis": {
+      "label": "MERSİS"
+    },
+    "languages": {
+      "label": "Dil",
+      "tier": "o",
+      "options": [
+        "Türkçe",
+        "English",
+        "Deutsch",
+        "العربية"
+      ]
+    },
+    "regions": {
+      "label": "Veri bölgesi",
+      "tier": "e",
+      "options": [
+        "Türkiye",
+        "Avrupa Birliği",
+        "Körfez"
+      ]
+    },
+    "theme": {
+      "label": "Tema",
+      "tier": "z",
+      "options": [
+        {
+          "value": "light",
+          "label": "Açık"
+        },
+        {
+          "value": "auto",
+          "label": "Sistem"
+        },
+        {
+          "value": "dark",
+          "label": "Koyu"
+        }
+      ]
+    },
+    "backToTop": {
+      "label": "Başa dön",
+      "tier": "z"
+    }
+  }
+}

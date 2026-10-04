@@ -1,0 +1,70 @@
+{
+  "id": "tc-questions",
+  "type": "trust-questions",
+  "order": 20,
+  "label": "Satın almacı soruları",
+  "owner": "Bilgi güvenliği (CISO ofisi)",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Sık sorulan 9 soru",
+    "title": "Kurumsal alıcının ilk dakikalarda sorduğu sorular",
+    "items": [
+      {
+        "question": "Bu şirket hangi standartlara göre çalışıyor?",
+        "answer": "ISO/IEC 27001:2022 temel alınır; SOC 2 Type II ve ISO/IEC 27701:2025 ile tamamlanır. Tam liste ve sürümler Uyum bölümündedir.",
+        "href": "#tc-compliance",
+        "tier": "z"
+      },
+      {
+        "question": "Bu sertifika hangi ürünleri gerçekten kapsıyor?",
+        "answer": "Ürün uyum matrisi her standardı ürün bazında gösterir. Kapsam dışı ürünler açıkça işaretlenir.",
+        "href": "#tc-matrix",
+        "tier": "o"
+      },
+      {
+        "question": "Verim nerede tutuluyor?",
+        "answer": "Türkiye ve AB veri bölgeleri arasından seçim yapılır; yedekler aynı bölgede kalır.",
+        "href": "#tc-residency",
+        "tier": "o"
+      },
+      {
+        "question": "Alt yüklenicileri kim?",
+        "answer": "Alt veri işleyen listesi; amaç, konum ve aktarım dayanağıyla yayımlanır. Değişiklikler 30 gün önceden bildirilir.",
+        "href": "#tc-subprocessors",
+        "tier": "o"
+      },
+      {
+        "question": "Bir güvenlik olayı olduğunda süreç ne?",
+        "answer": "Olay müdahale planı: tespit, sınıflandırma, müşteri bildirimi ve olay sonrası rapor. KVKK bildirim süreleri dahil.",
+        "href": "#tc-security",
+        "tier": "z"
+      },
+      {
+        "question": "Servis kesilirse ne oluyor?",
+        "answer": "SLA taahhütleri, RTO/RPO hedefleri ve felaket kurtarma yaklaşımı İş Sürekliliği bölümündedir.",
+        "href": "#tc-bcm",
+        "tier": "o"
+      },
+      {
+        "question": "Ürün ömrü ve destek süresi ne?",
+        "answer": "Her ürünün desteklenen sürümleri, destek süreleri ve EOL politikası yayımlanır.",
+        "href": "#tc-lifecycle",
+        "tier": "o"
+      },
+      {
+        "question": "AI kullanılıyorsa verilerim modele gönderiliyor mu?",
+        "answer": "Müşteri verisi varsayılan olarak model eğitiminde kullanılmaz. Hangi özelliğin hangi modeli kullandığı AI Yönetişimi bölümünde listelenir.",
+        "href": "#tc-ai",
+        "tier": "o"
+      },
+      {
+        "question": "Güvenlik raporunu nasıl talep ederim?",
+        "answer": "Satın alma bölümünden NDA ile SOC 2 raporu, sızma testi özeti ve SoA talep edilir.",
+        "href": "#tc-procurement",
+        "tier": "o"
+      }
+    ]
+  }
+}

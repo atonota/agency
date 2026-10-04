@@ -1,0 +1,114 @@
+/* ================================================================
+   Olgunluk paneli (.md-) — referans dashboard: mint üst panel + 4 koyu panel.
+   Bu bölüm kutu yasağının tek istisnasıdır; geri kalan grafikler kutusuz.
+   Renkler yalnızca --fe-* token'larından; yazı ≥ 1rem.
+   ================================================================ */
+
+.md-dash { --md-ink-soft: color-mix(in srgb, var(--fe-accent-ink) 74%, transparent); }
+.md-dash .md-big { font-family: "IBM Plex Sans", system-ui, sans-serif; font-weight: 600; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; display: inline-block; }
+.md-dash .counter-digit { width: 0.6em; }
+
+/* ---------- Başlık ---------- */
+.md-head { row-gap: 16px; }
+.md-seg { background: transparent; border: 1px solid var(--fe-line); }
+.md-seg .mantine-SegmentedControl-label { font-size: 1rem; }
+
+/* ---------- Blok: üst mint + alt koyu ---------- */
+.md-block { border-radius: 12px; overflow: hidden; border: 1px solid var(--fe-line); box-shadow: 0 30px 60px -40px var(--fe-glow); }
+
+/* Mint panel */
+.md-hero {
+  background: var(--fe-accent); color: var(--fe-accent-ink);
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr); gap: 32px 40px; align-items: start;
+  padding: 36px 40px 32px;
+}
+.md-hero-left { display: grid; gap: 22px; min-width: 0; }
+.md-hero-eyebrow {
+  font-family: var(--fe-mono); font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fe-accent-ink);
+}
+.md-hero-title {
+  font-size: clamp(30px, 3.4vw, 46px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; color: var(--fe-accent-ink);
+  text-wrap: balance; cursor: default;
+}
+.md-hero-icon { display: inline-grid; place-items: center; width: 1.2em; height: 1.2em; border-radius: 50%; border: 2px solid var(--fe-accent-ink); flex: none; }
+.md-hero-icon svg { width: 0.6em; height: 0.6em; }
+.md-hero-rule { display: block; height: 1px; background: color-mix(in srgb, var(--fe-accent-ink) 32%, transparent); }
+
+.md-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 24px; }
+.md-kpi { display: grid; gap: 10px; min-width: 0; transition: opacity 260ms ease; }
+.md-kpi[data-off] { opacity: 0.55; }
+.md-kpi-label { font-size: 1rem; font-weight: 500; color: var(--fe-accent-ink); white-space: nowrap; }
+.md-kpi-info { display: inline-grid; place-items: center; opacity: 0.75; cursor: help; border-radius: 50%; transition: opacity 150ms ease; }
+.md-kpi-info:hover, .md-kpi-info:focus-visible { opacity: 1; outline: none; }
+.md-kpi-info:focus-visible { box-shadow: 0 0 0 2px var(--fe-accent-ink); }
+.md-kpi-value { color: var(--fe-accent-ink); }
+.md-kpi-value .md-big { color: var(--fe-accent-ink); }
+.md-kpi-unit { font-size: 1rem; font-weight: 500; color: var(--md-ink-soft); }
+.md-kpi-sub { font-family: var(--fe-mono); font-size: 1rem; color: var(--md-ink-soft); margin-left: 6px; }
+
+.md-hero-radar { min-width: 0; display: grid; gap: 8px; align-content: start; }
+.md-radar-note { margin: 0; font-size: 1rem; line-height: 1.4; color: var(--md-ink-soft); }
+
+/* Koyu paneller */
+.md-panels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--fe-line); border-top: 1px solid var(--fe-line); }
+.md-panel { background: var(--fe-footer); padding: 28px 28px 24px; display: grid; gap: 14px; align-content: start; min-width: 0; transition: background 200ms ease; }
+.md-panel:hover { background: color-mix(in srgb, var(--fe-footer) 92%, var(--fe-accent)); }
+.md-panel-eyebrow { font-family: var(--fe-mono); font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fe-accent); }
+.md-panel-name { font-size: 18px; font-weight: 600; color: var(--fe-ink); margin-top: 6px; letter-spacing: -0.01em; }
+.md-panel-icon { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--fe-line-strong); color: var(--fe-ink); flex: none; }
+.md-panel-metric { font-size: 1rem; color: var(--fe-ink-2); margin-top: 8px; }
+.md-panel-unit { font-size: 1rem; color: var(--fe-muted); }
+.md-panel-rule { display: block; height: 1px; background: var(--fe-line); margin-top: 6px; }
+.md-rows { display: grid; }
+.md-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 7px 0; font-size: 1rem; transition: opacity 260ms ease; }
+.md-row[data-off='true'] { opacity: 0.42; }
+.md-row-label { display: inline-flex; align-items: center; gap: 8px; color: var(--fe-muted); min-width: 0; }
+.md-row-value { color: var(--fe-ink); font-weight: 500; white-space: nowrap; }
+.md-row-unit { color: var(--fe-muted); font-weight: 400; margin-left: 4px; }
+.md-row:hover .md-row-label { color: var(--fe-ink-2); }
+
+/* ---------- İkinci grafik satırı (kutusuz) ---------- */
+.md-charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; padding-top: 12px; }
+.md-chart { min-width: 0; }
+.md-chart-head { display: grid; gap: 4px; padding-bottom: 12px; margin-bottom: 8px; border-bottom: 1px solid var(--fe-line); }
+.md-chart-title { font-size: 18px; font-weight: 600; color: var(--fe-ink); letter-spacing: -0.01em; }
+.md-chart-hint { font-size: 1rem; color: var(--fe-muted); }
+
+/* ---------- Dedektör ---------- */
+.md-detector { border-top: 1px solid var(--fe-line); padding-top: 8px; }
+.md-toggle { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 0; color: var(--fe-ink); border-radius: 6px; }
+.md-toggle:hover .md-toggle-label { color: var(--fe-accent); }
+.md-toggle:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 4px; }
+.md-toggle-label { font-size: 18px; font-weight: 600; transition: color 150ms ease; }
+.md-toggle-meta { margin-left: auto; font-family: var(--fe-mono); font-size: 1rem; color: var(--fe-muted); text-align: right; }
+.md-err { color: var(--fe-tier-o); }
+.md-caret { color: var(--fe-muted); transition: transform 220ms ease; flex: none; }
+.md-caret[data-open] { transform: rotate(180deg); }
+.md-table { font-size: 1rem; }
+.md-table th { font-size: 1rem; font-weight: 600; color: var(--fe-muted); border-bottom: 1px solid var(--fe-line-strong) !important; }
+.md-table td { font-size: 1rem; border-bottom: 1px solid var(--fe-line) !important; }
+.md-mono { font-family: var(--fe-mono); font-size: 1rem; color: var(--fe-ink-2); }
+.md-muted { color: var(--fe-muted); }
+.md-minibar { display: flex; gap: 2px; height: 8px; width: 160px; border-radius: 4px; overflow: hidden; }
+.md-minibar span { display: block; height: 100%; background: var(--tc); transition: opacity 200ms ease; }
+.md-minibar span[data-off='true'] { opacity: 0.25; }
+
+/* ---------- Duyarlılık ---------- */
+@media (max-width: 1100px) {
+  .md-hero { grid-template-columns: 1fr; padding: 28px 28px 24px; }
+  .md-panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md-charts { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 640px) {
+  .md-hero { padding: 22px 18px 20px; }
+  .md-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 16px; }
+  .md-kpi-label { white-space: normal; }
+  .md-panels { grid-template-columns: 1fr; }
+  .md-panel { padding: 22px 18px 18px; }
+  .md-toggle { flex-wrap: wrap; }
+  .md-toggle-meta { margin-left: 30px; text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-caret, .md-row, .md-kpi, .md-panel { transition: none; }
+}

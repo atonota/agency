@@ -1,0 +1,64 @@
+/* ================================================================
+   Üyelik & ödüller — "Raf"
+   İnce bir taban çizgisi üzerinde eşit aralıklı işaretler. Kutu yok.
+   ================================================================ */
+
+.fe-band[data-type='memberships'] { padding-block: 14px 18px; }
+
+.cl-shelf {
+  display: grid; grid-template-columns: 1fr auto; row-gap: 10px; column-gap: 40px; align-items: end;
+  padding-top: 18px; border-bottom: 1px solid var(--fe-line-strong);
+}
+.cl-shelf-eyebrow { grid-column: 1; grid-row: 1; }
+.cl-shelf-more { grid-column: 2; grid-row: 1; }
+
+/* Her genişlikte sarar: nowrap öğeler ızgara hücresinden taşamaz, MoreLink ile çakışmaz, yatay kaydırma oluşmaz. */
+.cl-shelf-items {
+  list-style: none; margin: 0; padding: 0 8px;
+  grid-column: 1 / -1; grid-row: 2;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 4px 16px; min-width: 0;
+}
+.cl-shelf-cell { display: flex; min-width: 0; }
+
+.cl-magnet { display: inline-block; }
+.cl-magnet-inner { display: inline-block; }
+
+.cl-shelf-item {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 4px 8px 12px; color: inherit; text-decoration: none; text-align: center; min-width: 0;
+}
+/* Hover'da taban çizgisine oturan mint alt çizgi */
+.cl-shelf-item::after {
+  content: ''; position: absolute; left: 6px; right: 6px; bottom: -1px; height: 2px;
+  background: var(--mantine-primary-color-filled); transform: scaleX(0); transform-origin: center;
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1);
+}
+.cl-shelf-item:hover::after, .cl-shelf-item:focus-visible::after { transform: scaleX(1); }
+.cl-shelf-item:focus-visible { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: 4px; border-radius: 4px; }
+
+/* Mint halka içinde ikon */
+.cl-ring-lg {
+  display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
+  box-sizing: border-box; border: 1px solid var(--mantine-primary-color-filled); color: var(--mantine-primary-color-filled);
+  transition: box-shadow 220ms ease, background 220ms ease;
+}
+.cl-shelf-item:hover .cl-ring-lg { box-shadow: 0 0 0 6px var(--fe-glow); background: color-mix(in srgb, var(--fe-accent) 8%, transparent); }
+/* Hareket azaltmada elektrik kenarlık yerine sabit parıltı */
+.cl-shelf-item[data-featured] .cl-ring-lg { box-shadow: 0 0 0 5px var(--fe-glow), 0 0 22px var(--fe-glow); }
+
+.cl-electric { width: 44px; height: 44px; border-radius: 22px; }
+.cl-electric .eb-content { display: flex; }
+.cl-electric .eb-background-glow { opacity: 0.22; }
+
+.cl-shelf-name { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; color: var(--fe-ink); white-space: nowrap; }
+.cl-shelf-sub { font-family: var(--fe-mono); font-size: 16px; line-height: 1.2; color: var(--fe-muted); white-space: nowrap; }
+.cl-shelf-item[data-featured] .cl-shelf-name { color: var(--mantine-primary-color-filled); }
+
+@media (max-width: 700px) {
+  .cl-shelf-items { justify-content: space-between; gap: 4px 8px; }
+  .cl-shelf-item { min-width: 0; padding-inline: 6px; }
+  .cl-shelf-name, .cl-shelf-sub { white-space: normal; text-wrap: balance; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cl-shelf-item::after { transition: none; }
+}

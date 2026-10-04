@@ -1,0 +1,227 @@
+/* ================================================================
+   Procurement — satın alma / rapor talebi (önek: .pr-)
+   Kutu yok: ince çizgi, mono etiket, boşluk. Vurgu = --mantine-primary-color-filled.
+   Yazı ≥ 1rem her yerde. React Bits Stepper.css'in koyu kutu stilleri burada geçersiz kılınır.
+   ================================================================ */
+
+.pr-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; margin-top: 8px; }
+
+/* ---------- Ortak: mono etiket ve alt çizgili girdi ---------- */
+.pr-label {
+  display: block; font-family: var(--fe-mono); font-size: 16px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fe-muted); margin-bottom: 4px;
+}
+.pr-label-block { margin-bottom: 10px; }
+.pr-line-input .pr-input {
+  border: 0; border-bottom: 1px solid var(--fe-line-strong); border-radius: 0; background: transparent;
+  padding-left: 0; padding-right: 0; min-height: 44px; font-size: 17px; color: var(--fe-ink);
+  transition: border-color 200ms ease;
+}
+.pr-line-input .pr-input input { font-size: 17px; color: var(--fe-ink); }
+.pr-line-input .pr-input:focus-within { border-color: var(--mantine-primary-color-filled); }
+.pr-line-input .pr-input[data-error] { border-color: var(--mantine-color-red-6); }
+.pr-line-input ::placeholder { color: var(--fe-muted); opacity: 1; }
+.pr-pill { font-size: 16px; height: 28px; line-height: 28px; padding: 0 12px; border-radius: 999px; color: var(--fe-ink); background: color-mix(in srgb, var(--mantine-primary-color-filled) 12%, transparent); }
+.pr-dropdown { background: var(--fe-footer); border: 1px solid var(--fe-line); border-radius: 12px; padding: 6px; box-shadow: 0 18px 40px -20px color-mix(in srgb, var(--fe-ground) 70%, transparent); }
+.pr-option { font-size: 16px; color: var(--fe-ink); border-radius: 8px; padding: 8px 10px; }
+.pr-option:hover, .pr-option[data-combobox-selected] { background: color-mix(in srgb, var(--mantine-primary-color-filled) 12%, transparent); color: var(--fe-ink); }
+
+/* Talep türü: bölmeli kontrol — kutusuz, ince çizgi + mint gösterge */
+.pr-seg { background: transparent; border: 1px solid var(--fe-line); padding: 3px; }
+.pr-seg-ind { background: color-mix(in srgb, var(--mantine-primary-color-filled) 14%, transparent); box-shadow: none; border-radius: 999px; }
+.pr-seg-label { font-size: 16px; color: var(--fe-ink-2); padding-block: 8px; }
+.pr-seg-label:hover { color: var(--fe-ink); }
+.pr-seg-label[data-active] { color: var(--mantine-primary-color-filled); }
+
+/* Onay kutuları */
+.pr-check-input { border-color: var(--fe-line-strong); background: transparent; cursor: pointer; }
+.pr-check-input:checked { background: var(--mantine-primary-color-filled); border-color: var(--mantine-primary-color-filled); }
+.pr-check-label { font-size: 16px; color: var(--fe-ink); cursor: pointer; }
+.pr-check[data-error] .pr-check-input, .pr-check .pr-check-input[data-error] { border-color: var(--mantine-color-red-6); }
+
+/* ---------- Erişim etiketi ---------- */
+.pr-tag { display: inline-flex; align-items: center; gap: 5px; font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.06em; white-space: nowrap; }
+.pr-tag[data-access='public'] { color: var(--mantine-primary-color-filled); }
+.pr-tag[data-access='nda'] { color: var(--fe-tier-e); }
+
+/* ---------- Sol sütun: Belgeler defteri ---------- */
+.pr-ledger-head { padding-bottom: 12px; border-bottom: 1px solid var(--fe-ink); }
+.pr-ledger-head .fe-eyebrow { color: var(--fe-ink); }
+.pr-rows { display: block; }
+.pr-row {
+  /* işaret | ad | son kontrol | durum+erişim — tarih ayrı sütun, ≤84em'de 2. satıra iner */
+  display: grid; grid-template-columns: 18px minmax(0, 1fr) auto auto; gap: 12px; align-items: center; width: 100%;
+  padding: 14px 8px 14px 0; border: 0; border-bottom: 1px solid var(--fe-line); background: transparent;
+  color: inherit; font: inherit; text-align: left; cursor: pointer;
+  transition: background 220ms ease, padding 220ms ease;
+}
+.pr-row:hover, .pr-row:focus-visible {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--mantine-primary-color-filled) 8%, transparent), transparent 80%);
+  padding-left: 8px;
+}
+.pr-row:focus-visible { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: -2px; }
+/* NDA kilidi: "kabul gerekir" ipucuyla birlikte, mor tonlu hover */
+.pr-row[data-locked] { cursor: not-allowed; }
+.pr-row[data-locked]:hover { background: linear-gradient(90deg, color-mix(in srgb, var(--fe-tier-e) 7%, transparent), transparent 80%); padding-left: 0; }
+/* Gönderildi: defter salt okunur — hover yok, seçim durumu görünür kalır */
+.pr-row[data-disabled] { cursor: default; }
+.pr-row[data-disabled]:hover, .pr-row[data-disabled]:focus-visible { background: none; padding-left: 0; }
+.pr-row[data-disabled]:hover .pr-mark { border-color: var(--fe-line-strong); }
+.pr-row[data-disabled]:not([aria-pressed='true']) .pr-row-name { color: var(--fe-muted); }
+.pr-row[data-disabled]:not([aria-pressed='true']) .pr-tag { opacity: 0.6; }
+.pr-mark {
+  width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  border: 1.5px solid var(--fe-line-strong); color: var(--fe-accent-ink); transition: all 200ms ease;
+}
+.pr-row:hover .pr-mark { border-color: var(--mantine-primary-color-filled); }
+.pr-row[aria-pressed='true'] .pr-mark { background: var(--mantine-primary-color-filled); border-color: var(--mantine-primary-color-filled); box-shadow: 0 0 0 4px color-mix(in srgb, var(--mantine-primary-color-filled) 18%, transparent); }
+.pr-row[data-locked] .pr-mark { border-style: dashed; }
+.pr-row-name { display: flex; align-items: center; gap: 6px; min-width: 0; font-size: 16px; line-height: 1.4; color: var(--fe-ink-2); transition: color 160ms ease; }
+.pr-row:hover .pr-row-name, .pr-row[aria-pressed='true'] .pr-row-name { color: var(--fe-ink); }
+.pr-row[data-locked] .pr-row-name { color: var(--fe-muted); }
+.pr-row-state { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.06em; color: var(--mantine-primary-color-filled); white-space: nowrap; }
+.pr-row-meta { display: inline-flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 6px 14px; }
+/* Son kontrol: muted mono tarih — belgenin en son doğrulandığı gün */
+.pr-row-date { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.02em; color: var(--fe-muted); white-space: nowrap; font-variant-numeric: tabular-nums; transition: color 160ms ease; }
+.pr-row-date-word { color: color-mix(in srgb, var(--fe-muted) 80%, transparent); }
+.pr-row:hover .pr-row-date { color: var(--fe-ink-2); }
+.pr-row[data-disabled]:not([aria-pressed='true']) .pr-row-date { opacity: 0.6; }
+.pr-ledger-hint { line-height: 1.5; }
+
+/* ---------- Sağ sütun: sihirbaz — Stepper.css geçersiz kılma ---------- */
+.pr-wizard { --border-primary: transparent; min-width: 0; }
+.pr-wizard .outer-container { display: block; padding: 0; min-height: 0; aspect-ratio: auto; flex: none; }
+.pr-wizard .step-circle-container { max-width: none; margin: 0; border: 0 !important; border-radius: 0; box-shadow: none; }
+.pr-wizard .step-indicator-row { padding: 0 0 26px; align-items: flex-start; border-bottom: 1px solid var(--fe-line); margin-bottom: 28px; }
+.pr-wizard .step-connector { flex: 1 1 24px; min-width: 16px; height: 1px; margin: 17px 14px 0; border-radius: 0; background: var(--fe-line-strong); overflow: hidden; }
+.pr-wizard .step-connector-inner { background-color: var(--mantine-primary-color-filled) !important; }
+.pr-wizard .step-content-default { overflow: hidden; }
+.pr-wizard .step-default { padding: 6px 4px 12px 0; }
+.pr-wizard .footer-container { display: none; }
+.pr-wizard .step-number { font-size: 16px; }
+
+/* Adım göstergeleri: mint daireler + etiket */
+.pr-step {
+  flex: 0 1 auto; display: grid; justify-items: start; gap: 12px; max-width: 160px;
+  background: none; border: 0; padding: 0; color: inherit; font: inherit; text-align: left; cursor: pointer;
+}
+.pr-step:disabled { cursor: default; }
+.pr-step-circle {
+  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+  border: 1.5px solid var(--fe-line-strong); background: var(--fe-surface); color: var(--fe-muted);
+  transition: background 260ms ease, border-color 260ms ease, color 260ms ease, box-shadow 260ms ease;
+}
+.pr-step-num { font-family: var(--fe-mono); font-size: 16px; font-weight: 500; line-height: 1; }
+.pr-step[data-state='active'] .pr-step-circle {
+  border-color: var(--mantine-primary-color-filled); color: var(--mantine-primary-color-filled);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--mantine-primary-color-filled) 18%, transparent);
+}
+.pr-step[data-state='complete'] .pr-step-circle { background: var(--mantine-primary-color-filled); border-color: var(--mantine-primary-color-filled); color: var(--fe-accent-ink); }
+.pr-step[data-state='skipped'] .pr-step-circle { border-style: dashed; border-color: var(--fe-line-strong); color: var(--fe-muted); background: transparent; }
+.pr-step[data-state='skipped'] .pr-step-title { color: var(--fe-muted); font-weight: 500; }
+.pr-step[data-state='skipped'] .pr-step-hint { font-family: var(--fe-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.pr-step-label { display: grid; gap: 2px; }
+.pr-step-title { font-size: 16px; font-weight: 600; color: var(--fe-ink); transition: color 160ms ease; }
+.pr-step[data-state='inactive'] .pr-step-title { color: var(--fe-muted); }
+.pr-step-hint { font-size: 16px; line-height: 1.4; color: var(--fe-muted); }
+.pr-step:not(:disabled):hover .pr-step-title { color: var(--mantine-primary-color-filled); }
+.pr-step:not(:disabled):hover .pr-step-circle { border-color: var(--mantine-primary-color-filled); }
+.pr-step:focus-visible { outline: none; }
+.pr-step:focus-visible .pr-step-circle { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: 3px; }
+
+/* 2 · NDA özeti */
+.pr-nda-req { color: var(--fe-muted); margin-top: -4px; }
+.pr-nda-req[data-required] { color: var(--fe-tier-o); }
+.pr-nda-list { list-style: none; margin: 16px 0 22px; padding: 0; }
+.pr-nda-list li { display: grid; grid-template-columns: 36px 1fr; gap: 8px; padding: 10px 0; border-top: 1px solid var(--fe-line); font-size: 16px; line-height: 1.55; color: var(--fe-ink-2); }
+.pr-nda-list li:last-child { border-bottom: 1px solid var(--fe-line); }
+.pr-nda-n { font-family: var(--fe-mono); font-size: 16px; color: var(--mantine-primary-color-filled); padding-top: 1px; }
+
+/* 1 · KVKK aydınlatma satırı — veri toplama noktasında, form altında */
+.pr-kvkk { margin: -2px 0 0; padding-top: 14px; border-top: 1px solid var(--fe-line); font-size: 16px; line-height: 1.6; color: var(--fe-muted); }
+.pr-kvkk-controller { color: var(--fe-ink-2); font-weight: 500; }
+.pr-kvkk-sep { color: var(--fe-line-strong); }
+.pr-kvkk-link {
+  display: inline-flex; align-items: center; gap: 4px; white-space: nowrap;
+  color: var(--mantine-primary-color-filled); text-decoration: none; font-weight: 500;
+  border-bottom: 1px solid transparent; transition: border-color 160ms ease;
+}
+.pr-kvkk-link:hover { border-color: var(--mantine-primary-color-filled); }
+.pr-kvkk-link:focus-visible { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: 2px; border-radius: 2px; }
+.pr-kvkk-arrow { transition: transform 180ms ease; }
+.pr-kvkk-link:hover .pr-kvkk-arrow { transform: translateX(3px); }
+
+/* 3 · Demo: belge adımı atlanır — not satırı */
+.pr-note { padding-bottom: 4px; }
+.pr-note-tag { font-family: var(--fe-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--fe-muted); white-space: nowrap; }
+.pr-note-text { margin-top: 12px; padding: 14px 0; border-top: 1px solid var(--fe-line); border-bottom: 1px solid var(--fe-line); text-wrap: pretty; }
+.pr-note-docs { overflow-wrap: anywhere; }
+
+/* 3 · Belge seçimi */
+.pr-pick { display: block; }
+.pr-pick-row {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center;
+  padding: 12px 8px 12px 0; border-bottom: 1px solid var(--fe-line); cursor: pointer;
+  transition: background 200ms ease, padding 200ms ease;
+}
+.pr-pick > .pr-pick-row:first-child { border-top: 1px solid var(--fe-line); }
+.pr-pick-row:hover { background: linear-gradient(90deg, color-mix(in srgb, var(--mantine-primary-color-filled) 8%, transparent), transparent 80%); padding-left: 8px; }
+.pr-pick-row[data-checked] .pr-row-name { color: var(--fe-ink); }
+.pr-pick-row[data-disabled] { cursor: not-allowed; }
+.pr-pick-row[data-disabled]:hover { background: none; padding-left: 0; }
+.pr-pick-row[data-disabled] .pr-row-name { color: var(--fe-muted); }
+.pr-pick-row[data-disabled] .pr-tag { opacity: 0.6; }
+
+/* 4 · Özet */
+.pr-summary { margin: 0; }
+.pr-sum-row { display: grid; grid-template-columns: 148px 1fr; gap: 16px; padding: 10px 0; border-top: 1px solid var(--fe-line); }
+.pr-sum-row:last-child { border-bottom: 1px solid var(--fe-line); }
+.pr-sum-row dt { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fe-muted); padding-top: 1px; }
+.pr-sum-row dd { margin: 0; font-size: 16px; line-height: 1.5; color: var(--fe-ink); overflow-wrap: anywhere; }
+.pr-sum-row[data-empty] dd { color: var(--fe-muted); }
+
+/* Gezinme ve sonuç */
+.pr-nav { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--fe-line); }
+.pr-nav-left { min-height: 42px; display: flex; align-items: center; }
+.pr-error { color: var(--mantine-color-red-6); text-align: right; line-height: 1.4; min-height: 1.4em; }
+.pr-success {
+  display: grid; grid-template-columns: 44px 1fr auto; gap: 18px; align-items: start;
+  margin-top: 8px; padding-top: 28px; border-top: 1px solid var(--fe-line);
+  animation: pr-in 520ms cubic-bezier(.2,.8,.2,1) both;
+}
+.pr-success-icon { color: var(--mantine-primary-color-filled); filter: drop-shadow(0 0 12px color-mix(in srgb, var(--mantine-primary-color-filled) 55%, transparent)); }
+.pr-success-body { min-width: 0; }
+.pr-success-meta { overflow-wrap: anywhere; }
+@keyframes pr-in { from { opacity: 0.3; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Duyarlı ---------- */
+/* ≤84em: iki sütunlu düzende sol sütun daralır (1024'te ≈442px); "Son kontrol" tarihi
+   adın altına, ikinci satıra iner — belge adı nowrap meta grubunun üstüne taşmaz. */
+@media (max-width: 84em) {
+  .pr-row { grid-template-columns: 18px minmax(0, 1fr) auto; row-gap: 2px; }
+  .pr-row-date { grid-column: 2 / -1; grid-row: 2; justify-self: start; }
+}
+@media (max-width: 62em) {
+  .pr-layout { grid-template-columns: 1fr; gap: 56px; }
+}
+@media (max-width: 48em) {
+  .pr-step { max-width: 120px; }
+  .pr-step-hint { display: none; }
+  .pr-row-state { display: none; }
+  .pr-seg { border-radius: 16px; }
+  .pr-seg-ind { border-radius: 12px; }
+  .pr-sum-row { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (max-width: 30em) {
+  .pr-step:not([data-state='active']) .pr-step-label { display: none; }
+  .pr-wizard .step-connector { margin: 17px 10px 0; }
+  .pr-nav { display: flex; flex-wrap: wrap; justify-content: space-between; }
+  .pr-error { flex-basis: 100%; order: -1; text-align: left; min-height: 0; }
+  .pr-error:empty { display: none; }
+  .pr-success { grid-template-columns: 44px 1fr; }
+  .pr-success > .mantine-Button-root { grid-column: 2; justify-self: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pr-success { animation: none; }
+}

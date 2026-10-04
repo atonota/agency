@@ -1,0 +1,122 @@
+/* ================================================================
+   Aksiyon bandı (önek: .ab-)
+   Sol: BlurText başlık. Sağ: üç birincil aksiyon (büyük satır) + "Hızlı erişim".
+   Kutu yok: ince çizgi, mono numara, boşluk. Vurgu = --mantine-primary-color-filled (mint).
+   Yazı ≥ 1rem her yerde.
+   ================================================================ */
+
+.fe-band[data-type='action-cards'] { border-top: 0; padding-block: 88px 64px; }
+
+.ab { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; }
+.ab-lead { position: sticky; top: 96px; }
+.ab-title {
+  display: flex; flex-wrap: wrap; column-gap: 0.24em;
+  font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 600;
+  color: var(--fe-ink); margin: 0; text-wrap: balance;
+}
+.ab-sub { font-size: 17px; line-height: 1.55; color: var(--fe-ink-2); margin: 18px 0 0; max-width: 36ch; }
+
+/* ---------- Birincil aksiyonlar ---------- */
+.ab-primary-list { display: block; }
+.ab-primary {
+  display: grid; grid-template-columns: 34px 52px minmax(0, 1fr) 28px; gap: 18px; align-items: center;
+  padding: 22px 12px 22px 0; border-top: 1px solid var(--fe-line);
+  color: inherit; text-decoration: none;
+  transition: background 240ms ease, padding 240ms ease;
+}
+.ab-primary:last-child { border-bottom: 1px solid var(--fe-line); }
+.ab-index { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.06em; color: var(--fe-muted); font-variant-numeric: tabular-nums; transition: color 200ms ease; }
+.ab-icon {
+  width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+  color: var(--mantine-primary-color-filled);
+  background: color-mix(in srgb, var(--mantine-primary-color-filled) 11%, transparent);
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1), background 260ms ease, box-shadow 260ms ease;
+}
+.ab-body { display: grid; gap: 4px; min-width: 0; }
+.ab-primary-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: clamp(20px, 1.8vw, 26px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 600;
+  color: var(--fe-ink); transition: color 180ms ease; text-wrap: balance;
+}
+.ab-desc { font-size: 16px; line-height: 1.45; color: var(--fe-muted); }
+.ab-arrow { color: var(--fe-muted); transition: transform 240ms ease, color 240ms ease; }
+
+.ab-primary:hover, .ab-primary:focus-visible {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--mantine-primary-color-filled) 9%, transparent), transparent 85%);
+  padding-left: 14px;
+}
+.ab-primary:hover .ab-primary-title, .ab-primary:focus-visible .ab-primary-title { color: var(--mantine-primary-color-filled); }
+.ab-primary:hover .ab-index { color: var(--fe-ink); }
+.ab-primary:hover .ab-arrow, .ab-primary:focus-visible .ab-arrow { color: var(--mantine-primary-color-filled); transform: translate(4px, -4px); }
+.ab-primary:hover .ab-icon {
+  transform: rotate(-8deg) scale(1.06);
+  background: color-mix(in srgb, var(--mantine-primary-color-filled) 18%, transparent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--mantine-primary-color-filled) 10%, transparent);
+}
+.ab-primary:focus-visible { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: -2px; }
+
+/* ---------- Hızlı erişim ---------- */
+.ab-quick-head { margin-top: 44px; }
+.ab-quick-head .fe-eyebrow { color: var(--fe-ink); }
+.ab-quick-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; margin-top: 6px; }
+.ab-quick {
+  display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 12px; align-items: center;
+  min-width: 0; padding: 14px 8px 14px 0; border-bottom: 1px solid var(--fe-line);
+  color: inherit; text-decoration: none;
+  transition: background 200ms ease, padding 200ms ease;
+}
+/* Değer satırı (telefon): mono numara + Kopyala düğmesi sabit ≈285px genişlik ister;
+   iki sütunlu listede tek hücreye sığmaz (1440'ta ~318px, 1024'te ~243px). Her genişlikte
+   iki sütuna yayılır — JSON'da listenin son öğesidir, böylece kapanış satırı gibi okunur. */
+.ab-quick[data-kind='value'] { grid-template-columns: 24px minmax(0, 1fr) auto auto; grid-column: 1 / -1; }
+.ab-quick-icon { display: grid; place-items: center; color: var(--fe-muted); transition: color 200ms ease, transform 240ms cubic-bezier(.2,.8,.2,1); }
+.ab-quick-title { display: flex; align-items: center; gap: 6px; min-width: 0; font-size: 16px; font-weight: 500; line-height: 1.4; color: var(--fe-ink-2); transition: color 160ms ease; }
+.ab-quick-arrow { color: var(--fe-muted); transition: transform 200ms ease, color 200ms ease; }
+.ab-quick[data-link]:hover, .ab-quick[data-link]:focus-visible {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--mantine-primary-color-filled) 8%, transparent), transparent 80%);
+  padding-left: 8px;
+}
+.ab-quick[data-link]:hover .ab-quick-title, .ab-quick[data-link]:focus-visible .ab-quick-title { color: var(--fe-ink); }
+.ab-quick[data-link]:hover .ab-quick-icon { color: var(--mantine-primary-color-filled); transform: rotate(-8deg) scale(1.08); }
+.ab-quick[data-link]:hover .ab-quick-arrow, .ab-quick[data-link]:focus-visible .ab-quick-arrow { color: var(--mantine-primary-color-filled); transform: translateX(4px); }
+.ab-quick[data-link]:focus-visible { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: -2px; }
+.ab-quick[data-kind='value']:hover .ab-quick-icon { color: var(--mantine-primary-color-filled); }
+
+/* Mono değer (telefon) — seçilebilir, kopyalanabilir */
+.ab-value { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.02em; color: var(--fe-ink); font-variant-numeric: tabular-nums; white-space: nowrap; user-select: all; }
+.ab-value-sans { font-family: inherit; letter-spacing: 0; }
+.ab-copy {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: none; border: 0; padding: 4px 0 4px 6px; margin: -4px 0; border-radius: 6px;
+  font: inherit; font-size: 16px; color: var(--fe-muted); cursor: pointer; white-space: nowrap;
+  transition: color 160ms ease;
+}
+.ab-copy:hover, .ab-copy[data-copied] { color: var(--mantine-primary-color-filled); }
+.ab-copy:focus-visible { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: 2px; }
+
+/* ---------- Duyarlı ---------- */
+@media (max-width: 75em) {
+  .ab { gap: 48px; }
+}
+@media (max-width: 62em) {
+  .ab { grid-template-columns: 1fr; gap: 40px; }
+  .ab-lead { position: static; }
+  .ab-sub { max-width: 52ch; }
+}
+@media (max-width: 48em) {
+  .fe-band[data-type='action-cards'] { padding-block: 56px 40px; }
+  .ab-quick-list { grid-template-columns: 1fr; column-gap: 0; }
+  .ab-primary { grid-template-columns: 44px minmax(0, 1fr) 24px; gap: 14px; padding-block: 18px; }
+  .ab-index { display: none; }
+  .ab-icon { width: 44px; height: 44px; }
+}
+/* Dar ekran: numara ve Kopyala başlığın altına iner (başlık tek hücrede sıkışmaz) */
+@media (max-width: 36em) {
+  .ab-quick[data-kind='value'] { grid-template-columns: 24px minmax(0, 1fr); row-gap: 6px; }
+  .ab-quick[data-kind='value'] .ab-value { grid-column: 2; }
+  .ab-quick[data-kind='value'] .ab-copy { grid-column: 2; justify-self: start; padding-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ab-lead { position: static; }
+}

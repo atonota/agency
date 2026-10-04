@@ -1,0 +1,52 @@
+/* Bilgi Toplumu Hizmetleri künyesi — kutusuz, üst/alt çizgi, mono ızgara. Önek: .of-reg- */
+
+.fe-band[data-type='registry'] { border-top: 0; padding-block: 0 48px; }
+
+.of-reg { border-top: 1px solid var(--fe-line); border-bottom: 1px solid var(--fe-line); padding: 24px 0 22px; }
+
+/* başlık satırı */
+.of-reg-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.of-reg-title-line { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.of-reg-icon { color: var(--fe-accent); flex: none; }
+.of-reg-title {
+  margin: 0; font-family: var(--fe-mono); font-size: 16px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fe-ink); line-height: 1.3;
+}
+.of-reg-toggle {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 500; color: var(--fe-ink-2);
+  padding: 4px 0; border-bottom: 1px solid var(--fe-line-strong); transition: color 160ms ease, border-color 160ms ease;
+}
+.of-reg-toggle:hover { color: var(--fe-ink); border-bottom-color: var(--fe-ink); }
+.of-reg-toggle:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 4px; border-radius: 2px; }
+.of-reg-caret { transition: transform 200ms ease; }
+.of-reg-caret[data-open] { transform: rotate(180deg); }
+
+/* etiket / değer ızgarası */
+.of-reg-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 32px; row-gap: 20px; margin: 22px 0 0; }
+.of-reg-grid-more { margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--fe-line); }
+.of-reg-field { min-width: 0; }
+.of-reg-label { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fe-muted); margin: 0; }
+.of-reg-value { display: flex; align-items: center; gap: 4px; margin: 6px 0 0; font-size: 16px; line-height: 1.5; color: var(--fe-ink); overflow-wrap: anywhere; }
+.of-reg-val { min-width: 0; position: relative; }
+/* yalnızca ekran okuyucuya: animasyonlu değerin düz metin kardeşi */
+.of-reg-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.of-reg-field[data-pinned] .of-reg-value { font-weight: 500; }
+.of-reg-val-decrypt { font-family: var(--fe-mono); letter-spacing: 0.04em; }
+.of-reg-val-enc { color: var(--fe-accent); }
+.of-reg-copy { color: var(--fe-muted); flex: none; }
+.of-reg-copy:hover { color: var(--fe-ink); background: var(--fe-surface-2); }
+.of-reg-copy[data-copied] { color: var(--fe-ok); }
+.of-reg-copy:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 2px; }
+
+.of-reg-note { margin: 18px 0 0; font-size: 16px; line-height: 1.5; color: var(--fe-muted); }
+
+/* duyarlılık */
+@media (max-width: 64em) { .of-reg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 40em) {
+  .of-reg-grid { grid-template-columns: 1fr; row-gap: 16px; }
+  .of-reg-head { align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .of-reg-caret, .of-reg-toggle { transition: none; }
+}

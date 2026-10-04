@@ -1,0 +1,64 @@
+{
+  "id": "group",
+  "type": "group-strip",
+  "order": 50,
+  "label": "Grup şirketleri",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Grup şirketleri",
+    "navLabel": "Grup şirketleri bağlantıları",
+    "more": {
+      "label": "Tümü",
+      "href": "#grup",
+      "tier": "e"
+    },
+    "velocity": 34,
+    "scrollBoost": 2,
+    "hoverFactor": 0,
+    "separator": "◆",
+    "items": [
+      {
+        "label": "Marka Yazılım",
+        "href": "#g1",
+        "tier": "e"
+      },
+      {
+        "label": "Marka Bulut",
+        "href": "#g2",
+        "tier": "e"
+      },
+      {
+        "label": "Marka Danışmanlık",
+        "href": "#g3",
+        "tier": "e"
+      },
+      {
+        "label": "Marka Ventures",
+        "href": "#g4",
+        "tier": "e"
+      },
+      {
+        "label": "Marka Akademi",
+        "href": "#g6",
+        "tier": "e"
+      },
+      {
+        "label": "Marka Vakfı",
+        "href": "#g5",
+        "tier": "e"
+      }
+    ],
+    "line2": [
+      "Tek platform ailesi, altı şirket",
+      "Yazılım",
+      "Bulut",
+      "Danışmanlık",
+      "Girişim sermayesi",
+      "Eğitim",
+      "Sosyal sorumluluk"
+    ]
+  }
+}

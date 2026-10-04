@@ -1,0 +1,62 @@
+{
+  "id": "site",
+  "type": "site",
+  "order": 0,
+  "label": "Site ayarları",
+  "owner": "Platform ekibi",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "brand": {
+      "name": "MARKA",
+      "legalName": "MARKA Teknoloji Holding A.Ş.",
+      "descriptor": "Teknoloji Holding",
+      "tagline": "Kurumların operasyon, tedarik, insan ve iletişim süreçlerini tek bir platform ailesinde birleştiren yazılım grubu."
+    },
+    "zones": [
+      {
+        "key": "planning",
+        "label": "Olgunluk planı",
+        "as": "section",
+        "background": {
+          "iso": {
+            "size": 30,
+            "cubes": 0.03,
+            "radius": 170
+          }
+        }
+      },
+      {
+        "key": "trust",
+        "label": "Güven Merkezi",
+        "as": "section",
+        "anchor": "trust",
+        "background": {
+          "iso": {
+            "size": 32,
+            "cubes": 0.05,
+            "radius": 190
+          },
+          "effect": "light-rays"
+        }
+      },
+      {
+        "key": "footer",
+        "label": "Footer",
+        "as": "footer",
+        "anchor": "footer",
+        "background": {
+          "iso": {
+            "size": 24,
+            "cubes": 0.025,
+            "radius": 150
+          },
+          "effect": "threads"
+        }
+      }
+    ],
+    "copyright": "© 2026 MARKA Teknoloji Holding A.Ş. Tüm hakları saklıdır.",
+    "mersis": "0000-0000-0000-0000"
+  }
+}

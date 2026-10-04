@@ -1,0 +1,102 @@
+/* Ofis saatleri — satır düzeni, 24 saatlik bant, canlı saat. Önek: .of- */
+
+.fe-band[data-type='offices'] { padding-block: 56px 48px; }
+
+/* ---------- başlık ---------- */
+.of-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 8px; }
+.of-head-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.of-lead { margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.35; letter-spacing: -0.015em; color: var(--fe-ink-2); text-wrap: balance; max-width: 40ch; }
+.of-axis-note { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.06em; color: var(--fe-muted); white-space: nowrap; }
+
+/* ---------- satır ---------- */
+.of-list { display: flex; flex-direction: column; }
+.of-list > * + * .of-row { border-top: 0; }
+.of-row {
+  display: grid;
+  grid-template-columns: minmax(200px, 0.9fr) minmax(0, 2fr) minmax(220px, 1fr);
+  column-gap: 40px;
+  align-items: center;
+  padding: 26px 0;
+  border-top: 1px solid var(--fe-line);
+  transition: background 200ms ease;
+}
+.of-list > :last-child .of-row { border-bottom: 1px solid var(--fe-line); }
+.of-row:hover { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--fe-accent) 4%, transparent) 40%, transparent); }
+
+/* sol: rol, şehir, saat */
+.of-role-line { display: flex; align-items: center; gap: 8px; }
+.of-role { font-family: var(--fe-mono); font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fe-muted); }
+.of-city { margin: 4px 0 0; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 600; color: var(--fe-ink); text-wrap: balance; }
+.of-clock-line { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 12px; }
+.of-clock { display: inline-flex; align-items: center; font-family: var(--fe-mono); font-size: 28px; line-height: 1; font-weight: 500; color: var(--fe-ink); letter-spacing: -0.01em; }
+.of-clock-digits { display: inline-flex; align-items: center; }
+.of-clock-colon { display: inline-block; line-height: 1; padding: 0 1px; color: var(--fe-muted); }
+.of-clock .gradient-container { display: none; }
+/* yalnızca ekran okuyucuya: <time> içeriğinde etiket + saat */
+.of-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.of-clock { position: relative; }
+
+.of-status { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; color: var(--fe-muted); }
+.of-status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--fe-line-strong); flex: none; }
+.of-status[data-open] { color: var(--fe-ok); }
+.of-status[data-open] .of-status-dot { background: var(--fe-ok); box-shadow: 0 0 10px color-mix(in srgb, var(--fe-ok) 60%, transparent); }
+
+/* orta: 24 saatlik bant (SVG) */
+.of-col-band { min-width: 0; }
+/* overflow: hidden — etiketler piksel olarak bant içine kenetlenir; bu, sayfaya yatay kaydırma
+   eklenmesine karşı son emniyettir (ping halkası r≤~10.4 @ cy=22 ve etiket y=16 içeride kalır). */
+.of-band { display: block; width: 100%; overflow: hidden; cursor: crosshair; touch-action: pan-y; }
+.of-band text { font-family: var(--fe-mono); font-size: 16px; font-variant-numeric: tabular-nums; }
+.of-axis { stroke: var(--fe-line-strong); stroke-width: 1; }
+.of-tick { stroke: var(--fe-line-strong); stroke-width: 1; }
+.of-tick-label { fill: var(--fe-muted); }
+.of-shift-fill { fill: var(--fe-accent); fill-opacity: 0.18; transition: fill-opacity 200ms ease; }
+.of-shift-edge { stroke: var(--fe-accent); stroke-width: 2; }
+.of-shift-label { fill: var(--fe-accent); letter-spacing: 0.02em; }
+.of-band:hover .of-shift-fill { fill-opacity: 0.28; }
+.of-band[data-open] .of-shift-fill { fill-opacity: 0.26; }
+.of-hover-line { stroke: var(--fe-ink-2); stroke-width: 1; stroke-dasharray: 3 3; pointer-events: none; }
+.of-now-line { stroke: var(--fe-ok); stroke-width: 2; }
+.of-now-dot { fill: var(--fe-ok); }
+.of-now-ring {
+  fill: none; stroke: var(--fe-ok); stroke-width: 2; opacity: 0;
+  transform-box: fill-box; transform-origin: center;
+  animation: of-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes of-ping { 0% { transform: scale(0.8); opacity: 0.8; } 80%, 100% { transform: scale(2.6); opacity: 0; } }
+.of-top-label { fill: var(--fe-muted); pointer-events: none; }
+.of-top-label[data-hover] { fill: var(--fe-ink); }
+
+/* sağ: adres, telefon */
+.of-col-contact { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.of-address { font-style: normal; font-size: 16px; line-height: 1.55; color: var(--fe-ink-2); }
+.of-phone-line { display: flex; align-items: center; gap: 6px; }
+.of-phone {
+  font-family: var(--fe-mono); font-size: 16px; color: var(--fe-ink); text-decoration: none; user-select: all;
+  border-bottom: 1px solid transparent; transition: border-color 160ms ease, color 160ms ease;
+}
+.of-phone:hover { border-bottom-color: var(--fe-line-strong); }
+.of-phone:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 3px; border-radius: 2px; }
+.of-copy { color: var(--fe-muted); }
+.of-copy:hover { color: var(--fe-ink); background: var(--fe-surface-2); }
+.of-copy[data-copied] { color: var(--fe-ok); }
+.of-copy:focus-visible { outline: 2px solid var(--fe-accent); outline-offset: 2px; }
+
+/* ---------- duyarlılık ---------- */
+@media (max-width: 64em) {
+  .of-row { grid-template-columns: minmax(180px, 0.9fr) minmax(0, 1.6fr); column-gap: 28px; row-gap: 18px; }
+  .of-col-contact { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; }
+}
+@media (max-width: 48em) {
+  .fe-band[data-type='offices'] { padding-block: 40px 32px; }
+  .of-row { grid-template-columns: 1fr; row-gap: 16px; padding: 22px 0; }
+  .of-col-contact { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .of-head-meta { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .of-axis-note { white-space: normal; }
+}
+
+/* ---------- hareket azaltma ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .of-now-ring { display: none; }
+  .of-row, .of-shift-fill, .of-phone, .of-copy { transition: none; }
+}

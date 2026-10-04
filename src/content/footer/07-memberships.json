@@ -1,0 +1,63 @@
+{
+  "id": "memberships",
+  "type": "memberships",
+  "order": 70,
+  "label": "Üyelik ve ödüller",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Üyelik & ödüller",
+    "more": {
+      "label": "Tümü",
+      "href": "#oduller",
+      "tier": "e"
+    },
+    "items": [
+      {
+        "label": "TÜBİSAD",
+        "sub": "Üye · 2025",
+        "href": "#uye1",
+        "tier": "o",
+        "icon": "Handshake"
+      },
+      {
+        "label": "YASAD",
+        "sub": "Üye · 2025",
+        "href": "#uye2",
+        "tier": "o",
+        "icon": "Handshake"
+      },
+      {
+        "label": "UN Global Compact",
+        "sub": "Katılımcı · 2027",
+        "href": "#uye3",
+        "tier": "e",
+        "icon": "Globe"
+      },
+      {
+        "label": "Bulut İş Ortaklığı",
+        "sub": "Gold seviye · 2027",
+        "href": "#uye4",
+        "tier": "e",
+        "icon": "Cloud"
+      },
+      {
+        "label": "Great Place to Work",
+        "sub": "Sertifikalı işyeri · 2028",
+        "href": "#uye5",
+        "tier": "e",
+        "icon": "HandHeart"
+      },
+      {
+        "label": "Yılın Yazılım Ödülü",
+        "sub": "Ödül · 2026",
+        "href": "#uye6",
+        "tier": "e",
+        "icon": "Medal",
+        "featured": true
+      }
+    ]
+  }
+}

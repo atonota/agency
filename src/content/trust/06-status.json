@@ -1,0 +1,118 @@
+{
+  "id": "tc-status",
+  "type": "status-board",
+  "order": 60,
+  "label": "Sistem durumu",
+  "owner": "Bilgi güvenliği (CISO ofisi)",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Status",
+    "title": "Ürün bazlı servis durumu",
+    "note": "Örnek veri · son 90 gün",
+    "services": [
+      {
+        "name": "Platform API",
+        "uptime": 99.99,
+        "incidents": [
+          {
+            "day": 61,
+            "level": "minor"
+          }
+        ],
+        "tier": "z"
+      },
+      {
+        "name": "ERP",
+        "uptime": 99.97,
+        "incidents": [
+          {
+            "day": 23,
+            "level": "minor"
+          },
+          {
+            "day": 71,
+            "level": "major"
+          }
+        ],
+        "tier": "z"
+      },
+      {
+        "name": "SCM",
+        "uptime": 99.98,
+        "incidents": [
+          {
+            "day": 44,
+            "level": "minor"
+          }
+        ],
+        "tier": "z"
+      },
+      {
+        "name": "HSM yönetim konsolu",
+        "uptime": 100,
+        "incidents": [],
+        "tier": "o"
+      },
+      {
+        "name": "TeamsLike",
+        "uptime": 99.95,
+        "incidents": [
+          {
+            "day": 12,
+            "level": "minor"
+          },
+          {
+            "day": 13,
+            "level": "minor"
+          },
+          {
+            "day": 80,
+            "level": "major"
+          }
+        ],
+        "tier": "z"
+      },
+      {
+        "name": "Termitral ağ geçidi",
+        "uptime": 99.99,
+        "incidents": [
+          {
+            "day": 35,
+            "level": "minor"
+          }
+        ],
+        "tier": "o"
+      }
+    ],
+    "history": [
+      {
+        "date": "19 Eylül 2026",
+        "title": "TeamsLike mesaj gecikmesi",
+        "level": "major",
+        "duration": "38 dk",
+        "status": "Çözüldü"
+      },
+      {
+        "date": "2 Eylül 2026",
+        "title": "ERP rapor dışa aktarımında yavaşlık",
+        "level": "minor",
+        "duration": "1 sa 12 dk",
+        "status": "Çözüldü"
+      },
+      {
+        "date": "18 Ağustos 2026",
+        "title": "Planlı bakım · Platform API",
+        "level": "maintenance",
+        "duration": "20 dk",
+        "status": "Tamamlandı"
+      }
+    ],
+    "subscribe": {
+      "label": "Durum güncellemelerine abone ol",
+      "href": "#tc-status",
+      "tier": "o"
+    }
+  }
+}

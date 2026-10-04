@@ -1,0 +1,63 @@
+{
+  "id": "bth",
+  "type": "registry",
+  "order": 90,
+  "label": "Bilgi Toplumu Hizmetleri",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "title": "Bilgi Toplumu Hizmetleri · Şirket künyesi",
+    "tier": "z",
+    "labels": {
+      "showAll": "Tümünü göster",
+      "showLess": "Daha az göster",
+      "pinnedNote": "İlk dört alan 6102 sayılı TTK m. 1524 gereği her zaman görünür.",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "copyAria": "{label} değerini kopyala"
+    },
+    "fields": [
+      {
+        "label": "Ticaret unvanı",
+        "value": "MARKA Teknoloji Holding A.Ş.",
+        "pinned": true
+      },
+      {
+        "label": "MERSİS No",
+        "value": "0000-0000-0000-0000",
+        "pinned": true,
+        "decrypt": true,
+        "copy": true
+      },
+      {
+        "label": "Ticaret sicil",
+        "value": "İstanbul · 000000-0",
+        "pinned": true
+      },
+      {
+        "label": "Vergi dairesi / No",
+        "value": "Maslak · 000 000 0000",
+        "pinned": true
+      },
+      {
+        "label": "Merkez adresi",
+        "value": "Maslak Mah. Örnek Cad. No:1, Sarıyer / İstanbul"
+      },
+      {
+        "label": "Taahhüt edilen sermaye",
+        "value": "₺000.000.000"
+      },
+      {
+        "label": "KEP adresi",
+        "value": "marka@hs00.kep.tr",
+        "copy": true
+      },
+      {
+        "label": "Bağımsız denetçi",
+        "value": "Örnek Denetim A.Ş."
+      }
+    ]
+  }
+}

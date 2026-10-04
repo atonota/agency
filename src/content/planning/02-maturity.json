@@ -1,0 +1,158 @@
+{
+  "id": "maturity",
+  "type": "maturity-dashboard",
+  "order": 20,
+  "label": "Olgunluk paneli",
+  "owner": "Ürün pazarlama",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "title": "Olgunluk paneli",
+    "description": "Tüm JSON dosyalarından otomatik hesaplanır. Yeni bir dosya eklediğinizde grafikler kendiliğinden güncellenir; aşama rayında seçim değiştikçe sayılar yeniden hesaplanır.",
+    "zoneSelector": {
+      "ariaLabel": "Grafik bölgesi"
+    },
+    "hero": {
+      "eyebrow": "Genel olgunluk",
+      "titleHint": "Seçili aşama. Aşama rayından değiştirebilirsiniz.",
+      "kpis": [
+        {
+          "key": "readiness",
+          "label": "Hazırlık",
+          "unit": "%",
+          "hint": "Seçili aşamaya kadar gereken öğelerin, tüm dosyalardaki toplam öğeye oranı."
+        },
+        {
+          "key": "total",
+          "label": "Toplam öğe",
+          "unit": "öğe",
+          "hint": "Bütün JSON dosyalarında tier alanı taşıyan öğe sayısı."
+        },
+        {
+          "key": "z",
+          "label": "Gün 1",
+          "unit": "öğe",
+          "hint": "Yayın gününde zorunlu olan öğeler: yasal sayfalar, temel iletişim ve kimlik bilgileri."
+        },
+        {
+          "key": "o",
+          "label": "Büyüme",
+          "unit": "öğe",
+          "hint": "İlk kurumsal müşteriler geldiğinde beklenen öğeler: sertifikalar, güven belgeleri, tedarik akışları."
+        },
+        {
+          "key": "e",
+          "label": "Kurumsal olgunluk",
+          "unit": "öğe",
+          "hint": "Holding yapısı, halka arz ve kamu ihalelerinde istenen ileri düzey öğeler."
+        },
+        {
+          "key": "files",
+          "label": "Algılanan JSON",
+          "unit": "dosya",
+          "hint": "İçerik klasöründe bulunan ve motor tarafından okunan dosya sayısı (ayar dosyaları dahil)."
+        }
+      ],
+      "radar": {
+        "ariaLabel": "Bölüm bazında hazırlık radarı",
+        "current": "Seçili aşama",
+        "all": "Tüm aşamalar",
+        "hint": "Her eksen seçili bölgedeki bir bölüm. Düz çizgi seçili aşamaya kadar gereken öğe, kesik çizgi bölümün toplam öğesi.",
+        "truncated": "Dar ekranda en yoğun {shown} bölüm gösteriliyor; {total} bölümün tamamı aşağıdaki bar grafiğinde."
+      }
+    },
+    "panels": [
+      {
+        "kind": "densest",
+        "eyebrow": "En yoğun bölüm",
+        "icon": "Stack",
+        "label": "Toplam öğe",
+        "unit": "öğe"
+      },
+      {
+        "kind": "tier-share",
+        "ref": "z",
+        "eyebrow": "Gün 1 ağırlığı",
+        "icon": "Flag",
+        "label": "Toplam içindeki pay",
+        "unit": "%"
+      },
+      {
+        "kind": "zone",
+        "ref": "trust",
+        "eyebrow": "Güven Merkezi",
+        "icon": "ShieldCheck",
+        "label": "Bölgedeki öğe",
+        "unit": "öğe"
+      },
+      {
+        "kind": "doc",
+        "ref": "certs",
+        "eyebrow": "Sertifika hedefleri",
+        "icon": "SealCheck",
+        "label": "Hedef sayısı",
+        "unit": "hedef"
+      }
+    ],
+    "rowLabels": {
+      "zone": "Bölge",
+      "file": "Dosya",
+      "files": "Dosya sayısı",
+      "required": "Seçili aşamada gerekli",
+      "total": "Toplam",
+      "missing": "Bulunamadı",
+      "itemUnit": "öğe",
+      "percentUnit": "%"
+    },
+    "charts": {
+      "bars": {
+        "eyebrow": "Bölüm × aşama",
+        "title": "Bölüm ve aşama dağılımı",
+        "hint": "Seçili aşamanın üstündeki dilimler soluk görünür."
+      },
+      "sunburst": {
+        "eyebrow": "Bölüm → aşama",
+        "title": "Bölüm ve aşama halkası",
+        "hint": "İç halka bölümler, dış halka her bölümün aşama kırılımı."
+      }
+    },
+    "detector": {
+      "toggle": "Algılanan dosyalar",
+      "columns": {
+        "file": "Dosya",
+        "zone": "Bölge",
+        "type": "Tip",
+        "order": "Sıra",
+        "items": "Öğe",
+        "tiers": "Aşama dağılımı",
+        "status": "Durum",
+        "owner": "Sahip",
+        "reviewed": "Son kontrol",
+        "lifecycle": "Yayın"
+      },
+      "status": {
+        "config": "Ayar",
+        "registered": "Render ediliyor",
+        "fallback": "Yedek görünüm"
+      },
+      "summary": {
+        "registered": "renderer",
+        "config": "ayar",
+        "fallback": "yedek görünüm",
+        "errors": "hata"
+      },
+      "lifecycle": {
+        "draft": "Taslak",
+        "published": "Yayında",
+        "archived": "Arşiv"
+      },
+      "visibility": {
+        "public": "Herkese açık",
+        "controlled": "Kontrollü"
+      },
+      "note": "İçerik modeli: her dosya sahip, son kontrol tarihi, yayın durumu ve görünürlük taşır (rapordaki kurumsal bilgi sistemi yaklaşımı)."
+    },
+    "showDetector": true
+  }
+}

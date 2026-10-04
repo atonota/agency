@@ -1,0 +1,190 @@
+{
+  "id": "tc-areas",
+  "type": "trust-areas",
+  "order": 30,
+  "label": "Güven Merkezi alanları",
+  "owner": "Bilgi güvenliği (CISO ofisi)",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "16 alan",
+    "title": "Güven Merkezi'nde neler var?",
+    "access": {
+      "public": "Herkese açık",
+      "nda": "Özeti açık, detay NDA ile"
+    },
+    "items": [
+      {
+        "id": "tc-security",
+        "title": "Security Overview",
+        "label": "Güvenlik",
+        "description": "Güvenlik yönetişimi ve temel güvenlik mimarisi",
+        "icon": "ShieldCheck",
+        "tier": "z",
+        "access": "public",
+        "group": "Güvence"
+      },
+      {
+        "id": "tc-compliance",
+        "title": "Compliance",
+        "label": "Uyum",
+        "description": "Standartlar, sertifikalar, raporlar ve kapsamları",
+        "icon": "SealCheck",
+        "tier": "o",
+        "access": "public",
+        "href": "#tc-roadmap",
+        "group": "Güvence"
+      },
+      {
+        "id": "tc-area-matrix",
+        "title": "Product Compliance Matrix",
+        "label": "Ürün uyum matrisi",
+        "description": "Hangi ürünün hangi standardın kapsamında olduğu",
+        "icon": "Table",
+        "tier": "o",
+        "access": "public",
+        "href": "#tc-matrix",
+        "group": "Güvence"
+      },
+      {
+        "id": "tc-privacy",
+        "title": "Privacy",
+        "label": "Gizlilik",
+        "description": "Veri koruma yaklaşımı, roller ve bağlantılı politikalar",
+        "icon": "Lock",
+        "tier": "z",
+        "access": "public",
+        "group": "Veri"
+      },
+      {
+        "id": "tc-residency",
+        "title": "Data Residency",
+        "label": "Veri barındırma",
+        "description": "Veri bölgeleri ve barındırma seçenekleri",
+        "icon": "Database",
+        "tier": "o",
+        "access": "public",
+        "group": "Veri"
+      },
+      {
+        "id": "tc-subprocessors",
+        "title": "Subprocessors",
+        "label": "Alt veri işleyenler",
+        "description": "Alt veri işleyen / hizmet sağlayıcı listesi",
+        "icon": "UsersThree",
+        "tier": "o",
+        "access": "public",
+        "group": "Veri"
+      },
+      {
+        "id": "tc-encryption",
+        "title": "Encryption",
+        "label": "Şifreleme",
+        "description": "Aktarımda ve depolamada şifreleme yaklaşımının özeti",
+        "icon": "Key",
+        "tier": "o",
+        "access": "public",
+        "group": "Veri"
+      },
+      {
+        "id": "tc-iam",
+        "title": "Identity & Access",
+        "label": "Kimlik ve erişim",
+        "description": "Kimlik ve erişim yönetimi yaklaşımı (SSO, MFA, rol tabanlı erişim)",
+        "icon": "IdentificationCard",
+        "tier": "o",
+        "access": "public",
+        "group": "Operasyon"
+      },
+      {
+        "id": "tc-sdlc",
+        "title": "Secure Development",
+        "label": "Güvenli geliştirme",
+        "description": "SDLC (Software Development Life Cycle — yazılım geliştirme yaşam döngüsü) ve güvenli geliştirme özeti",
+        "icon": "Code",
+        "tier": "o",
+        "access": "public",
+        "group": "Operasyon"
+      },
+      {
+        "id": "tc-vdp",
+        "title": "Vulnerability Disclosure",
+        "label": "Açık bildirimi",
+        "description": "Güvenlik açığı bildirim kanalı ve sorumlu bildirim politikası",
+        "icon": "Bug",
+        "tier": "z",
+        "access": "public",
+        "group": "Güvence"
+      },
+      {
+        "id": "tc-bcm",
+        "title": "Business Continuity",
+        "label": "İş sürekliliği",
+        "description": "İş sürekliliği ve felaket kurtarma yaklaşımı",
+        "icon": "ArrowsClockwise",
+        "tier": "o",
+        "access": "nda",
+        "group": "Operasyon"
+      },
+      {
+        "id": "tc-area-status",
+        "title": "Status",
+        "label": "Durum",
+        "description": "Ürün bazlı servis durumu ve olay geçmişi",
+        "icon": "Pulse",
+        "tier": "z",
+        "access": "public",
+        "href": "#tc-status",
+        "group": "Operasyon"
+      },
+      {
+        "id": "tc-accessibility",
+        "title": "Accessibility",
+        "label": "Erişilebilirlik",
+        "description": "Erişilebilirlik durumu ve uyumluluk raporları (ACR)",
+        "icon": "Wheelchair",
+        "tier": "o",
+        "access": "public",
+        "group": "Yaşam döngüsü"
+      },
+      {
+        "id": "tc-ai",
+        "title": "AI Governance",
+        "label": "AI yönetişimi",
+        "description": "Yapay zekâ kullanımı, veri kullanımı ve yönetişim yaklaşımı",
+        "icon": "Brain",
+        "tier": "o",
+        "access": "public",
+        "group": "Yaşam döngüsü"
+      },
+      {
+        "id": "tc-lifecycle",
+        "title": "Product Lifecycle",
+        "label": "Ürün yaşam döngüsü",
+        "description": "Desteklenen sürümler, EOL (End of Life — sürüm desteğinin sona ermesi) politikası",
+        "icon": "ClockCounterClockwise",
+        "tier": "o",
+        "access": "public",
+        "group": "Yaşam döngüsü"
+      },
+      {
+        "id": "tc-area-procurement",
+        "title": "Procurement",
+        "label": "Satın alma",
+        "description": "Güvenlik anketi ve kurumsal inceleme talepleri",
+        "icon": "ClipboardText",
+        "tier": "o",
+        "access": "nda",
+        "href": "#tc-procurement",
+        "group": "Yaşam döngüsü"
+      }
+    ],
+    "groupIcons": {
+      "Güvence": "ShieldCheck",
+      "Veri": "Database",
+      "Operasyon": "Pulse",
+      "Yaşam döngüsü": "ClockCounterClockwise"
+    }
+  }
+}

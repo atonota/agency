@@ -1,0 +1,232 @@
+/* ================================================================
+   Sertifika yol haritası eklentileri (.rm-)
+   (a) 12 dalga rayı · (b) güven rozeti politikası · (c) regülasyon takvimi
+   Kutu yok: ince çizgi, tipografi, boşluk. Yazı ≥ 1rem. Renk yalnızca token.
+   Mevcut .fe-phase / .fe-wording sınıfları global.css'te kalır.
+   ================================================================ */
+
+.fe-band[data-type='cert-roadmap'] { padding-block: 56px 64px; }
+
+/* ---------- Alt bölüm başlığı: eyebrow + ince çizgi + açıklama ---------- */
+.rm-sub { margin-top: 88px; }
+.rm-sub-head {
+  display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 20px;
+  margin-bottom: 8px;
+}
+.rm-sub-head::after { content: ''; height: 1px; background: var(--fe-line); }
+.rm-sub-title {
+  margin: 0; font-family: var(--fe-mono); font-size: 1rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fe-accent); white-space: nowrap;
+}
+.rm-sub-intro { font-size: 1rem; line-height: 1.55; color: var(--fe-ink-2); max-width: 72ch; margin: 0 0 36px; }
+
+/* ================================================================
+   (a) 12 dalga · numaralı yatay ray (3 sütun × 4 satır)
+   Her satır tek sürekli çizgidir; sütun boşluğu iç padding ile açılır.
+   ================================================================ */
+.rm-waves {
+  display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 0; row-gap: 64px;
+  margin-top: 40px; list-style: none; padding: 0;
+}
+.rm-wave {
+  position: relative; display: flex; flex-direction: column; gap: 6px;
+  border-top: 1px solid var(--fe-line); padding: 22px 40px 6px 0;
+  transition: border-color 260ms ease;
+}
+.rm-wave-wrap { min-width: 0; }
+.rm-waves > :nth-child(3n) > .rm-wave { padding-right: 0; }
+/* ray üzerindeki nokta */
+.rm-wave::before {
+  content: ''; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--fe-line-strong); transition: background 260ms ease, box-shadow 260ms ease;
+}
+.rm-wave[data-active]::before {
+  background: var(--tc, var(--fe-accent));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--tc, var(--fe-accent)) 18%, transparent);
+}
+/* hover'da soldan akan vurgu çizgisi — ayrı çocuk (.rm-wave-hl), kendi hücresinde kalır.
+   ::after kullanılmaz: global.css'teki .fe-tier-block[data-tags='true']::after köşe tier noktasına aittir. */
+.rm-wave-hl {
+  position: absolute; top: -1px; left: 0; right: 40px; height: 1px; pointer-events: none;
+  background: var(--fe-accent); transform: scaleX(0); transform-origin: left;
+  transition: transform 360ms cubic-bezier(.2,.8,.2,1);
+}
+.rm-waves > :nth-child(3n) > .rm-wave > .rm-wave-hl { right: 0; }
+.rm-wave:hover > .rm-wave-hl, .rm-wave:focus-within > .rm-wave-hl { transform: scaleX(1); }
+.rm-wave:hover { border-top-color: var(--fe-line-strong); }
+/* Etiketler açıkken köşe noktası sağ üstte; sağ padding'in içinde kalır, hover çizgisiyle çakışmaz */
+.rm-wave[data-tags='true']::after { top: 10px; right: 10px; }
+.rm-waves > :nth-child(3n) > .rm-wave[data-tags='true']::after { right: 0; }
+
+.rm-wave-n {
+  position: absolute; top: -36px; left: 0;
+  font-family: var(--fe-mono); font-size: 1rem; font-weight: 500; letter-spacing: 0.06em;
+  color: var(--fe-muted); font-variant-numeric: tabular-nums; transition: color 260ms ease;
+}
+.rm-wave[data-active] .rm-wave-n, .rm-wave:hover .rm-wave-n { color: var(--tc, var(--fe-accent)); }
+.rm-wave-domain {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--fe-mono); font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fe-muted);
+}
+.rm-wave-std { font-size: 1.125rem; font-weight: 600; color: var(--fe-ink); letter-spacing: -0.01em; transition: color 260ms ease; }
+.rm-wave:hover .rm-wave-std { color: var(--fe-accent); }
+.rm-wave-p { font-size: 1rem; line-height: 1.55; color: var(--fe-ink-2); margin: 0; }
+.rm-wave-p[data-kind='why'] { color: var(--fe-muted); }
+.rm-wave-k { font-weight: 600; color: var(--fe-ink); margin-right: 6px; }
+.rm-wave-p[data-kind='why'] .rm-wave-k { color: var(--fe-ink-2); }
+
+/* ================================================================
+   (b) Güven rozeti politikası · üç sütunlu çizgi listesi
+   ================================================================ */
+.rm-policy { display: grid; grid-template-columns: minmax(200px, 0.85fr) minmax(200px, 1fr) minmax(280px, 1.7fr); column-gap: 40px; }
+.rm-policy-h {
+  font-size: 1rem; font-weight: 600; color: var(--fe-ink); padding-bottom: 12px; border-bottom: 1px solid var(--fe-ink);
+}
+.rm-policy-row {
+  grid-column: 1 / -1; display: grid; grid-template-columns: subgrid;
+  padding: 18px 0; border-bottom: 1px solid var(--fe-line); align-items: baseline;
+  transition: background 220ms ease;
+}
+.rm-policy-row:hover { background: linear-gradient(90deg, color-mix(in srgb, var(--fe-accent) 7%, transparent), transparent 60%); }
+.rm-policy-kind { font-size: 1rem; font-weight: 600; color: var(--fe-ink); }
+.rm-policy-ex { font-family: var(--fe-mono); font-size: 1rem; color: var(--fe-ink-2); font-variant-numeric: tabular-nums; }
+.rm-policy-how { font-size: 1rem; line-height: 1.55; color: var(--fe-ink-2); }
+.rm-policy-row:hover .rm-policy-ex { color: var(--fe-accent); }
+
+.rm-notes { list-style: none; margin: 36px 0 0; padding: 0; display: grid; gap: 14px; max-width: 90ch; }
+.rm-notes-title { font-family: var(--fe-mono); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fe-muted); margin: 32px 0 0; }
+.rm-notes li { position: relative; padding-left: 34px; font-size: 1rem; line-height: 1.55; color: var(--fe-ink-2); }
+.rm-notes li::before {
+  content: ''; position: absolute; left: 0; top: 0.78em; width: 18px; height: 1px; background: var(--fe-accent);
+}
+
+/* ================================================================
+   (c) Regülasyon ve sürüm takvimi · yatay zaman çizgisi
+   SVG yalnızca çizgi/bağlantı (non-scaling-stroke); metin ve noktalar HTML.
+   ================================================================ */
+.rm-cal { position: relative; margin-top: 44px; --rm-h: 150px; --rm-r: 60px; } /* Trust.tsx: CAL_H / CAL_R */
+/* Izgara: üst olaylar (1. satır) · ray (2. satır, tam genişlik) · alt olaylar (3. satır); sütun sayısı --rm-n = ⌈n/2⌉ */
+.rm-cal-grid {
+  display: grid; grid-template-columns: repeat(var(--rm-n, 4), 1fr); grid-template-rows: auto var(--rm-h) auto;
+  column-gap: 0; list-style: none; margin: 0; padding: 0;
+}
+.rm-cal-rail { grid-row: 2; grid-column: 1 / -1; position: relative; height: var(--rm-h); }
+.rm-cal-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; display: block; }
+.rm-cal-line { fill: none; stroke: var(--fe-line-strong); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.rm-cal-line[data-future] { stroke: var(--fe-accent); }
+.rm-cal-link { fill: none; stroke: var(--fe-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.rm-cal-link[data-future] { stroke: color-mix(in srgb, var(--fe-accent) 55%, transparent); }
+.rm-cal-link[data-on] { stroke: var(--fe-ink); }
+.rm-cal-today-line { stroke: var(--fe-accent); stroke-width: 1.5; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; }
+
+/* Konum dış span'da (translate), hareket iç span'da (scale) — motion inline transform'u konumu ezmesin */
+.rm-cal-dot-pos {
+  position: absolute; top: var(--rm-r); width: 10px; height: 10px;
+  transform: translate(-50%, -50%); transition: transform 220ms ease;
+}
+.rm-cal-dot-pos[data-on] { transform: translate(-50%, -50%) scale(1.5); }
+.rm-cal-dot {
+  display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--fe-muted);
+  transition: box-shadow 220ms ease;
+}
+.rm-cal-dot[data-future] { background: var(--fe-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--fe-accent) 18%, transparent); }
+.rm-cal-dot-pos[data-on] .rm-cal-dot { box-shadow: 0 0 0 4px color-mix(in srgb, var(--fe-accent) 26%, transparent); }
+
+/* "Bugün" etiketi rayın altında; kesikli çizgi raydan etikete iner (alt bağlantıların dikey kolları sütun merkezlerinde kalır) */
+.rm-cal-today-pos { position: absolute; top: calc(var(--rm-r) + 40px); transform: translateX(-50%); }
+.rm-cal-today {
+  position: relative; display: block; white-space: nowrap;
+  font-family: var(--fe-mono); font-size: 1rem; letter-spacing: 0.06em; color: var(--fe-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Olay hücresi: yerleşim CSS değişkeniyle (--rm-c sütun), taraf data-side ile */
+.rm-cal-ev {
+  position: relative; display: flex; flex-direction: column; gap: 6px;
+  grid-column: var(--rm-c, auto); min-width: 0; padding-right: 32px;
+  transition: border-color 220ms ease;
+}
+.rm-cal-ev[data-last] { padding-right: 0; }
+.rm-cal-ev[data-side='above'] { grid-row: 1; align-self: end; padding-bottom: 16px; border-bottom: 1px solid var(--fe-line); }
+.rm-cal-ev[data-side='below'] { grid-row: 3; padding-top: 16px; border-top: 1px solid var(--fe-line); }
+.rm-cal-ev[data-future] { border-color: color-mix(in srgb, var(--fe-accent) 60%, var(--fe-line)); }
+.rm-cal-ev:hover { border-color: var(--fe-ink); }
+.rm-cal-date {
+  font-family: var(--fe-mono); font-size: 1rem; color: var(--fe-muted); font-variant-numeric: tabular-nums; letter-spacing: 0.02em;
+  overflow-wrap: anywhere; /* yalnızca mono tarih kırılabilir */
+}
+.rm-cal-ev[data-future] .rm-cal-date { color: var(--fe-accent); }
+.rm-cal-label { font-size: 1rem; font-weight: 600; line-height: 1.4; color: var(--fe-ink-2); overflow-wrap: break-word; hyphens: auto; }
+.rm-cal-ev[data-future] .rm-cal-label { color: var(--fe-ink); }
+.rm-cal-action { font-size: 1rem; line-height: 1.5; color: var(--fe-muted); overflow-wrap: break-word; hyphens: auto; }
+.rm-cal-arrow { font-family: var(--fe-mono); color: var(--fe-ink-2); margin-right: 6px; }
+.rm-cal-ev[data-future] .rm-cal-action { color: var(--fe-ink-2); }
+
+.rm-cal-legend { display: flex; gap: 28px; margin-top: 28px; font-size: 1rem; color: var(--fe-muted); }
+.rm-cal-legend span { display: inline-flex; align-items: center; gap: 10px; }
+.rm-cal-legend i { width: 10px; height: 10px; border-radius: 50%; background: var(--fe-muted); }
+.rm-cal-legend i[data-future] { background: var(--fe-accent); }
+
+/* Dikey liste görünümü (dar ekran) — ray gizlenir, sol çizgi + nokta kullanılır */
+.rm-cal-ev-dot { display: none; }
+
+/* ---------- Doğru/yanlış başlıkları (mevcut .fe-wording ile uyumlu, yalnızca ikon yerleşimi) ---------- */
+.rm-wording-tag { display: inline-flex; align-items: center; gap: 8px; }
+
+/* ================================================================
+   Duyarlılık
+   ================================================================ */
+@media (max-width: 75em) {
+  .rm-cal-rail { display: none; }
+  .rm-cal-grid { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 0; border-left: 1px solid var(--fe-line); }
+  .rm-cal-ev, .rm-cal-ev[data-side] {
+    grid-column: auto; grid-row: auto; align-self: auto;
+    border: 0; padding: 14px 0 18px 32px;
+  }
+  .rm-cal-ev + .rm-cal-ev { border-top: 1px solid var(--fe-line); margin-left: 0; }
+  .rm-cal-ev[data-future] { border-color: var(--fe-line); }
+  .rm-cal-ev:hover { border-color: var(--fe-line); }
+  .rm-cal-ev-dot {
+    display: block; position: absolute; left: -5px; top: 22px; width: 9px; height: 9px; border-radius: 50%;
+    background: var(--fe-muted);
+  }
+  .rm-cal-ev[data-future] .rm-cal-ev-dot { background: var(--fe-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--fe-accent) 18%, transparent); }
+  .rm-cal-ev[data-today-marker]::before {
+    content: attr(data-today-marker); display: block; font-family: var(--fe-mono); font-size: 1rem; letter-spacing: 0.06em;
+    color: var(--fe-accent); margin-bottom: 10px;
+  }
+}
+@media (max-width: 62em) {
+  .rm-waves { grid-template-columns: repeat(2, 1fr); row-gap: 56px; }
+  .rm-waves > :nth-child(3n) > .rm-wave { padding-right: 40px; }
+  .rm-waves > :nth-child(3n) > .rm-wave > .rm-wave-hl { right: 40px; }
+  .rm-waves > :nth-child(3n) > .rm-wave[data-tags='true']::after { right: 10px; }
+  .rm-waves > :nth-child(2n) > .rm-wave { padding-right: 0; }
+  .rm-waves > :nth-child(2n) > .rm-wave > .rm-wave-hl { right: 0; }
+  .rm-waves > :nth-child(2n) > .rm-wave[data-tags='true']::after { right: 0; }
+  .rm-policy { grid-template-columns: minmax(160px, 0.8fr) 1.6fr; }
+  .rm-policy-h:nth-child(2) { display: none; }
+  .rm-policy-row { grid-template-columns: subgrid; row-gap: 4px; }
+  .rm-policy-kind { grid-column: 1; grid-row: 1; }
+  .rm-policy-ex { grid-column: 1; grid-row: 2; }
+  .rm-policy-how { grid-column: 2; grid-row: 1 / span 2; }
+}
+@media (max-width: 48em) {
+  .rm-sub { margin-top: 64px; }
+  .rm-sub-head { grid-template-columns: 1fr; row-gap: 10px; }
+  .rm-sub-title { white-space: normal; }
+  .rm-waves { grid-template-columns: 1fr; row-gap: 52px; }
+  .rm-waves > * > .rm-wave { padding-right: 0; }
+  .rm-waves > * > .rm-wave > .rm-wave-hl { right: 0; }
+  .rm-waves > * > .rm-wave[data-tags='true']::after { right: 0; }
+  .rm-policy { grid-template-columns: 1fr; }
+  .rm-policy-h { display: none; }
+  .rm-policy-row { grid-template-columns: 1fr; row-gap: 4px; }
+  .rm-policy-kind, .rm-policy-ex, .rm-policy-how { grid-column: 1; grid-row: auto; }
+  .rm-cal-legend { flex-wrap: wrap; gap: 12px 24px; }
+}
+
+/* Hareket azaltma: çizgi statik, geçişler kapalı */
+@media (prefers-reduced-motion: reduce) {
+  .rm-wave-hl { transition: none; }
+}

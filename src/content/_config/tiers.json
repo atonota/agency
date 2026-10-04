@@ -1,0 +1,35 @@
+{
+  "id": "tiers",
+  "type": "tiers",
+  "order": 0,
+  "label": "Olgunluk aşamaları",
+  "owner": "Platform ekibi",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "tiers": [
+      {
+        "key": "z",
+        "rank": 1,
+        "label": "Gün 1",
+        "hint": "Yasal zorunluluk ve temel sayfalar",
+        "icon": "Flag"
+      },
+      {
+        "key": "o",
+        "rank": 2,
+        "label": "Büyüme",
+        "hint": "İlk kurumsal müşteriler geldiğinde",
+        "icon": "TrendUp"
+      },
+      {
+        "key": "e",
+        "rank": 3,
+        "label": "Kurumsal olgunluk",
+        "hint": "Holding yapısı, halka arz, kamu",
+        "icon": "Buildings"
+      }
+    ]
+  }
+}

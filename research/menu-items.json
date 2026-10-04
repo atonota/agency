@@ -1,0 +1,3863 @@
+{
+  "aciklama": "Ekran görüntülerindeki tüm menü öğeleri. Kaynak/görsel bazlı gruplama yok. Yalnızca birebir aynı metinler (büyük/küçük harf farkı Türkçe kurallarla yok sayılarak) birleştirildi; benzer ama farklı metinler ayrı tutuldu.",
+  "alanlar": {
+    "etiket": "Görünen metin",
+    "turler": "baslik | baglanti | sosyal | rozet | cta | marka | uygulama_magazasi | dil",
+    "tekrar": "Tüm görsellerde toplam görülme sayısı"
+  },
+  "toplam_ham_kayit": 687,
+  "toplam_benzersiz": 478,
+  "ogeler": [
+    {
+      "id": 1,
+      "etiket": "Codeberg",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 2,
+      "etiket": "Association",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 3,
+      "etiket": "Services",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 4,
+      "etiket": "Legal",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 5,
+      "etiket": "Blog",
+      "turler": [
+        "baglanti",
+        "marka"
+      ],
+      "tekrar": 5
+    },
+    {
+      "id": 6,
+      "etiket": "Documentation",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 7,
+      "etiket": "Community issues",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 8,
+      "etiket": "Contributing",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 9,
+      "etiket": "Report abuse",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 10,
+      "etiket": "Who are we?",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 11,
+      "etiket": "Bylaws / Satzung",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 12,
+      "etiket": "Donate",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 13,
+      "etiket": "Join / Support",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 14,
+      "etiket": "Contact",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 15,
+      "etiket": "Codeberg Pages",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 16,
+      "etiket": "Codeberg Translate",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 17,
+      "etiket": "Woodpecker CI",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 18,
+      "etiket": "Forgejo API",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 19,
+      "etiket": "Status page",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 20,
+      "etiket": "Imprint / Impressum",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 21,
+      "etiket": "Privacy Policy",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 22,
+      "etiket": "Licenses",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 23,
+      "etiket": "Terms of Use",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 24,
+      "etiket": "Mastodon",
+      "turler": [
+        "sosyal"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 25,
+      "etiket": "Matrix Space (Web link)",
+      "turler": [
+        "sosyal"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 26,
+      "etiket": "Powered by Forgejo",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 27,
+      "etiket": "Hakkında",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 28,
+      "etiket": "Sürdürülebilirlik",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 9
+    },
+    {
+      "id": 29,
+      "etiket": "İş Grupları",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 30,
+      "etiket": "Teknoloji & İnovasyon",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 31,
+      "etiket": "Yatırımcı İlişkileri",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 7
+    },
+    {
+      "id": 32,
+      "etiket": "Medya",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 33,
+      "etiket": "Sabancı'da Yaşam ve Kariyer",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 34,
+      "etiket": "İletişim",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 10
+    },
+    {
+      "id": 35,
+      "etiket": "Sabancı Holding",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 36,
+      "etiket": "Yönetim",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 37,
+      "etiket": "Tarihte Sabancı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 38,
+      "etiket": "Unutamadıklarımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 39,
+      "etiket": "Sosyal Projeler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 40,
+      "etiket": "Sosyo-Kültürel",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 41,
+      "etiket": "Faaliyet Raporu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 42,
+      "etiket": "Politikalar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 43,
+      "etiket": "Kişisel Verilerin Korunması",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 12
+    },
+    {
+      "id": 44,
+      "etiket": "Sürdürülebilirlikte Öncü Olmak",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 45,
+      "etiket": "Sürdürülebilirlik Yaklaşımımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 46,
+      "etiket": "Sürdürülebilirlik Hedeflerimiz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 47,
+      "etiket": "Sürdürülebilirlik Raporu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 48,
+      "etiket": "Banka ve Finansal Hizmetler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 49,
+      "etiket": "Enerji ve İklim Teknolojileri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 50,
+      "etiket": "Malzeme Teknolojileri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 51,
+      "etiket": "Dijital",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 52,
+      "etiket": "Mobilite Çözümleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 53,
+      "etiket": "Perakende",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 54,
+      "etiket": "Diğer Sektörler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 55,
+      "etiket": "Dijital Teknolojiler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 56,
+      "etiket": "AR-GE Merkezleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 57,
+      "etiket": "Girişim Ekosistemi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 58,
+      "etiket": "Kullanım Koşulları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 4
+    },
+    {
+      "id": 59,
+      "etiket": "Gizlilik",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 60,
+      "etiket": "Bilgi Toplumu Hizmetleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 8
+    },
+    {
+      "id": 61,
+      "etiket": "Kişisel Verilerin Korunması Kanunu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 62,
+      "etiket": "Sabancı Holding E-Bülten Aydınlatma Metni",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 63,
+      "etiket": "Sabancı Vakfı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 64,
+      "etiket": "Sabancı Üni.",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 65,
+      "etiket": "SSM",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 66,
+      "etiket": "LinkedIn",
+      "turler": [
+        "sosyal"
+      ],
+      "tekrar": 7
+    },
+    {
+      "id": 67,
+      "etiket": "Instagram",
+      "turler": [
+        "sosyal"
+      ],
+      "tekrar": 9
+    },
+    {
+      "id": 68,
+      "etiket": "YouTube",
+      "turler": [
+        "sosyal"
+      ],
+      "tekrar": 8
+    },
+    {
+      "id": 69,
+      "etiket": "X",
+      "turler": [
+        "sosyal"
+      ],
+      "tekrar": 8
+    },
+    {
+      "id": 70,
+      "etiket": "Facebook",
+      "turler": [
+        "sosyal"
+      ],
+      "tekrar": 9
+    },
+    {
+      "id": 71,
+      "etiket": "Ürünler",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 72,
+      "etiket": "Kurumsal",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 7
+    },
+    {
+      "id": 73,
+      "etiket": "Destek",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 4
+    },
+    {
+      "id": 74,
+      "etiket": "Hizmet",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 75,
+      "etiket": "Daha Fazlası",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 76,
+      "etiket": "Özel Günler & Kampanyalar",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 77,
+      "etiket": "Beyaz Eşya",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 78,
+      "etiket": "Ankastre",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 79,
+      "etiket": "Elektronik",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 80,
+      "etiket": "Isıtma Soğutma",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 81,
+      "etiket": "Küçük Ev Aletleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 82,
+      "etiket": "Yedek Parça Ve Aksesuar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 83,
+      "etiket": "Su Sebili & Su Arıtma",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 84,
+      "etiket": "Evcil Hayvan Ürünleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 85,
+      "etiket": "Arçelik A.Ş.",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 86,
+      "etiket": "Kurumsal Çözümler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 87,
+      "etiket": "İnsan Kaynakları",
+      "turler": [
+        "baglanti",
+        "baslik"
+      ],
+      "tekrar": 4
+    },
+    {
+      "id": 88,
+      "etiket": "Medya İlişkileri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 89,
+      "etiket": "Müşteri Memnuniyeti",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 90,
+      "etiket": "Hizmet Talebinin Değerlendirilmesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 91,
+      "etiket": "Yazılım ve Kılavuz Arama",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 92,
+      "etiket": "TV Yazılım İndirme Merkezi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 93,
+      "etiket": "Katalog ve Broşür",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 94,
+      "etiket": "Garanti Uygulamaları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 95,
+      "etiket": "Satın Alma Rehberi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 96,
+      "etiket": "Sıkça Sorulan Sorular",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 4
+    },
+    {
+      "id": 97,
+      "etiket": "E-Ticaret Destek",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 98,
+      "etiket": "Online Uzman",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 99,
+      "etiket": "Destek Kaydı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 100,
+      "etiket": "Garanti Süresini Uzat",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 101,
+      "etiket": "Sipariş Takip",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 102,
+      "etiket": "Site Haritası",
+      "turler": [
+        "baglanti",
+        "baslik"
+      ],
+      "tekrar": 5
+    },
+    {
+      "id": 103,
+      "etiket": "Yetkili Satıcı Başvuru Formu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 104,
+      "etiket": "Arçelik Mağazalar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 105,
+      "etiket": "Konsept Mağazalar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 106,
+      "etiket": "Yetkili Servis Başvuru Formu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 107,
+      "etiket": "Yetkili Servisler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 108,
+      "etiket": "İklim Dostu Hareket",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 109,
+      "etiket": "Mucize Lezzetler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 110,
+      "etiket": "Mucize Lezzetler TV Uygulaması",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 111,
+      "etiket": "Oyun Merkezi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 112,
+      "etiket": "Teknolojiler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 113,
+      "etiket": "Babalar Günü",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 114,
+      "etiket": "Okula Dönüş",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 115,
+      "etiket": "Bize Ulaşın",
+      "turler": [
+        "baglanti",
+        "baslik"
+      ],
+      "tekrar": 5
+    },
+    {
+      "id": 116,
+      "etiket": "İşlem Rehberi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 117,
+      "etiket": "Satış Sözleşmesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 118,
+      "etiket": "Gizlilik Politikası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 119,
+      "etiket": "Hizmet Şartları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 120,
+      "etiket": "7/24 Çağrı Destek Merkezi",
+      "turler": [
+        "cta"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 121,
+      "etiket": "Teknik Destek ve Servis Randevusu",
+      "turler": [
+        "cta"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 122,
+      "etiket": "eyebrand – Blind Friendly Brand",
+      "turler": [
+        "rozet"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 123,
+      "etiket": "ETBİS'e Kayıtlıdır",
+      "turler": [
+        "rozet"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 124,
+      "etiket": "Customer Oriented Company (görselde bulanık)",
+      "turler": [
+        "rozet"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 125,
+      "etiket": "TR GO",
+      "turler": [
+        "rozet"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 126,
+      "etiket": "SGS ISO 10002",
+      "turler": [
+        "rozet"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 127,
+      "etiket": "Isıtma Soğutma ve Enerji",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 128,
+      "etiket": "Kurucumuz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 129,
+      "etiket": "Tarihçe",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 130,
+      "etiket": "Yanındayız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 131,
+      "etiket": "Servis Randevusu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 132,
+      "etiket": "Beko Mağazalar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 133,
+      "etiket": "Oyunlar Dünyası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 134,
+      "etiket": "Beko No.1",
+      "turler": [
+        "rozet"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 135,
+      "etiket": "Gizlilik ve Politikalar",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 136,
+      "etiket": "Yardım",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 137,
+      "etiket": "Mobil Uygulamalar",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 138,
+      "etiket": "Sosyal Medya Hesaplarımız",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 139,
+      "etiket": "Hakkımızda",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 140,
+      "etiket": "Kariyer",
+      "turler": [
+        "baglanti",
+        "baslik"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 141,
+      "etiket": "Kişisel Verilerin Korunması ve İşlenmesi Politikası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 142,
+      "etiket": "Kişisel Verilerin Korunması - Başvuru Formu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 143,
+      "etiket": "Çerez Politikası Aydınlatma Metni",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 144,
+      "etiket": "Veri Güvenliği Tedbirleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 145,
+      "etiket": "Bilgi Güvenliği Politikası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 4
+    },
+    {
+      "id": 146,
+      "etiket": "Dilek, İstek ve Şikayet",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 147,
+      "etiket": "Kiralık Yeriniz mi Var?",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 148,
+      "etiket": "App Store",
+      "turler": [
+        "uygulama_magazasi"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 149,
+      "etiket": "Google Play",
+      "turler": [
+        "uygulama_magazasi"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 150,
+      "etiket": "AppGallery",
+      "turler": [
+        "uygulama_magazasi"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 151,
+      "etiket": "Anadolu Grubu",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 152,
+      "etiket": "Grup Şirketlerimiz ve Sosyal Kuruluşlarımız",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 153,
+      "etiket": "Migros",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 154,
+      "etiket": "CCI",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 155,
+      "etiket": "Anadolu Efes",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 156,
+      "etiket": "Anadolu Isuzu",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 157,
+      "etiket": "Çelik Motor",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 158,
+      "etiket": "Garenta",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 159,
+      "etiket": "Anadolu Motor",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 160,
+      "etiket": "Bizi takip edin",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 4
+    },
+    {
+      "id": 161,
+      "etiket": "Grup",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 162,
+      "etiket": "Finans",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 163,
+      "etiket": "Kurumsal Sosyal Sorumluluk",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 164,
+      "etiket": "Haber Odası",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 165,
+      "etiket": "İK",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 166,
+      "etiket": "Twitter",
+      "turler": [
+        "sosyal"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 167,
+      "etiket": "Carrefour Faaliyetleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 168,
+      "etiket": "Mağazalar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 169,
+      "etiket": "Carrefour Yönetimi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 170,
+      "etiket": "Vakıf ve Dayanışma",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 171,
+      "etiket": "Carrefour Hikayesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 172,
+      "etiket": "Carrefour 2030 Stratejisi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 173,
+      "etiket": "Gıda Geçişi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 174,
+      "etiket": "Carrefour Franchise",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 175,
+      "etiket": "Paris 2024 Olimpiyat ve Paralimpik Oyunları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 176,
+      "etiket": "Beni Besle",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 177,
+      "etiket": "Hissedar bölümü",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 178,
+      "etiket": "Hissedarlar Toplantısı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 179,
+      "etiket": "Carrefour Hissesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 180,
+      "etiket": "Finansal yayınlar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 181,
+      "etiket": "Düzenlenmiş bilgiler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 182,
+      "etiket": "Evrensel Kayıt Belgesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 183,
+      "etiket": "Borç ve Derecelendirme",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 184,
+      "etiket": "Kurumsal Sosyal Sorumluluk Yönetişimi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 185,
+      "etiket": "Performans",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 186,
+      "etiket": "Bağlılık",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 187,
+      "etiket": "Kurumsal Sosyal Sorumluluk Kütüphanesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 188,
+      "etiket": "Kurumsal Sosyal Sorumluluk haberleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 189,
+      "etiket": "Orman Şeffaflık Platformu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 190,
+      "etiket": "Tekrar başlat",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 191,
+      "etiket": "Tedarikçi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 192,
+      "etiket": "Tüm haberler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 193,
+      "etiket": "Değişim İçin Harekete Geçin",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 194,
+      "etiket": "Çeşitlilik",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 195,
+      "etiket": "Carrefour'da kişisel veri koruması",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 196,
+      "etiket": "Genel terimler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 197,
+      "etiket": "Çerez politikası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 198,
+      "etiket": "Çerezleri yapılandırın",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 199,
+      "etiket": "Faciliti",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 200,
+      "etiket": "Erişilebilirlik: Kısmen uyumlu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 201,
+      "etiket": "Yasal bildirimler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 202,
+      "etiket": "Kurumsal yönetim",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 203,
+      "etiket": "Kurumsal yönetim uyum beyanı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 204,
+      "etiket": "Organizasyon yapısı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 205,
+      "etiket": "Yönetim kurulu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 4
+    },
+    {
+      "id": 206,
+      "etiket": "Yönetim Kurulu Çalışma Esasları Yönetmeliği",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 207,
+      "etiket": "Yönetim kurulu matrisi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 208,
+      "etiket": "Yönetim kurulu komiteleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 209,
+      "etiket": "Üst yönetim",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 210,
+      "etiket": "Yönetim kurulu danışmanı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 211,
+      "etiket": "Uluslararası danışma kurulu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 212,
+      "etiket": "Etik ilkeler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 213,
+      "etiket": "Sermaye ve ticaret sicil bilgileri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 214,
+      "etiket": "Bağımsız Denetim",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 215,
+      "etiket": "FATCA/CRS",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 216,
+      "etiket": "Uyum",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 217,
+      "etiket": "Uyum başkanı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 218,
+      "etiket": "Ana sözleşme",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 219,
+      "etiket": "Genel kurul dokümanları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 220,
+      "etiket": "Dijital güven ilkeleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 221,
+      "etiket": "SPK İnternet sitesi yükümlülükleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 222,
+      "etiket": "İzahname ve sirküler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 223,
+      "etiket": "Yapı Kredi Hakkında",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 224,
+      "etiket": "Finansal Bilgiler & Duyurular",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 225,
+      "etiket": "Hisse Bilgileri",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 226,
+      "etiket": "Borçlanma Aracı İhraçları",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 227,
+      "etiket": "Duyurular",
+      "turler": [
+        "baslik",
+        "baglanti"
+      ],
+      "tekrar": 5
+    },
+    {
+      "id": 228,
+      "etiket": "Genel Bakış",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 6
+    },
+    {
+      "id": 229,
+      "etiket": "Kurumsal Profil",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 230,
+      "etiket": "Kredi Notları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 231,
+      "etiket": "Vizyon, Misyon, Strateji ve Değerler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 232,
+      "etiket": "Ortaklık Yapısı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 233,
+      "etiket": "Bankacılık Faaliyetleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 234,
+      "etiket": "Yapı Kredi İştirakleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 235,
+      "etiket": "Ödüller",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 236,
+      "etiket": "Sürdürülebilirlik Yönetimi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 237,
+      "etiket": "Yönetişim Yapısı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 238,
+      "etiket": "Strateji",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 239,
+      "etiket": "Sürdürülebilirlik Yolculuğu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 240,
+      "etiket": "Kilometre Taşları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 241,
+      "etiket": "Üyelikler ve İnisiyatifler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 242,
+      "etiket": "Sürdürülebilir Finansman",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 243,
+      "etiket": "Sürdürülebilir Borçlanma",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 244,
+      "etiket": "Sorumlu Ürün ve Hizmetler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 245,
+      "etiket": "Çevresel ve Sosyal Risk Yönetimi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 246,
+      "etiket": "Finansal Sağlık ve Kapsayıcılık",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 247,
+      "etiket": "Sürdürülebilirlik Raporları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 248,
+      "etiket": "Endeksler ve Ratingler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 249,
+      "etiket": "Çevre ve Toplum",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 250,
+      "etiket": "Net Sıfır Yaklaşımı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 251,
+      "etiket": "Sorumlu Kaynak Yönetimi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 252,
+      "etiket": "Cinsiyet Eşitliği ve Çeşitliliği",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 253,
+      "etiket": "Engelsiz Bankacılık",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 254,
+      "etiket": "Toplumsal Katkı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 255,
+      "etiket": "Kültür Sanat",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 256,
+      "etiket": "Sürdürülebilir Tercih Programı (Step)",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 257,
+      "etiket": "Sürdürülebilirliği Anlatıyoruz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 258,
+      "etiket": "Basın Bültenleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 259,
+      "etiket": "Sürdürülebilirlik Gündemi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 260,
+      "etiket": "WISER",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 261,
+      "etiket": "Sürdürülebilirlik Sohbetleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 262,
+      "etiket": "Sürdürülebilirliği Konuşalım",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 263,
+      "etiket": "Dünya Kadar Sade",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 264,
+      "etiket": "Sunumlar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 265,
+      "etiket": "Finansal Sonuçlara İlişkin Sunumlar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 266,
+      "etiket": "Yatırımcı Sunumları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 267,
+      "etiket": "Öncelikler ve Beklenti Sunumları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 268,
+      "etiket": "Raporlar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 269,
+      "etiket": "Faaliyet Raporları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 270,
+      "etiket": "BDDK Konsolide Finansal Raporlar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 271,
+      "etiket": "TFRS Finansal Tablolar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 272,
+      "etiket": "BDDK Konsolide Olmayan Finansal Raporlar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 273,
+      "etiket": "İlk Bakışta Yapı Kredi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 274,
+      "etiket": "Kamuyu Aydınlatma",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 275,
+      "etiket": "Yatırımcı Takvimi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 276,
+      "etiket": "Toplantı Ses Kayıtları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 277,
+      "etiket": "Çeyreksel Etkinlikler & Web-Cast Ses Kaydı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 278,
+      "etiket": "Yatırımcı Araçları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 279,
+      "etiket": "Hisse Fiyat Grafiği",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 280,
+      "etiket": "Yatırımcı Kiti",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 281,
+      "etiket": "Yatırımcı Hesap Makinesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 282,
+      "etiket": "Neden Yapı Kredi'ye Yatırım Yapmalıyım?",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 283,
+      "etiket": "Neden Türkiye?",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 284,
+      "etiket": "Neden Türk Bankacılık Sistemi?",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 285,
+      "etiket": "Neden Yapı Kredi?",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 286,
+      "etiket": "Temettüler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 287,
+      "etiket": "Sermaye Artırımları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 288,
+      "etiket": "Analistler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 289,
+      "etiket": "MTN Programı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 290,
+      "etiket": "Sürdürülebilir Tahviller",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 291,
+      "etiket": "Sermaye Benzeri Tahvil",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 292,
+      "etiket": "İpotek Teminatlı Menkul Kıymet",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 293,
+      "etiket": "Kurumsal Yönetim Uyum Raporu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 294,
+      "etiket": "Kurumsal Yönetim İlkelerine Uyum Beyanı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 295,
+      "etiket": "Kurumsal Yönetim İlkelerine Uyum Raporları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 296,
+      "etiket": "Kurumsal Yönetim Bilgi Formu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 297,
+      "etiket": "Kurumsal Yönetim Derecelendirme Raporu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 298,
+      "etiket": "Komiteler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 299,
+      "etiket": "Etik İlkeler ve Politikalar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 300,
+      "etiket": "AML Politikası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 301,
+      "etiket": "Genel Kurul Toplantıları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 302,
+      "etiket": "Esas sözleşme",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 303,
+      "etiket": "Ana sayfa",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 304,
+      "etiket": "Site by LuckyEye",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 305,
+      "etiket": "Haberler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 306,
+      "etiket": "Yapı Kredi Blog",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 307,
+      "etiket": "Yapı Kredi Podcast Kanalları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 308,
+      "etiket": "Etkinlikler ve Sponsorluklar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 309,
+      "etiket": "Yapı Kredi Akademi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 310,
+      "etiket": "Değerlerimiz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 5
+    },
+    {
+      "id": 311,
+      "etiket": "Kültür ve Sanat",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 312,
+      "etiket": "İştirakler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 313,
+      "etiket": "Piyasa Bültenleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 314,
+      "etiket": "Reklamlarımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 315,
+      "etiket": "Satılık Gayrimenkuller",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 316,
+      "etiket": "Bağımsız Güvence Raporu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 317,
+      "etiket": "İlginizi Çekebilir",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 318,
+      "etiket": "Yatırım & Finans",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 319,
+      "etiket": "Kartlar & Başvurular",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 320,
+      "etiket": "Krediler",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 321,
+      "etiket": "Faydalı Sayfalar",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 322,
+      "etiket": "Tüm Duyurular",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 323,
+      "etiket": "Memnuniyetiniz İçin",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 324,
+      "etiket": "Emekli Promosyon",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 325,
+      "etiket": "Uygulama Marketi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 326,
+      "etiket": "Vadesiz Mevduat",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 327,
+      "etiket": "Vadeli Mevduat",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 328,
+      "etiket": "EYT",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 329,
+      "etiket": "Canlı Döviz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 330,
+      "etiket": "Yatırım Fonları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 331,
+      "etiket": "Altın Mevduat",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 332,
+      "etiket": "Altın",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 333,
+      "etiket": "Halka Arz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 334,
+      "etiket": "Hisse Senedi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 335,
+      "etiket": "Vadeli Mevduat Oranları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 336,
+      "etiket": "Yurt Dışı Piyasaları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 337,
+      "etiket": "Yatırımcı Köşesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 338,
+      "etiket": "Dolar Kaç TL",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 339,
+      "etiket": "Banka Hesabı Aç",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 340,
+      "etiket": "Ticari Hesap Aç",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 341,
+      "etiket": "Kredi Kartı Başvuru",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 342,
+      "etiket": "Banka Kartı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 343,
+      "etiket": "Kredi Kartı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 344,
+      "etiket": "Worldcard",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 345,
+      "etiket": "Ticari Kartlar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 346,
+      "etiket": "Kredi Kartı Asgari Hesaplama",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 347,
+      "etiket": "Güvenli Araç Alım Satım",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 348,
+      "etiket": "Kiram Hesabımda",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 349,
+      "etiket": "Konut Kredisi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 350,
+      "etiket": "İhtiyaç Kredisi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 351,
+      "etiket": "Kredi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 352,
+      "etiket": "Taşıt Kredisi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 353,
+      "etiket": "Kredi Başvurusu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 354,
+      "etiket": "3 Ay Ertelemeli Kredi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 355,
+      "etiket": "Esnek Hesap/Kredili Mevduat Hesabı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 356,
+      "etiket": "EYT Kredisi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 357,
+      "etiket": "Alışveriş Kredisi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 358,
+      "etiket": "2. El Araç Kredisi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 359,
+      "etiket": "Kredi Hesaplama",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 360,
+      "etiket": "Döviz Hesaplama",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 361,
+      "etiket": "Mevduat Hesaplama",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 362,
+      "etiket": "Fatura Ödeme",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 363,
+      "etiket": "HGS",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 364,
+      "etiket": "MTV Ödeme",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 365,
+      "etiket": "Trafik Sigortası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 366,
+      "etiket": "Kasko",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 367,
+      "etiket": "TMSF ve YTM Zaman Aşımı Listesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 368,
+      "etiket": "Çerez Aydınlatma Metni",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 3
+    },
+    {
+      "id": 369,
+      "etiket": "FRWRD",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 370,
+      "etiket": "Koç 100",
+      "turler": [
+        "marka"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 371,
+      "etiket": "Sabri Ülker Vakfı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 372,
+      "etiket": "Gıda Güvenliği Kurulu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 373,
+      "etiket": "Kullanım Şartları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 374,
+      "etiket": "Çerez Tercihleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 375,
+      "etiket": "Bizi Tanıyın",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 376,
+      "etiket": "Grup Şirketleri",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 377,
+      "etiket": "Anadolu Vakfı",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 378,
+      "etiket": "Biz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 379,
+      "etiket": "Onursal Başkanlarımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 380,
+      "etiket": "Yönetim Kurulu Başkanı Mesajı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 381,
+      "etiket": "İcra Başkanı Mesajı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 382,
+      "etiket": "Operasyon Coğrafyamız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 383,
+      "etiket": "Tarihçemiz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 384,
+      "etiket": "Perakende Grubu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 385,
+      "etiket": "Meşrubat Grubu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 386,
+      "etiket": "Bira Grubu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 387,
+      "etiket": "Otomotiv Grubu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 388,
+      "etiket": "Tarım, Enerji ve Sanayi Grubu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 389,
+      "etiket": "Sosyal Kuruluşlar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 390,
+      "etiket": "Hissedarlar ve Yatırımcı İlişkileri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 391,
+      "etiket": "Politika ve Prosedürler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 392,
+      "etiket": "Vakfımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 393,
+      "etiket": "Faaliyetlerimiz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 394,
+      "etiket": "Anadolu Grubu Kariyer",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 395,
+      "etiket": "Anadolu'dan Haberler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 396,
+      "etiket": "Yasal Uyarı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 397,
+      "etiket": "Çerez Ayarları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 398,
+      "etiket": "EN",
+      "turler": [
+        "dil"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 399,
+      "etiket": "RU",
+      "turler": [
+        "dil"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 400,
+      "etiket": "İletişim Formu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 401,
+      "etiket": "Etik Kurallar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 402,
+      "etiket": "Faaliyet Alanları",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 403,
+      "etiket": "Mehmet Zorlu Vakfı",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 404,
+      "etiket": "Medya Merkezi",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 405,
+      "etiket": "Sayılarla Zorlu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 406,
+      "etiket": "Finansal Bilgiler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 407,
+      "etiket": "Toplumsal Yatırım Projeleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 408,
+      "etiket": "Taahhütlerimiz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 409,
+      "etiket": "Sektörler",
+      "turler": [
+        "baglanti",
+        "baslik"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 410,
+      "etiket": "Diğer Faaliyet Alanları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 411,
+      "etiket": "Markalar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 412,
+      "etiket": "Zorlu Dergi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 413,
+      "etiket": "Medya İletişim Merkezi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 414,
+      "etiket": "Bültenler",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 415,
+      "etiket": "Zorlu Holding Tedarikçileri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 416,
+      "etiket": "Bilgi Topluluğu Hizmetleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 417,
+      "etiket": "Gizlilik ve Kullanım Koşulları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 418,
+      "etiket": "Çerezleri Yönet",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 419,
+      "etiket": "Anasayfa",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 420,
+      "etiket": "Doğuş Grubu'nu Tanıyın",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 421,
+      "etiket": "Kurumsal Sorumluluk",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 422,
+      "etiket": "Basın Odası",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 423,
+      "etiket": "Biz'D Dergisi",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 424,
+      "etiket": "Vizyonumuz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 425,
+      "etiket": "Operasyon Haritası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 426,
+      "etiket": "Otomotiv",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 427,
+      "etiket": "İnşaat",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 428,
+      "etiket": "Doğuş Yayın Grubu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 429,
+      "etiket": "Doğuş Yeme-İçme, Turizm ve Perakende",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 430,
+      "etiket": "Gayrimenkul",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 431,
+      "etiket": "Enerji",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 2
+    },
+    {
+      "id": 432,
+      "etiket": "Diğer Yatırımlar",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 433,
+      "etiket": "Doğuş'lu Olmak",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 434,
+      "etiket": "Aile İçi Şiddet İş Yeri İlkeleri Politikası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 435,
+      "etiket": "Doğuş'ta İş Fırsatları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 436,
+      "etiket": "İşe Alım",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 437,
+      "etiket": "Eğitim ve Gelişim",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 438,
+      "etiket": "Performans Yönetimi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 439,
+      "etiket": "Ücretlendirme Sistemi ve Yan Hakları",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 440,
+      "etiket": "Sosyal Yaşam",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 441,
+      "etiket": "İş'te Eşitlik Bildirgesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 442,
+      "etiket": "Doğuştan İyi Bir Gelecek",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 443,
+      "etiket": "Neler Yapıyoruz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 444,
+      "etiket": "KSS Raporlarımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 445,
+      "etiket": "KSS Video",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 446,
+      "etiket": "Sanata Doğuştan İyi Bir Gelecek",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 447,
+      "etiket": "Tarihe Doğuştan İyi Bir Gelecek",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 448,
+      "etiket": "Çocuklara Doğuştan İyi Bir Gelecek",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 449,
+      "etiket": "Gençlere Doğuştan İyi Bir Gelecek",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 450,
+      "etiket": "Topluma Doğuştan İyi Bir Gelecek",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 451,
+      "etiket": "Kadınlara Doğuştan İyi Bir Gelecek",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 452,
+      "etiket": "Spora Doğuştan İyi Bir Gelecek",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 453,
+      "etiket": "Toplumsal Fayda",
+      "turler": [
+        "baslik"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 454,
+      "etiket": "Grup Vizyon Misyonumuz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 455,
+      "etiket": "Kilometre Taşlarımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 456,
+      "etiket": "İş Ortaklarımız ve Markalarımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 457,
+      "etiket": "Kurumsal Yapımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 458,
+      "etiket": "Turuncu Etik İlkemiz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 459,
+      "etiket": "Borusan Grubu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 460,
+      "etiket": "Üretim",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 461,
+      "etiket": "Makine ve Güç Sistemleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 462,
+      "etiket": "Liman Hizmetleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 463,
+      "etiket": "Kurumsal Girişim Sermayesi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 464,
+      "etiket": "Sürdürülebilirlik Manifestomuz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 465,
+      "etiket": "Sürdürülebilirlik Yolculuğumuz",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 466,
+      "etiket": "Borusan'da Sürdürülebilirliğin Yönetimi",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 467,
+      "etiket": "Sürdürülebilir Tedarik Zinciri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 468,
+      "etiket": "Geleceğe İlham Ödülleri",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 469,
+      "etiket": "Raporlarımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 470,
+      "etiket": "Toplumsal Fayda Anlayışımız",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 471,
+      "etiket": "Borusan Kocabıyık Vakfı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 472,
+      "etiket": "Borusan Sanat",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 473,
+      "etiket": "Borusan Contemporary",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 474,
+      "etiket": "Borusan Eşittir",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 475,
+      "etiket": "Okyanus Gönüllü Borusanlılar Platformu",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 476,
+      "etiket": "Borusan Sürdürülebilir Fayda Programı",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 477,
+      "etiket": "Bilgi Güvenliği ve Yönetim Sistemi Politikası",
+      "turler": [
+        "baglanti"
+      ],
+      "tekrar": 1
+    },
+    {
+      "id": 478,
+      "etiket": "Vimeo",
+      "turler": [
+        "sosyal"
+      ],
+      "tekrar": 1
+    }
+  ],
+  "haric_tutulanlar": [
+    "Görev verisini hazırla (uygulama butonu, footer menüsü değil)",
+    "Vikipedi 'Türkiye'nin en zengin 100 ailesi' tablosu (menü değil)",
+    "Telif satırları (© ...)",
+    "Sitelerin kendi logoları",
+    "Adres ve telefon numaraları",
+    "Kesik 'Metni' öğesi (Yapı Kredi yan menü, tamamı görünmüyor)",
+    "Başa dön / reCAPTCHA ikonları"
+  ]
+}

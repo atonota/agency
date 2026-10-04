@@ -1,0 +1,44 @@
+{
+  "id": "trust-line",
+  "type": "trust-line",
+  "order": 95,
+  "label": "Güven şeridi",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "aria": "Güvence özeti",
+    "certs": [
+      {
+        "label": "ISO/IEC 27001:2022",
+        "aria": "ISO/IEC 27001:2022 bilgi güvenliği sertifikası — uyum sayfasına git",
+        "href": "#tc-compliance",
+        "tier": "z"
+      },
+      {
+        "label": "SOC 2 Type II",
+        "aria": "SOC 2 Type II denetim raporu — uyum sayfasına git",
+        "href": "#tc-compliance",
+        "tier": "o"
+      },
+      {
+        "label": "ISO/IEC 27701:2025",
+        "aria": "ISO/IEC 27701:2025 gizlilik yönetimi sertifikası — uyum sayfasına git",
+        "href": "#tc-compliance",
+        "tier": "o"
+      }
+    ],
+    "status": {
+      "label": "Sistem Durumu",
+      "aria": "Canlı sistem durumu sayfası",
+      "href": "#tc-status",
+      "tier": "z"
+    },
+    "trust": {
+      "label": "Güven Merkezi",
+      "href": "#trust",
+      "tier": "z"
+    }
+  }
+}

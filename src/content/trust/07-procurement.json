@@ -1,0 +1,211 @@
+{
+  "id": "tc-procurement",
+  "type": "procurement",
+  "order": 70,
+  "label": "Satın alma ve rapor talebi",
+  "owner": "Bilgi güvenliği (CISO ofisi)",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Procurement",
+    "title": "Güvenlik incelemesi ve rapor talebi",
+    "description": "Dört adımda: talep, karşılıklı NDA, belge paylaşımı ve güvenlik ekibiyle soru-cevap. Demo talebinde belge adımı atlanır. Bu bir önizlemedir; gönderim gerçek bir istek oluşturmaz.",
+    "steps": [
+      {
+        "title": "Talep",
+        "text": "Kurumsal e-posta ile belge, demo ya da anket talebi"
+      },
+      {
+        "title": "NDA",
+        "text": "Karşılıklı gizlilik sözleşmesi imzalanır"
+      },
+      {
+        "title": "Paylaşım",
+        "text": "Belgeler süreli bağlantıyla paylaşılır"
+      },
+      {
+        "title": "Soru-cevap",
+        "text": "Güvenlik ekibiyle görüşme"
+      }
+    ],
+    "access": {
+      "public": "Açık",
+      "nda": "NDA"
+    },
+    "ledger": {
+      "title": "Belgeler",
+      "publicWord": "açık",
+      "ndaWord": "NDA",
+      "reviewedWord": "Son kontrol",
+      "hint": "Satıra tıklayarak belgeyi talebe ekleyin ya da çıkarın. Son kontrol tarihi, belgenin en son doğrulandığı günü gösterir.",
+      "locked": "Bu belge için 2. adımda NDA kabulü gerekir.",
+      "inRequest": "Talepte"
+    },
+    "documents": [
+      {
+        "id": "iso27001",
+        "label": "ISO/IEC 27001:2022 sertifikası",
+        "access": "public",
+        "reviewedAt": "2026-09-12",
+        "tier": "z"
+      },
+      {
+        "id": "dpa",
+        "label": "DPA — veri işleme sözleşmesi",
+        "access": "public",
+        "reviewedAt": "2026-08-30",
+        "tier": "o"
+      },
+      {
+        "id": "subprocessors",
+        "label": "Alt veri işleyen listesi",
+        "access": "public",
+        "reviewedAt": "2026-09-19",
+        "tier": "o"
+      },
+      {
+        "id": "soc2",
+        "label": "SOC 2 Type II raporu",
+        "access": "nda",
+        "reviewedAt": "2026-07-15",
+        "tier": "o"
+      },
+      {
+        "id": "pentest",
+        "label": "Sızma testi özet raporu",
+        "access": "nda",
+        "reviewedAt": "2026-09-04",
+        "tier": "o"
+      },
+      {
+        "id": "soa",
+        "label": "SoA — Uygulanabilirlik bildirgesi",
+        "access": "nda",
+        "reviewedAt": "2026-06-27",
+        "tier": "o"
+      },
+      {
+        "id": "bcdr",
+        "label": "İş sürekliliği ve DR özeti",
+        "access": "nda",
+        "reviewedAt": "2026-08-08",
+        "tier": "o"
+      },
+      {
+        "id": "caiq",
+        "label": "CAIQ / SIG Lite anket yanıtları",
+        "access": "nda",
+        "reviewedAt": "2026-05-21",
+        "tier": "e"
+      },
+      {
+        "id": "acr",
+        "label": "ACR — erişilebilirlik uygunluk raporu",
+        "access": "public",
+        "reviewedAt": "2026-09-22",
+        "tier": "o"
+      }
+    ],
+    "form": {
+      "typeLabel": "Talep türü",
+      "types": [
+        {
+          "value": "report",
+          "label": "Rapor talebi",
+          "nda": true,
+          "docs": true
+        },
+        {
+          "value": "demo",
+          "label": "Demo talebi",
+          "nda": false,
+          "docs": false,
+          "note": "Demo için belge gerekmez; bu adım atlanır. İsterseniz soldaki defterden yine de belge ekleyebilirsiniz."
+        },
+        {
+          "value": "survey",
+          "label": "Güvenlik anketi",
+          "nda": false,
+          "docs": false
+        },
+        {
+          "value": "call",
+          "label": "Güvenlik ekibiyle görüşme",
+          "nda": false,
+          "docs": false
+        }
+      ],
+      "emailLabel": "Kurumsal e-posta",
+      "emailPlaceholder": "ad.soyad@sirketiniz.com",
+      "productsLabel": "İlgili ürünler",
+      "productsPlaceholder": "Seçin",
+      "products": [
+        "ERP",
+        "SCM",
+        "HSM",
+        "TeamsLike",
+        "Termitral",
+        "Platform"
+      ],
+      "kvkk": {
+        "text": "Bu formdaki kişisel verileriniz talebinizi yanıtlamak amacıyla işlenir.",
+        "controllerLabel": "Veri sorumlusu:",
+        "controller": "MARKA Teknoloji Holding A.Ş.",
+        "linkLabel": "Aydınlatma metni",
+        "href": "#kvkk-satinalma"
+      },
+      "operator": "MARKA Teknoloji Holding A.Ş.",
+      "nda": {
+        "title": "Karşılıklı gizlilik sözleşmesi — özet",
+        "required": "Rapor talebinde zorunlu",
+        "optional": "Bu talep türünde isteğe bağlı; NDA belgelerini almak için gerekir",
+        "summary": [
+          "İki taraf da paylaşılan bilgiyi yalnızca güvenlik değerlendirmesi amacıyla kullanır.",
+          "Belgeler üçüncü taraflarla paylaşılmaz; erişim, değerlendirmeyi yürüten ekiple sınırlıdır.",
+          "Paylaşım bağlantıları süreli ve kişiye özeldir; süre sonunda erişim kendiliğinden kapanır.",
+          "Yükümlülük, belgelerin alınmasından itibaren üç yıl sürer; kamuya açık bilgiler kapsam dışıdır."
+        ],
+        "accept": "Karşılıklı NDA imzalamayı kabul ediyorum",
+        "accepted": "Kabul edildi",
+        "notAccepted": "Kabul edilmedi"
+      },
+      "documentsLabel": "Alınacak belgeler",
+      "documentsHint": "Kilitli belgeler için 2. adımda NDA kabulü gerekir.",
+      "skippedLabel": "Atlandı",
+      "slotLabel": "Tercih edilen görüşme dilimi",
+      "slotPlaceholder": "Seçin",
+      "slots": [
+        "Hafta içi 09:00–12:00",
+        "Hafta içi 13:00–17:00",
+        "Esnek — ekip önersin"
+      ],
+      "summaryTitle": "Özet",
+      "summary": {
+        "type": "Talep türü",
+        "operator": "İşletmeci tüzel kişi",
+        "email": "E-posta",
+        "products": "Ürünler",
+        "nda": "NDA",
+        "documents": "Belgeler",
+        "slot": "Görüşme"
+      },
+      "empty": "—",
+      "back": "Geri",
+      "next": "Devam",
+      "submit": "Talebi gönder",
+      "reset": "Yeni talep",
+      "messages": {
+        "email": "Kurumsal e-posta adresinizi girin.",
+        "products": "En az bir ürün seçin.",
+        "ndaRequired": "Rapor paylaşımı için NDA kabulü gerekir.",
+        "documents": "En az bir belge seçin.",
+        "slot": "Bir görüşme dilimi seçin."
+      },
+      "success": {
+        "title": "Talebiniz alındı",
+        "text": "Önizleme — gerçek gönderim yapılmaz. Gerçek akışta güvenlik ekibi bir iş günü içinde kurumsal e-postanıza döner."
+      }
+    }
+  }
+}

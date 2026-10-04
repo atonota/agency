@@ -1,0 +1,355 @@
+{
+  "id": "tc-roadmap",
+  "type": "cert-roadmap",
+  "order": 50,
+  "label": "Sertifika yol haritası",
+  "owner": "Bilgi güvenliği (CISO ofisi)",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Sertifika yol haritası",
+    "title": "Hangi güvence, hangi sırayla?",
+    "description": "Dört faz büyük resmi verir; on iki dalga sırayı, rozet politikası ifadeyi, takvim ise geçiş tarihlerini sabitler.",
+    "phases": [
+      {
+        "title": "Faz 1 · Temel güvence",
+        "tier": "z",
+        "items": [
+          {
+            "code": "ISO/IEC 27001:2022",
+            "text": "İlk hedef. ISMS kurulur; kapsam ürün ve süreç bazında tanımlanır."
+          },
+          {
+            "code": "SOC 2 Type I → Type II",
+            "text": "Type I geçiş aşamasıdır. Uzun vadeli sinyal, kontrollerin bir dönem boyunca işlediğini gösteren Type II'dir."
+          },
+          {
+            "code": "ISO/IEC 27701:2025",
+            "text": "2025 sürümü bağımsız yönetim sistemi standardıdır. ERP, İK ve müşteri verisi işleyen yapıda üçüncü ana hedef."
+          }
+        ]
+      },
+      {
+        "title": "Faz 2 · Operasyonel dayanıklılık ve AI",
+        "tier": "o",
+        "items": [
+          {
+            "code": "ISO 22301:2019",
+            "text": "ERP ve SCM müşterinin operasyonunu durdurabilir; BCMS anlamlıdır. Standart revizyona alınacak, geçiş takvimi izlenmeli."
+          },
+          {
+            "code": "ISO/IEC 42001:2023",
+            "text": "AI ürünün temel parçasıysa. Organizasyonun AI risk yönetişimini gösterir, modelin doğruluğunu değil."
+          },
+          {
+            "code": "CSA STAR Level 1",
+            "text": "Öz değerlendirme; bağımsız sertifika gibi sunulmaz."
+          }
+        ]
+      },
+      {
+        "title": "Faz 3 · Olgunluk ve bulut derinliği",
+        "tier": "e",
+        "items": [
+          {
+            "code": "ISO/IEC 20000-1:2018",
+            "text": "Yönetilen hizmet ve destek operasyonu büyüdüğünde."
+          },
+          {
+            "code": "ISO 9001:2026",
+            "text": "Operasyon ve satın alma süreçleri olgunlaştığında; 2015 değil 2026 sürümü planlanır."
+          },
+          {
+            "code": "ISO/IEC 27017:2026 · 27018:2025",
+            "text": "Bulut kontrol ortamını derinleştirir; ayrı “ana rozet” olarak pazarlanmaz."
+          },
+          {
+            "code": "CSA STAR Level 2",
+            "text": "Üçüncü taraf bulut denetimi; 27001 veya SOC 2'yi bulut kontrolleriyle birleştirir."
+          }
+        ]
+      },
+      {
+        "title": "Ürüne özgü yollar",
+        "tier": "o",
+        "items": [
+          {
+            "code": "HSM · FIPS 140-3",
+            "text": "Belirli kriptografik modülün NIST CMVP doğrulaması. FIPS 140-2 modülleri 21 Eylül 2026'dan sonra Historical listesine geçiyor; yeni HSM için doğrudan 140-3."
+          },
+          {
+            "code": "Termitral · PCI PTS POI, EMVCo, GİB ÖKC",
+            "text": "Kart kabul eden ve yazarkasa işlevli terminaller için cihaz onayları."
+          },
+          {
+            "code": "PCI DSS v4.0.1",
+            "text": "Yalnızca kart sahibi verisine dokunuluyorsa. Kurumsal görünmek için hedeflenmez."
+          },
+          {
+            "code": "WCAG 2.2 + ACR",
+            "text": "Bağımsız erişilebilirlik testi ve ACR; kamu ve büyük kurumlarda güçlü satın alma kanıtı."
+          }
+        ]
+      }
+    ],
+    "wavesTitle": "12 dalga · stratejik sıralama",
+    "wavesNote": "Her dalga bir öncekinin kanıtı üzerine kurulur. Sıra, alıcının sorduğu soruların sırasıdır: önce yönetim sistemi, sonra işleyen operasyon, sonra derinlik.",
+    "waveLabels": {
+      "target": "Hedef",
+      "why": "Neden"
+    },
+    "waves": [
+      {
+        "n": 1,
+        "domain": "Temel güven",
+        "standard": "ISO/IEC 27001:2022",
+        "target": "Ürün ve destek süreçlerini kapsayan ISMS; akredite kuruluştan belge.",
+        "why": "Her RFP'nin ilk sorusu. Diğer tüm güvencelerin kontrol tabanı burada kurulur.",
+        "tier": "z"
+      },
+      {
+        "n": 2,
+        "domain": "Gerçek operasyon kanıtı",
+        "standard": "Pentest · VDP · Status · Olay süreci",
+        "target": "Yıllık bağımsız sızma testi özeti, security.txt ve açık VDP, herkese açık durum sayfası, yazılı olay süreci.",
+        "why": "Belge değil davranış gösterir; sertifikadan önce bile yayımlanabilir ve alıcının teknik ekibini ikna eder.",
+        "tier": "z"
+      },
+      {
+        "n": 3,
+        "domain": "Enterprise güvence",
+        "standard": "SOC 2 Type II",
+        "target": "En az 6 aylık gözlem dönemi; Security zorunlu, Availability ve Confidentiality eklenir.",
+        "why": "Kuzey Amerika ve global kurumsal alıcı 27001 yerine ya da yanında bunu ister; NDA ile paylaşılan rapor satış döngüsünü kısaltır.",
+        "tier": "z"
+      },
+      {
+        "n": 4,
+        "domain": "Mahremiyet",
+        "standard": "ISO/IEC 27701:2025",
+        "target": "27001 kapsamının üzerine PIMS; işleyen ve kontrolör rolleri ayrı tanımlanır.",
+        "why": "İK, ERP ve müşteri verisi işleyen yapıda KVKK ve GDPR sorularına tek yönetim sistemiyle yanıt verir; 2025 sürümü bağımsız MSS'dir.",
+        "tier": "z"
+      },
+      {
+        "n": 5,
+        "domain": "Kritik servisler",
+        "standard": "ISO 22301",
+        "target": "ERP ve SCM için iş etki analizi, RTO/RPO hedefleri ve yılda en az bir tatbikat.",
+        "why": "Müşterinin operasyonunu durdurabilecek servislerde süreklilik kanıtı satın alma şartıdır.",
+        "tier": "o"
+      },
+      {
+        "n": 6,
+        "domain": "AI",
+        "standard": "ISO/IEC 42001:2023",
+        "target": "AI özellikleri için risk değerlendirmesi, etki analizi ve yaşam döngüsü kontrolleri; AIMS belgesi.",
+        "why": "AI Act ve kurumsal AI politikaları yönetişim ister; standart modelin doğruluğunu değil organizasyonun kontrolünü gösterir.",
+        "tier": "o"
+      },
+      {
+        "n": 7,
+        "domain": "Hizmet operasyonu",
+        "standard": "ISO/IEC 20000-1:2018",
+        "target": "Destek, değişiklik ve olay yönetimi için SMS; SLA raporlaması standartlaşır.",
+        "why": "Yönetilen hizmet ve destek gelirleri büyüdükçe alıcı, süreçlerin ITIL uyumlu işlediğini görmek ister.",
+        "tier": "e"
+      },
+      {
+        "n": 8,
+        "domain": "Kalite",
+        "standard": "ISO 9001:2026",
+        "target": "Ürün geliştirme ve satın alma süreçlerini kapsayan QMS; doğrudan 2026 sürümüne belgelendirme.",
+        "why": "Kamu ihaleleri ve büyük sanayi alıcıları için hâlâ ön şart; 2015 sürümüne yeni giriş anlamsız.",
+        "tier": "e"
+      },
+      {
+        "n": 9,
+        "domain": "Bulut derinliği",
+        "standard": "ISO/IEC 27017 + 27018 · CSA STAR",
+        "target": "27001 sertifikasına bulut kontrol setleri eklenir; CSA STAR Level 2 üçüncü taraf değerlendirmesi.",
+        "why": "Çok kiracılı mimaride paylaşılan sorumluluk ve PII kontrollerini bağımsız doğrular; ayrı rozet değil, 27001'in derinliğidir.",
+        "tier": "e"
+      },
+      {
+        "n": 10,
+        "domain": "HSM",
+        "standard": "FIPS 140-3",
+        "target": "Kriptografik modül için NIST CMVP doğrulaması; modül numarası ve güvenlik seviyesi yayımlanır.",
+        "why": "FIPS 140-2 modülleri 21 Eylül 2026 itibarıyla Historical listesine geçti; kamu ve finans alıcıları aktif doğrulama ister.",
+        "tier": "o"
+      },
+      {
+        "n": 11,
+        "domain": "Ödeme",
+        "standard": "PCI DSS v4.0.1",
+        "target": "Kart sahibi verisine dokunan bileşen için AoC; Termitral cihazları için PCI PTS POI ve EMVCo onayları.",
+        "why": "Yalnızca kart verisi işleniyorsa zorunludur; kapsam dışı ürünlere rozet taşınmaz.",
+        "tier": "o"
+      },
+      {
+        "n": 12,
+        "domain": "Erişilebilirlik",
+        "standard": "WCAG 2.2 AA + ACR",
+        "target": "Bağımsız erişilebilirlik denetimi ve VPAT şablonuyla hazırlanmış ACR; her büyük sürümde güncelleme.",
+        "why": "Kamu ve büyük kurum alımlarında Avrupa Erişilebilirlik Yasası ve yerel mevzuat kanıt ister.",
+        "tier": "o"
+      }
+    ],
+    "badgePolicyTitle": "Güven rozeti politikası",
+    "badgePolicyIntro": "Sekiz kanıt türü, sekiz farklı ifade. Tür ne ise footer'da o kelime kullanılır; hepsi ‘sertifika’ değildir.",
+    "badgeColumns": {
+      "kind": "Tür",
+      "example": "Örnek",
+      "how": "Nasıl yazılır"
+    },
+    "badgePolicy": [
+      {
+        "kind": "Sertifika",
+        "example": "ISO/IEC 27001:2022",
+        "how": "Certified to ISO/IEC 27001:2022 by [belgelendirme kuruluşu] · kapsam: ERP, SCM, TeamsLike platformları · belge no ve doğrulama bağlantısı."
+      },
+      {
+        "kind": "Güvence / denetim raporu",
+        "example": "SOC 2 Type II",
+        "how": "SOC 2 Type II raporu (dönem ve denetçi firma belirtilir) NDA ile talep edilebilir. ‘Sertifika’ denmez, rapor denir."
+      },
+      {
+        "kind": "Doğrulama",
+        "example": "FIPS 140-3 (NIST CMVP)",
+        "how": "HSM modülü [ad] — FIPS 140-3 Validated, CMVP sertifika no. ve güvenlik seviyesi. Doğrulanan şirket değil modüldür."
+      },
+      {
+        "kind": "Öz değerlendirme",
+        "example": "CSA STAR Level 1",
+        "how": "CSA STAR Level 1 — öz değerlendirme (CAIQ), STAR Registry bağlantısıyla. Bağımsız denetim izlenimi verilmez."
+      },
+      {
+        "kind": "Uygunluk raporu",
+        "example": "WCAG 2.2 ACR · PCI DSS AoC",
+        "how": "WCAG 2.2 AA değerlendirmesi ve ACR (tarih, ürün sürümü, kapsam). PCI için AoC tarihi ve kapsamdaki bileşen."
+      },
+      {
+        "kind": "Üyelik",
+        "example": "CSA · FIRST · TÜBİSAD",
+        "how": "MARKA, [kuruluş] üyesidir. Üyelik bir güvence ya da denetim sonucu olarak sunulmaz."
+      },
+      {
+        "kind": "Partnerlik",
+        "example": "Bulut sağlayıcı partner programı",
+        "how": "[Sağlayıcı] [seviye] Partner (yıl). Partnerlik, ürün güvenliğini ya da uyumu belgelemez; ticari ilişkiyi gösterir."
+      },
+      {
+        "kind": "Yasal kayıt",
+        "example": "MERSİS · VERBİS",
+        "how": "MERSİS no ve VERBİS kayıt no, resmi sorgu bağlantısıyla. Yasal kayıt bir sertifika değildir; güvenlik iddiası taşımaz."
+      }
+    ],
+    "badgeNotesTitle": "Ek notlar",
+    "badgeNotes": [
+      "ISO şirketleri belgelendirmez; ISO logosu sertifikasyon işareti olarak kullanılmaz. ‘ISO Certified Company’ yerine ‘Certified to ISO/IEC 27001:2022 by [kuruluş]’ + kapsam ve doğrulama bağlantısı yazılır.",
+      "ETBİS karekod uygulaması 2 Eylül 2025'te sona erdi; footer'da güvenlik sertifikası ya da güven rozeti olarak sunulmaz."
+    ],
+    "calendarTitle": "Regülasyon ve sürüm takvimi",
+    "calendarIntro": "Geçmiş olaylar tamamlanmış işleri, gelecek olaylar açık yükümlülükleri gösterir. Bugün işaretlidir.",
+    "calendarToday": "2026-09-26",
+    "calendarTodayLabel": "Bugün",
+    "calendarRange": {
+      "start": "2025-03-01",
+      "end": "2028-03-01"
+    },
+    "calendarLegend": {
+      "past": "Geçmiş",
+      "future": "Gelecek"
+    },
+    "calendarActionPrefix": "→",
+    "calendar": [
+      {
+        "date": "2025-09-02",
+        "dateLabel": "2 Eyl 2025",
+        "label": "ETBİS karekod uygulaması sona erdi",
+        "action": "ETBİS karekodunu ve güven rozeti ifadesini kaldır."
+      },
+      {
+        "date": "2025-04-15",
+        "dateLabel": "2025",
+        "label": "ISO/IEC 27018:2025 yayımlandı",
+        "action": "Bulut PII kontrollerini 27018:2025 sürümüne haritala."
+      },
+      {
+        "date": "2025-11-15",
+        "dateLabel": "2025",
+        "label": "ISO/IEC 27701:2025 (ed. 2, bağımsız MSS)",
+        "action": "PIMS hedefini 2019 değil 2025 sürümüne kur."
+      },
+      {
+        "date": "2026-07-01",
+        "dateLabel": "Tem 2026",
+        "label": "ISO/IEC 27017:2026 yayımlandı",
+        "action": "Bulut kontrol setini 2026 sürümüne göre gözden geçir."
+      },
+      {
+        "date": "2026-08-15",
+        "dateLabel": "2026",
+        "label": "ISO 9001:2026 yayımlandı",
+        "action": "Doğrudan 2026 sürümüne belgelendirme planla."
+      },
+      {
+        "date": "2026-09-11",
+        "dateLabel": "11 Eyl 2026",
+        "label": "AB CRA açık ve olay raporlama yükümlülükleri yürürlükte",
+        "action": "Açık ve olay bildirimini 24 saat içinde ENISA'ya yap."
+      },
+      {
+        "date": "2026-09-21",
+        "dateLabel": "21 Eyl 2026",
+        "label": "FIPS 140-2 modülleri Historical listesinde",
+        "action": "Yeni HSM alımında yalnızca FIPS 140-3 modül seç."
+      },
+      {
+        "date": "2027-12-11",
+        "dateLabel": "11 Ara 2027",
+        "label": "AB CRA ana yükümlülükler",
+        "action": "CE uygunluk, SBOM ve destek süresi beyanını hazırla."
+      }
+    ],
+    "wordingTitle": "Doğru ve yanlış ifade",
+    "wordingDo": "Böyle yazın",
+    "wordingDont": "Böyle yazmayın",
+    "wording": [
+      {
+        "do": "ERP, SCM ve TeamsLike platformlarının tasarımı, geliştirilmesi, işletilmesi ve destek süreçleri ISO/IEC 27001:2022 kapsamındadır.",
+        "dont": "Tüm holding ISO 27001 sertifikalıdır."
+      },
+      {
+        "do": "SOC 2 Type II güvence raporumuz NDA ile talep edilebilir.",
+        "dont": "SOC 2 sertifikalıyız."
+      },
+      {
+        "do": "HSM — FIPS 140-3 Validated (modül no. ve yapılandırma belirtilerek)",
+        "dont": "Company FIPS 140-3 certified"
+      },
+      {
+        "do": "CSA STAR Level 1 — öz değerlendirme",
+        "dont": "CSA STAR sertifikalı (Level 1 için)"
+      },
+      {
+        "do": "WCAG 2.2 AA değerlendirmesi ve ACR (VPAT şablonuyla hazırlanmış)",
+        "dont": "VPAT sertifikası"
+      },
+      {
+        "do": "AI yönetim sistemimiz ISO/IEC 42001:2023'e göre işletilir.",
+        "dont": "ISO 42001 ile AI'ımız güvenli ve doğrudur."
+      },
+      {
+        "do": "Certified to ISO/IEC 27001:2022 by [belgelendirme kuruluşu] + kapsam",
+        "dont": "ISO Certified Company"
+      },
+      {
+        "do": "ISO/IEC 27001 sertifikası: <belgelendirme kuruluşu logosu / belge no>",
+        "dont": "ISO logosu ile ‘ISO sertifikalı’"
+      }
+    ]
+  }
+}

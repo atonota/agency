@@ -1,0 +1,115 @@
+{
+  "id": "offices",
+  "type": "offices",
+  "order": 80,
+  "label": "Ofisler",
+  "owner": "Dijital deneyim",
+  "reviewedAt": "2026-09-26",
+  "lifecycle": "published",
+  "visibility": "public",
+  "data": {
+    "eyebrow": "Ofis saatleri",
+    "lead": "Her ofisin çalışma saati, sizin saat diliminize oturtulmuş olarak.",
+    "labels": {
+      "yourAxis": "Sizin saatinizle",
+      "localTime": "Yerel saat",
+      "open": "Açık",
+      "closesAt": "Açık · {close}'da kapanır",
+      "opensAt": "Kapalı · {open}'da açılır",
+      "opensOn": "Kapalı · {day} {open}'da açılır",
+      "hoursRange": "{open}–{close}",
+      "now": "Şimdi",
+      "hoverLocal": "{viewer} sizde · {office} {city}",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "copyAria": "{city} telefonunu kopyala",
+      "callAria": "{city} ofisini ara",
+      "bandAria": "{city} ofisi çalışma saatleri, sizin saat diliminizde {open} ile {close} arası",
+      "ticks": [
+        "00",
+        "06",
+        "12",
+        "18",
+        "24"
+      ]
+    },
+    "items": [
+      {
+        "city": "İstanbul",
+        "role": "Genel merkez",
+        "address": "Maslak Mah. Örnek Cad. No:1, 34485 Sarıyer / İstanbul",
+        "phone": "+90 212 000 00 00",
+        "timezone": "Europe/Istanbul",
+        "hours": {
+          "open": "09:00",
+          "close": "18:00"
+        },
+        "workdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "tier": "z"
+      },
+      {
+        "city": "Ankara",
+        "role": "Kamu",
+        "address": "Üniversiteler Mah. Teknokent, 06800 Çankaya / Ankara",
+        "phone": "+90 312 000 00 00",
+        "timezone": "Europe/Istanbul",
+        "hours": {
+          "open": "09:00",
+          "close": "18:00"
+        },
+        "workdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "tier": "o"
+      },
+      {
+        "city": "İzmir",
+        "role": "Ar-Ge",
+        "address": "Teknopark İzmir, Gülbahçe, 35430 Urla / İzmir",
+        "phone": "+90 232 000 00 00",
+        "timezone": "Europe/Istanbul",
+        "hours": {
+          "open": "08:30",
+          "close": "17:30"
+        },
+        "workdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "tier": "o"
+      },
+      {
+        "city": "Berlin",
+        "role": "AB",
+        "address": "Friedrichstraße 00, 10117 Berlin, Almanya",
+        "phone": "+49 30 0000 0000",
+        "timezone": "Europe/Berlin",
+        "hours": {
+          "open": "09:00",
+          "close": "17:00"
+        },
+        "workdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "tier": "e"
+      }
+    ]
+  }
+}
