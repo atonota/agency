@@ -12,7 +12,10 @@ NODE_IMAGE=node:24-alpine
 SRC="$BASE/src"; REL="$BASE/releases"; mkdir -p "$BASE/state" "$REL"
 exec 9>"$BASE/state/lock"; flock -n 9 || { echo "başka bir güncelleme çalışıyor"; exit 0; }
 
-[ -d "$SRC/.git" ] || git clone --quiet "$REPO_URL" "$SRC"
+if [ ! -d "$SRC/.git" ]; then
+  [ -e "$SRC" ] && { echo "HATA: $SRC var ama ayrı bir git kopyası değil (BASE=$BASE başka bir şeyin içinde olabilir). Klasörü kenara alın ya da AGENCY_BASE ile farklı bir dizin verin."; exit 1; }
+  git clone --quiet "$REPO_URL" "$SRC"
+fi
 git -C "$SRC" fetch --quiet origin main
 if [ -s "$BASE/state/pin" ]; then SHA=$(cat "$BASE/state/pin"); else SHA=$(git -C "$SRC" rev-parse origin/main); fi
 CUR=$(cat "$BASE/state/deployed" 2>/dev/null || true)
